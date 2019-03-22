@@ -1,8 +1,8 @@
 # SciFi UI Project
 
-Name:
+Name: Taif AL Beedh
 
-Student Number: 
+Student Number: D17125070
 
 Fork this repository and use it a starter project for your assignment
 
