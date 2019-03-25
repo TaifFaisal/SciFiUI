@@ -50,4 +50,27 @@ public class Radar
         ui.ellipse(i, j, size1, size1);
 		//j = j + 0.1f;
     }
+    
+    public void render()
+    {
+        ui.pushMatrix();
+        ui.noFill();
+        ui.stroke(255);
+        ui.circle(x, y, size);
+        ui.circle(x, y, size-40);
+        ui.circle(x, y, size-80);
+        ui.circle(x, y, size-120);
+        ui.circle(x, y, size-140);
+        ui.translate(pos.x, pos.y);
+        ui.rotate(rotation);
+
+
+        ui.stroke(255);
+
+        ui.line(0, 0, pos.x/2, pos.x/2);
+        ui.popMatrix();
+    }
+
+
+
 }
