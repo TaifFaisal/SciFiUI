@@ -70,7 +70,31 @@ public class BackGround
 
 	}
 	
+	void movingstars() 
+	{	
+		for(int num = 0; num<50; num++)
+		{
+			ui.fill(255);
+			ui.ellipse(x[num], y[num], size[num], size[num]);
+		
+			x[num] = x[num] - z[num];
+			
+			if(x[num] < 0)
+			{
+				x[num] = ui.width;
+				
+			}
+		}
 
+		// ui.ellipse(x, y, size, size);
+			
+		// x = x - z;
+		// if(x < 0)
+		// {
+		// 	x = ui.width;
+		// }
+				
+	}
 	
 	
 	void star()
