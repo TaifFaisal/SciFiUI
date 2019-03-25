@@ -7,7 +7,8 @@ public class UI extends PApplet
     Button b;
     MovingCircle mc;
     BackGround background;
-
+    Radar radar;
+    
     boolean[] keys = new boolean[1024];
 
     public void keyPressed()
