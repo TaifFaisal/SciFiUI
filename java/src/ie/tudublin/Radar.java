@@ -50,7 +50,7 @@ public class Radar
         ui.ellipse(i, j, size1, size1);
 		//j = j + 0.1f;
     }
-    
+
     public void render()
     {
         ui.pushMatrix();
@@ -70,7 +70,13 @@ public class Radar
         ui.line(0, 0, pos.x/2, pos.x/2);
         ui.popMatrix();
     }
+    
+    public void update()
+    {
+        //pos.x += speed;
+        rotation += 0.1f;
 
+    }
 
 
 }
