@@ -53,6 +53,7 @@ public class UI extends PApplet
         background.star();
         background.movingstars();
         radar.rect();
+        radar.render();
 
         if (checkKey(LEFT))
         {
