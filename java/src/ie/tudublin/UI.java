@@ -55,6 +55,7 @@ public class UI extends PApplet
         radar.rect();
         radar.render();
         radar.update();
+        radar.update();
 
         if (checkKey(LEFT))
         {
