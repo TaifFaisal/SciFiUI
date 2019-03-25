@@ -8,7 +8,7 @@ public class UI extends PApplet
     MovingCircle mc;
     BackGround background;
     Radar radar;
-    
+
     boolean[] keys = new boolean[1024];
 
     public void keyPressed()
@@ -39,6 +39,8 @@ public class UI extends PApplet
         b = new Button(this, 50, 50, 100, 50, "I am a button");
         mc = new MovingCircle(this, width / 2, height / 2, 50);
         background = new BackGround(this);
+        radar = new Radar(this, 110, 490,  150, random(20,160), random(420,140));
+
     }
 
     public void draw()
