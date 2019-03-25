@@ -47,8 +47,8 @@ public class UI extends PApplet
 
         // mc.update();
         // mc.render();
-        //background.star();
-        // background.movingstars();
+        background.star();
+        background.movingstars();
 
         if (checkKey(LEFT))
         {
