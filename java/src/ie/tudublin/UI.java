@@ -1,6 +1,7 @@
 package ie.tudublin;
 
 import processing.core.PApplet;
+import processing.core.PFont;
 
 public class UI extends PApplet
 {
@@ -32,7 +33,8 @@ public class UI extends PApplet
     {
         size(800, 800);
         // Use fullscreen instead of size to make your interface fullscreen
-        //fullScreen(); 
+        //fullScreen();
+        //fullScreen(P3D);
     }
 
     public void setup()
@@ -51,18 +53,22 @@ public class UI extends PApplet
 
         // mc.update();
         // mc.render();
-        //background.star();
-        background.movingstars();
-        radar.rect();
-        radar.render();
-        radar.update();
-        clock.digitalclock();
-        clock.analogclock();
-
-        if (checkKey(LEFT))
+        
+        if (checkKey(ENTER))
         {
-            System.out.println("Left arrow key pressed");
+            background.star();
         }
+       
+       
+        
+        //background.movingstars();
+        // radar.rect();
+        // radar.render();
+        // radar.update();
+        // clock.digitalclock();
+        // clock.analogclock();
+
+        
     }
 }
 
