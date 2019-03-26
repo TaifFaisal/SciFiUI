@@ -58,7 +58,13 @@ public class UI extends PApplet
         {
             background.star();
         }
-       
+        else
+        {
+           fill(255);
+            PFont font = createFont("Apple Chancery", 32);
+            textFont(font);
+            text("Press Enter to start", 250, 380);  
+        }
        
         
         //background.movingstars();
