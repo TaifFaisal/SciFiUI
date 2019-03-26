@@ -14,6 +14,12 @@ public class Clock
         this.ui = ui;
     }
 
-    
+    public void digitalclock()
+    {
+        int s = ui.second(); 
+        int m =ui. minute(); 
+        int h = ui.hour(); 
+        ui.text(h+":"+m+":"+s, 15, 50); 
+    }
    
 }
