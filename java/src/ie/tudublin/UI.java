@@ -56,7 +56,8 @@ public class UI extends PApplet
         radar.rect();
         radar.render();
         radar.update();
-
+        clock.digitalclock();
+        clock.analogclock();
 
         if (checkKey(LEFT))
         {
