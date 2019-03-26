@@ -8,6 +8,7 @@ public class UI extends PApplet
     MovingCircle mc;
     BackGround background;
     Radar radar;
+    Clock clock;
 
     boolean[] keys = new boolean[1024];
 
@@ -40,7 +41,7 @@ public class UI extends PApplet
         mc = new MovingCircle(this, width / 2, height / 2, 50);
         background = new BackGround(this);
         radar = new Radar(this, 110, 490,  150, random(20,160), random(420,140));
-
+        clock = new Clock(this);
     }
 
     public void draw()
@@ -50,12 +51,12 @@ public class UI extends PApplet
 
         // mc.update();
         // mc.render();
-        background.star();
+        //background.star();
         background.movingstars();
         radar.rect();
         radar.render();
         radar.update();
-        radar.update();
+
 
         if (checkKey(LEFT))
         {
