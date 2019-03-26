@@ -22,4 +22,10 @@ public class Clock
         ui.text(h+":"+m+":"+s, 15, 50); 
     }
    
+    public void analogclock()
+    {
+        float x =0;
+        float y =0;
+        //ellipse();
+    }
 }
