@@ -57,7 +57,7 @@ public class UI extends PApplet
         if (checkKey(ENTER))
         {
             background.star();
-            // background.spaceship();
+            background.spaceship();
             // if (checkKey(' '))
             // {
             //     background.movingstars();
