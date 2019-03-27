@@ -111,7 +111,25 @@ public class BackGround
 		ui.fill(231,220,184);
 		ui.ellipse(100, 850, 500, 500);
 		ui.fill(169,169,169);
+		ui.noStroke();
+		ui.triangle(344, 324, 460, 280, 453, 400);
+		ui.triangle(180, 500, 240, 480, 215, 522);
+		ui.triangle(345, 530, 350, 615, 319, 593);
+		ui.pushMatrix();
+		ui.translate(380, -80);
+		ui.rotate(0.6f);
+		ui.noStroke();
+		ui.rect(200, 350, 130, 240);
+		ui.popMatrix();
+		ui.pushMatrix();
+		ui.translate(350, -45);
+		ui.rotate(0.6f);
 		
+		ui.rect(250, 550, 50, 30);
+		ui.popMatrix();
+		
+		ui.fill(65,105,225);
+		ui.circle(375, 400, 100);
 	}
 	
 
