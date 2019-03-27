@@ -108,6 +108,9 @@ public class BackGround
 	
 	void spaceship()
 	{
+		ui.fill(231,220,184);
+		ui.ellipse(100, 850, 500, 500);
+		ui.fill(169,169,169);
 		
 	}
 	
