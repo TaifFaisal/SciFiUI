@@ -57,6 +57,11 @@ public class UI extends PApplet
         if (checkKey(ENTER))
         {
             background.star();
+            // background.spaceship();
+            // if (checkKey(' '))
+            // {
+            //     background.movingstars();
+            // }
         }
         else
         {
@@ -65,9 +70,9 @@ public class UI extends PApplet
             textFont(font);
             text("Press Enter to start", 250, 380);  
         }
-       
         
-        //background.movingstars();
+        
+        
         // radar.rect();
         // radar.render();
         // radar.update();

@@ -106,14 +106,8 @@ public class BackGround
         }
 	}
 	
-	void earth()
+	void spaceship()
 	{
-		// ui.noStroke();
-		// PImage img = ui.loadImage("\Earth2.jpg");
-		// // ui.beginShape();
-		// ui.texture(img);
-		// ui.ellipse(250, 380, 70, 70);
-		// // ui.endShape();
 		
 	}
 	
