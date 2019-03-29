@@ -6,7 +6,7 @@ import processing.core.PFont;
 public class UI extends PApplet
 {
     Button button1;
-    
+    Button button2;
     MovingCircle mc;
     BackGround background;
     Radar radar;
@@ -43,7 +43,8 @@ public class UI extends PApplet
     {
         
         button1 = new Button(this, buttonX, buttonY, 100, 50,"Start");
-        
+        button2 = new Button(this, buttonX + 150, buttonY, 100, 50,"Info");
+
 
         mc = new MovingCircle(this, width / 2, height / 2, 50);
         background = new BackGround(this);
