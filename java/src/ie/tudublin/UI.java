@@ -53,7 +53,7 @@ public class UI extends PApplet
         background = new BackGround(this);
         radar = new Radar(this, 110, 490,  150, random(20,160), random(420,140));
         clock = new Clock(this);
-        info = new Info(this, buttonX , buttonY, 100, 50);
+        info = new Info(this, width , height);
     }
     int button = 0;
 
@@ -97,6 +97,7 @@ public class UI extends PApplet
             if (button == 2)
             {
                 background.movingstars();
+                info.render();
             }
             if (button == 3)
             {
