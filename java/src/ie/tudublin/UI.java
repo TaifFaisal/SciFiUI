@@ -68,7 +68,14 @@ public class UI extends PApplet
             button1.render();
             button2.render();
             button3.render();
-            
+            if(mousePressed == true)
+            {
+                //for the first button Start
+                if(mouseX > buttonX && mouseX < buttonX + 100 && mouseY > buttonY && mouseY < buttonY + 50)
+                {
+                    button = 1;
+                }
+            }
            
         }
         else
