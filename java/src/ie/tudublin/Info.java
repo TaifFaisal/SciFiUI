@@ -18,8 +18,6 @@ public class Info
     }
     public void render()
     {
-        System.out.println("x ="+ x);
-        System.out.println("\n y ="+ y);
         ui.fill(255);
         ui.strokeWeight(4); 
         ui.line(0, y/4, x/8, y/2.7f);

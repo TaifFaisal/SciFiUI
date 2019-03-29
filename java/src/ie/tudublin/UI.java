@@ -13,6 +13,7 @@ public class UI extends PApplet
     Radar radar;
     Clock clock;
     Info info;
+    Spaceship spaceship;
 
 
     boolean[] keys = new boolean[1024];
@@ -54,6 +55,7 @@ public class UI extends PApplet
         radar = new Radar(this, 110, 490,  150, random(20,160), random(420,140));
         clock = new Clock(this);
         info = new Info(this, width , height);
+        spaceship = new Spaceship(this, width, height);
     }
     int button = 0;
 
