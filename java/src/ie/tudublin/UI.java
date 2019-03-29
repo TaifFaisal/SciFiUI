@@ -12,6 +12,8 @@ public class UI extends PApplet
     BackGround background;
     Radar radar;
     Clock clock;
+    Info info;
+
 
     boolean[] keys = new boolean[1024];
 
@@ -51,6 +53,7 @@ public class UI extends PApplet
         background = new BackGround(this);
         radar = new Radar(this, 110, 490,  150, random(20,160), random(420,140));
         clock = new Clock(this);
+        info = new Info(this, buttonX , buttonY, 100, 50);
     }
     int button = 0;
 
