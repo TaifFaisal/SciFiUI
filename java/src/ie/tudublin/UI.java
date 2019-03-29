@@ -98,7 +98,16 @@ public class UI extends PApplet
             if (button == 3)
             {
                 background.movingstars();
-                
+                text("Are you sure you want to exit?!", width/3, height/2);
+                text("if yes press Y if no press any key", width/3, height/2 + 50);
+                if(checkKey('Y') || checkKey('y'))
+                {
+                    System.exit(0);
+                }
+                else 
+                {
+                    
+                }
             }
            
         }
