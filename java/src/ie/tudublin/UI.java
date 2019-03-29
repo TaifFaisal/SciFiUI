@@ -81,6 +81,11 @@ public class UI extends PApplet
                     button = 2;
                     //background.movingstars(); 
                 }
+                //for the third button Exit
+                if(mouseX > buttonX + 300 && mouseX < buttonX + 400 && mouseY > buttonY && mouseY < buttonY + 50)
+                {
+                    button = 3;
+                }
             }
            
         }
