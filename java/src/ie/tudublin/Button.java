@@ -20,6 +20,15 @@ public class Button
         this.height = height;
         this.text = text;
     }
+    public void render()
+    {
+        ui.noFill();
+        ui.stroke(255);
+        ui.rect(x, y, width, height);
+        ui.textAlign(PApplet.CENTER, PApplet.CENTER);
+        ui.fill(255);
+        ui.text(text, x + 50, y + 15);
+    }
 
    
 }
