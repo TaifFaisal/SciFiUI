@@ -5,7 +5,8 @@ import processing.core.PFont;
 
 public class UI extends PApplet
 {
-    Button b;
+    Button button1;
+    
     MovingCircle mc;
     BackGround background;
     Radar radar;
@@ -36,39 +37,43 @@ public class UI extends PApplet
         //fullScreen();
         //fullScreen(P3D);
     }
-
+    float buttonX = width/3;
+    float buttonY = height/3;
     public void setup()
     {
-        b = new Button(this, 50, 50, 100, 50, "I am a button");
+        
+        button1 = new Button(this, buttonX, buttonY, 100, 50,"Start");
+        
+
         mc = new MovingCircle(this, width / 2, height / 2, 50);
         background = new BackGround(this);
         radar = new Radar(this, 110, 490,  150, random(20,160), random(420,140));
         clock = new Clock(this);
     }
+    int button = 0;
 
     public void draw()
     {
         background(0);
-        // b.render();
 
         // mc.update();
         // mc.render();
         
         if (checkKey(ENTER))
         {
-            background.star();
-            background.spaceship();
-            // if (checkKey(' '))
-            // {
-            //     background.movingstars();
-            // }
+            // background.star();
+            // background.spaceship();
+
+            
+           
         }
         else
         {
-           fill(255);
+            //background.star1();
+            fill(255);
             PFont font = createFont("Apple Chancery", 32);
             textFont(font);
-            text("Press Enter to start", 250, 380);  
+            text("Press Enter to start", width/3, height/2);  
         }
         
         

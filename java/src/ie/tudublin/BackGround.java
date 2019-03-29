@@ -95,12 +95,31 @@ public class BackGround
 		// }
 				
 	}
+	void star1()
+	{
+		for(int i = 0; i<50; i++)
+        {
+			ui.fill(255);
+            ui.ellipse(w[i], h[i], num[i], num[i]);
+
+        }
+		
+		
+		for(int i = 0; i<50; i++)
+        {
+			ui.fill(65,105,225);
+			//ui.fill(0,0,255);
+            ui.ellipse(w[i]*2, h[i]*2, num[i], num[i]);
+		}
 	
+	
+	}
 	
 	void star()
 	{
 		for(int i = 0; i<50; i++)
         {
+			ui.fill(255);
             ui.ellipse(w[i], h[i], num[i], num[i]);
 
         }
@@ -122,10 +141,10 @@ public class BackGround
 		ui.rect(200, 350, 130, 240);
 		ui.popMatrix();
 		ui.pushMatrix();
-		ui.translate(350, -45);
+		ui.translate(335, -50);
 		ui.rotate(0.6f);
 		
-		ui.rect(250, 550, 50, 30);
+		ui.rect(248, 550, 60, 30);
 		ui.popMatrix();
 		
 		ui.fill(65,105,225);
