@@ -87,6 +87,19 @@ public class UI extends PApplet
                     button = 3;
                 }
             }
+            if (button == 1)
+            {
+                background.movingstars();
+            }
+            if (button == 2)
+            {
+                background.movingstars();
+            }
+            if (button == 3)
+            {
+                background.movingstars();
+                
+            }
            
         }
         else
