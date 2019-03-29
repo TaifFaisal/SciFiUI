@@ -65,7 +65,9 @@ public class UI extends PApplet
         {
             // background.star();
             // background.spaceship();
-
+            button1.render();
+            button2.render();
+            button3.render();
             
            
         }
