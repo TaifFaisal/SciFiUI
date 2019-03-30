@@ -30,7 +30,8 @@ public class Radar
         
     }
 
-    public void rect()
+
+    public void render()
     {
         ui.fill(0,0,255);
         ui.stroke(0,0,255);
@@ -49,10 +50,8 @@ public class Radar
         
         ui.ellipse(i, j, size1, size1);
 		//j = j + 0.1f;
-    }
 
-    public void render()
-    {
+
         ui.pushMatrix();
         ui.noFill();
         ui.stroke(255);

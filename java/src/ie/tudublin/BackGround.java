@@ -74,10 +74,11 @@ public class BackGround
 	{	
 		for(int num = 0; num<50; num++)
 		{
+			ui.strokeWeight(1);
 			ui.fill(255);
 			ui.ellipse(x[num], y[num], size[num], size[num]);
 		
-			x[num] = x[num] - z[num];
+			x[num] -=  z[num];
 			
 			if(x[num] < 0)
 			{
@@ -138,15 +139,28 @@ public class BackGround
 		ui.translate(380, -80);
 		ui.rotate(0.6f);
 		ui.noStroke();
+		
 		ui.rect(200, 350, 130, 240);
 		ui.popMatrix();
 		ui.pushMatrix();
 		ui.translate(335, -50);
 		ui.rotate(0.6f);
-		
 		ui.rect(248, 550, 60, 30);
 		ui.popMatrix();
-		
+
+		// ui.stroke(255);
+        // ui.strokeWeight(4);
+		// ui.beginShape();
+		// ui.vertex(460, 280);
+		// ui.vertex(350, 320);
+		// ui.vertex(460, 280);
+		// ui.vertex(455, 395);
+		// ui.vertex(320, 590);
+		// ui.vertex(319, 593);
+		// ui.vertex(350, 615);
+		// ui.endShape();
+
+
 		ui.fill(65,105,225);
 		ui.circle(375, 400, 100);
 	}

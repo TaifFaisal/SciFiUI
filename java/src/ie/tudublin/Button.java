@@ -20,7 +20,7 @@ public class Button
         this.height = height;
         this.text = text;
     }
-    public void render()
+    public void buttons()
     {
         ui.noFill();
         ui.stroke(255);

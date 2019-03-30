@@ -38,7 +38,7 @@ public class UI extends PApplet
     {
         size(800, 800);
         // Use fullscreen instead of size to make your interface fullscreen
-        //fullScreen();
+        // fullScreen();
         //fullScreen(P3D);
     }
     float buttonX = width/3;
@@ -58,21 +58,28 @@ public class UI extends PApplet
         spaceship = new Spaceship(this, width, height);
     }
     int button = 0;
-
+    int checkbutton = 1;
+    int homebutton = 1;
     public void draw()
     {
         background(0);
+        // spaceship.structure();
+      
 
         // mc.update();
         // mc.render();
-        
+        // /*
         if (checkKey(ENTER))
         {
             // background.star();
             // background.spaceship();
-            button1.render();
-            button2.render();
-            button3.render();
+            if(checkbutton == 1)
+            {
+                button1.buttons();
+                button2.buttons();
+                button3.buttons();
+            }
+            
             if(mousePressed == true)
             {
                 //for the first button Start
@@ -94,15 +101,18 @@ public class UI extends PApplet
             }
             if (button == 1)
             {
+                checkbutton = 0;
                 background.movingstars();
+                spaceship.structure();
             }
             if (button == 2)
             {
-                background.movingstars();
-                info.render();
+                checkbutton = 1;
+                
             }
             if (button == 3)
             {
+                checkbutton = 1;
                 background.movingstars();
                 text("Are you sure you want to exit?!", width/3, height/2);
                 text("if yes press Y if no press any key", width/3, height/2 + 50);
@@ -125,10 +135,10 @@ public class UI extends PApplet
             textFont(font);
             text("Press Enter to start", width/3, height/2);  
         }
+        // */
         
         
-        
-        // radar.rect();
+
         // radar.render();
         // radar.update();
         // clock.digitalclock();

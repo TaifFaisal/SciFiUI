@@ -16,7 +16,7 @@ public class Info
         this.y = y;
         
     }
-    public void render()
+    public void borders()
     {
         ui.fill(255);
         ui.strokeWeight(4); 
@@ -30,7 +30,7 @@ public class Info
         PFont font = ui.createFont("Apple Chancery", 32);
         ui.textFont(font);
         ui.text("Object Oriented Programming Assignment", x/2, y/2);
-        ui.text("D17125070", x/3 + 150, y/2+50);
+        ui.text("D17125070", x/4 + 200, y/2+50);
     }
 
 
