@@ -34,12 +34,15 @@ public class Radar
         }
     }
 
-
-    public void render()
+    public void rect()
     {
         ui.fill(0);
         ui.noStroke();
         ui.rect(10,625,115,110);
+    }
+
+    public void render()
+    {
 
         float howFast = 2;
         

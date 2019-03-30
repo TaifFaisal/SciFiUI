@@ -1,5 +1,7 @@
 package ie.tudublin;
 
+import java.awt.GraphicsEnvironment;
+
 import processing.core.PApplet;
 import processing.core.PFont;
 
@@ -8,6 +10,8 @@ public class UI extends PApplet
     Button button1;
     Button button2;
     Button button3;
+    Button redbutton;
+    Button greenbutton;
     MovingCircle mc;
     BackGround background;
     Radar radar;
@@ -49,7 +53,8 @@ public class UI extends PApplet
         button1 = new Button(this, buttonX, buttonY, 100, 50,"Start");
         button2 = new Button(this, buttonX + 150, buttonY, 100, 50,"Info");
         button3 = new Button(this, buttonX + 300, buttonY, 100, 50,"Exit");
-
+        redbutton = new Button(this, 60 , 600, 17, 17,"Radar / OFF");
+        greenbutton = new Button(this, 60 , 600, 17, 17,"Radar / ON");
         mc = new MovingCircle(this, width / 2, height / 2, 50);
         background = new BackGround(this);
         radar = new Radar(this, 65, 680,  100);
@@ -60,16 +65,18 @@ public class UI extends PApplet
     int button = 0;
     int checkbutton = 1;
     int homebutton = 1;
+    int onoffbutton = 0;
     public void draw()
     {
         background(0);
-        spaceship.structure();
-        radar.render();
-        radar.update();
+        // spaceship.structure();
+        // radar.render();
+        // radar.update();
+        // circlebutton.circlebuttons();
 
         // mc.update();
         // mc.render();
-        /*
+        // /*
         if (checkKey(ENTER))
         {
             // background.star();
@@ -105,6 +112,32 @@ public class UI extends PApplet
                 checkbutton = 0;
                 background.movingstars();
                 spaceship.structure();
+                radar.rect();
+                
+                
+                if(mousePressed == true)
+                {
+                    if(mouseX > 60  && mouseX < 77 && mouseY > 600 && mouseY < 617)
+                    {
+                        onoffbutton = 1;
+                    } 
+                }
+                if(onoffbutton == 0)
+                {
+                    redbutton.redbutton();
+                }
+                else
+                {
+                    greenbutton.greenbutton();
+                    radar.render();
+                    radar.update();
+                    // if(mouseX > 60  && mouseX < 77 && mouseY > 600 && mouseY < 617)
+                    // {
+                    //     onoffbutton = 0;
+                    // } 
+                }
+
+
             }
             if (button == 2)
             {
@@ -142,7 +175,7 @@ public class UI extends PApplet
             textFont(font);
             text("Press Enter to start", width/3, height/2);  
         }
-        */
+        // */
         
         
 

@@ -76,6 +76,7 @@ public class BackGround
 		{
 			ui.strokeWeight(1);
 			ui.fill(255);
+			ui.stroke(255);
 			ui.ellipse(x[num], y[num], size[num], size[num]);
 		
 			x[num] -=  z[num];
@@ -106,7 +107,9 @@ public class BackGround
 	{
 		for(int i = 0; i<50; i++)
         {
+			ui.strokeWeight(1);
 			ui.fill(255);
+			ui.stroke(255);
             ui.ellipse(w[i], h[i], num[i], num[i]);
 
         }
