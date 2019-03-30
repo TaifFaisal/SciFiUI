@@ -108,7 +108,13 @@ public class UI extends PApplet
             if (button == 2)
             {
                 checkbutton = 1;
-                
+                button2 = new Button(this, buttonX + 150, buttonY, 100, 50,"Home");
+                background.movingstars();
+                info.borders();
+                if(mouseX > buttonX + 150 && mouseX < buttonX + 250 && mouseY > buttonY && mouseY < buttonY + 50)
+                {
+                    
+                }
             }
             if (button == 3)
             {
