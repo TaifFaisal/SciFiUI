@@ -36,7 +36,7 @@ public class UI extends PApplet
 
     public void settings()
     {
-        size(800, 800);
+        size(800, 750);
         // Use fullscreen instead of size to make your interface fullscreen
         // fullScreen();
         //fullScreen(P3D);
@@ -52,7 +52,7 @@ public class UI extends PApplet
 
         mc = new MovingCircle(this, width / 2, height / 2, 50);
         background = new BackGround(this);
-        radar = new Radar(this, 110, 490,  150, random(20,160), random(420,140));
+        radar = new Radar(this, 65, 680,  100);
         clock = new Clock(this);
         info = new Info(this, width , height);
         spaceship = new Spaceship(this, width, height);
@@ -63,12 +63,13 @@ public class UI extends PApplet
     public void draw()
     {
         background(0);
-        // spaceship.structure();
-      
+        spaceship.structure();
+        radar.render();
+        radar.update();
 
         // mc.update();
         // mc.render();
-        // /*
+        /*
         if (checkKey(ENTER))
         {
             // background.star();
@@ -141,7 +142,7 @@ public class UI extends PApplet
             textFont(font);
             text("Press Enter to start", width/3, height/2);  
         }
-        // */
+        */
         
         
 

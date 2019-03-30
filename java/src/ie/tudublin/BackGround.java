@@ -98,21 +98,7 @@ public class BackGround
 	}
 	void star1()
 	{
-		for(int i = 0; i<50; i++)
-        {
-			ui.fill(255);
-            ui.ellipse(w[i], h[i], num[i], num[i]);
-
-        }
 		
-		
-		for(int i = 0; i<50; i++)
-        {
-			ui.fill(65,105,225);
-			//ui.fill(0,0,255);
-            ui.ellipse(w[i]*2, h[i]*2, num[i], num[i]);
-		}
-	
 	
 	}
 	
