@@ -37,12 +37,16 @@ import processing.core.*;
         ui.fill(169,169,169);
         ui.vertex(0, 0);
         ui.vertex(0, y/16);
+
         ui.vertex(0, y/16);
-        ui.vertex(x/10, y/10);
-        ui.vertex(x/10, y/10);
+        ui.vertex(x/16*1.5f, y/10);
+
+        ui.vertex(x/16*1.5f, y/10);
         ui.vertex(x-100, y/10);
+        
         ui.vertex(x-100, y/10);
         ui.vertex(x, y/16);
+
         ui.vertex(x, y/16);
         ui.vertex(x, 0);
         ui.vertex( x, 0);

@@ -62,7 +62,7 @@ public class UI extends PApplet
         screen = new Screen(this, words, 300, 470);
         background = new BackGround(this);
         radar = new Radar(this, 65, 680,  100);
-        clock = new Clock(this);
+        clock = new Clock(this, 120, 20);
         info = new Info(this, width , height);
         spaceship = new Spaceship(this, width, height);
         
@@ -77,17 +77,19 @@ public class UI extends PApplet
     {
         background(0);
 
-        // spaceship.structure();
-        // radar.render();
-        // radar.update();
-        // redbutton.redbutton();
-        // startbutton.beforestartbutton();
-        // screen.displayscreen();
-        // screen.displaywords();
-        // mc.update();
-        // mc.render();
+        spaceship.structure();
+        radar.render();
+        radar.update();
+        redbutton.redbutton();
+        startbutton.beforestartbutton();
+        screen.displayscreen();
+        screen.displaywords();
+        clock.frame();
+        // clock.digitalclock();
+        // clock.analogclock();
 
-        // /*
+
+        /*
         if (checkKey(ENTER))
         {
             // background.star();
@@ -219,15 +221,9 @@ public class UI extends PApplet
             textFont(font);
             text("Press Enter to start", width/3, height/2);  
         }
-        // */
+        */
         
         
-
-        // radar.render();
-        // radar.update();
-        // clock.digitalclock();
-        // clock.analogclock();
-
         
     }
 }

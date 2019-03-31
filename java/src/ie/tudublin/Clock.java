@@ -9,11 +9,19 @@ public class Clock
     private float y;
 
 
-    public Clock(PApplet ui)
+    public Clock(PApplet ui, float x, float y)
     {
         this.ui = ui;
+        this.x = x;
+        this.y = y;
     }
 
+    public void frame()
+    {
+        ui.stroke(0);
+        ui.fill(0);
+        ui.rect(x , y , 150, 40);
+    }
     public void digitalclock()
     {
         int s = ui.second(); 
