@@ -19,7 +19,7 @@ public class UI extends PApplet
     Clock clock;
     Info info;
     Spaceship spaceship;
-
+   
 
     boolean[] keys = new boolean[1024];
 
@@ -50,6 +50,7 @@ public class UI extends PApplet
     float buttonY = height/3;
     public void setup()
     {
+        String[] words = loadStrings("screen.txt");
         
         button1 = new Button(this, buttonX, buttonY, 100, 50,"Start");
         button2 = new Button(this, buttonX + 150, buttonY, 100, 50,"Info");
@@ -58,12 +59,13 @@ public class UI extends PApplet
         greenbutton = new Button(this, 60 , 600, 17, 17,"Radar / ON");
         exitbutton = new Button(this, 650 , 20, 60, 40,"Exit");
         startbutton = new Button(this, 90 , 490, 110, 60,"Start");
-        // startbutton = new Button(this, 90 , 490, 110, 60,"Start");
+        
         background = new BackGround(this);
         radar = new Radar(this, 65, 680,  100);
         clock = new Clock(this);
         info = new Info(this, width , height);
         spaceship = new Spaceship(this, width, height);
+        
     }
     int button = 0;
     int checkbutton = 1;
@@ -74,14 +76,17 @@ public class UI extends PApplet
     public void draw()
     {
         background(0);
+
         // spaceship.structure();
         // radar.render();
         // radar.update();
         // redbutton.redbutton();
         // startbutton.beforestartbutton();
-
+        // screen.displayscreen();
+        // screen.displaywords();
         // mc.update();
         // mc.render();
+
         // /*
         if (checkKey(ENTER))
         {
@@ -143,6 +148,7 @@ public class UI extends PApplet
                     startbutton.afterstartbutton();
                     radar.rect();
                     exitbutton.exitbutton();
+                    
 
 
                 }
@@ -153,6 +159,7 @@ public class UI extends PApplet
                     radar.rect();
                     exitbutton.exitbutton();
                     startbutton.beforestartbutton();
+                    
                 }
                 if(onoffbutton == 0)
                 {
