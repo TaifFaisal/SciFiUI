@@ -14,6 +14,8 @@ public class UI extends PApplet
     Button greenbutton;
     Button exitbutton;
     Button startbutton;
+    Button clockredbutton;
+    Button clockgreenbutton;
     BackGround background;
     Radar radar;
     Clock clock;
@@ -63,6 +65,8 @@ public class UI extends PApplet
         background = new BackGround(this);
         radar = new Radar(this, 65, 680,  100);
         clock = new Clock(this, 120, 20);
+        clockredbutton = new Button(this, 85 , 35, 17, 17,"Clock / OFF");
+        clockgreenbutton = new Button(this, 85 , 35, 17, 17,"Clock / ON");
         info = new Info(this, width , height);
         spaceship = new Spaceship(this, width, height);
         
@@ -73,23 +77,26 @@ public class UI extends PApplet
     int onoffbutton = 0;
     int exitcheck = 0;
     int startcheck = 0;
+    int clockckeck = 0;
     public void draw()
     {
         background(0);
 
-        spaceship.structure();
-        radar.render();
-        radar.update();
-        redbutton.redbutton();
-        startbutton.beforestartbutton();
-        screen.displayscreen();
-        screen.displaywords();
-        clock.frame();
+        // spaceship.structure();
+        // radar.render();
+        // radar.update();
+        // redbutton.redbutton();
+        // startbutton.beforestartbutton();
+        // screen.displayscreen();
+        // screen.displaywords();
+        // clock.frame();
+        // //clockredbutton.clockredbutton();
+        // // clockgreenbutton.clockgreenbutton();
         // clock.digitalclock();
-        // clock.analogclock();
+        // // clock.analogclock();
 
 
-        /*
+    //    /*
         if (checkKey(ENTER))
         {
             // background.star();
@@ -118,6 +125,10 @@ public class UI extends PApplet
                 if(mouseX > buttonX + 300 && mouseX < buttonX + 400 && mouseY > buttonY && mouseY < buttonY + 50)
                 {
                     button = 3;
+                }
+                if(mouseX > 85 && mouseX < 102 && mouseY > 35 && mouseY < 52 )
+                {
+                    clockckeck = 1;
                 }
             }
             if (button == 1)
@@ -152,6 +163,9 @@ public class UI extends PApplet
                     exitbutton.exitbutton();
                     screen.displayscreen();
                     screen.displaywords();
+                    clock.frame();
+                    
+                    
 
                 }
                 else
@@ -162,7 +176,17 @@ public class UI extends PApplet
                     exitbutton.exitbutton();
                     startbutton.beforestartbutton();
                     screen.displayscreen();
+                    clock.frame();
                 }
+                if(clockckeck == 1)
+                    {
+                        clockgreenbutton.clockgreenbutton();
+                        clock.digitalclock();
+                    }
+                    else
+                    {
+                        clockredbutton.clockredbutton();
+                    }
                 if(onoffbutton == 0)
                 {
                     redbutton.redbutton();
@@ -221,7 +245,7 @@ public class UI extends PApplet
             textFont(font);
             text("Press Enter to start", width/3, height/2);  
         }
-        */
+        // */
         
         
         

@@ -1,6 +1,7 @@
 package ie.tudublin;
 
 import processing.core.PApplet;
+import processing.core.PFont;
 
 public class Clock
 {
@@ -22,18 +23,22 @@ public class Clock
         ui.fill(0);
         ui.rect(x , y , 150, 40);
     }
+    
     public void digitalclock()
     {
         int s = ui.second(); 
         int m =ui. minute(); 
         int h = ui.hour(); 
-        ui.text(h+":"+m+":"+s, 15, 50); 
+        ui.fill(255);
+        PFont font = ui.createFont("Times New Roman", 30);
+        ui.textFont(font);
+        ui.text(h+":"+m+":"+s, x + 73, y+15); 
     }
    
-    public void analogclock()
-    {
-        float x =0;
-        float y =0;
-        //ellipse();
-    }
+    // public void analogclock()
+    // {
+    //     float x =0;
+    //     float y =0;
+    //     //ellipse();
+    // }
 }

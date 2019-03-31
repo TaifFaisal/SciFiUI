@@ -87,6 +87,28 @@ public class Button
         ui.textFont(font);
         ui.text("ON", x + 55, y + 25);
     }
+    public void clockredbutton()
+    {
+        ui.fill(255,0,0);
+        ui.stroke(255,0,0);
+        ui.rect(x , y, width, height);
+        ui.fill(0);
+        PFont font = ui.createFont("Times New Roman", 9);
+        ui.textFont(font);
+        ui.text(text, x+6 , y -8);
+        
+    }
+    public void clockgreenbutton()
+    {
+        ui.fill(0,255,0);
+        ui.stroke(0,255,0);
+        ui.rect(x, y, width, height);
+        //ui.textAlign(PApplet.CENTER, PApplet.CENTER);
+        ui.fill(0);
+        PFont font = ui.createFont("Times New Roman", 9);
+        ui.textFont(font);
+        ui.text(text, x+6 , y -8);
+    }
 
    
 }
