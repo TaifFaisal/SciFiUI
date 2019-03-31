@@ -138,7 +138,11 @@ public class UI extends PApplet
                 }
                 if(startcheck == 1)
                 {
-                    
+                    background.movingstars();
+                    spaceship.structure();
+                    startbutton.afterstartbutton();
+                    radar.rect();
+                    exitbutton.exitbutton();
 
 
                 }

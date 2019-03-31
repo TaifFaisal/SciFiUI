@@ -76,7 +76,17 @@ public class Button
         ui.textFont(font);
         ui.text(text, x + 55, y + 25);
     }
-    
+    public void afterstartbutton()
+    {
+        ui.fill(0,255,0);
+        ui.stroke(0,255,0);
+        ui.rect(x, y, width, height);
+        ui.textAlign(PApplet.CENTER, PApplet.CENTER);
+        ui.fill(105,105,105);
+        PFont font = ui.createFont("Times New Roman", 30);
+        ui.textFont(font);
+        ui.text("ON", x + 55, y + 25);
+    }
 
    
 }
