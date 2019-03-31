@@ -1,9 +1,9 @@
 package ie.tudublin;
 
-import java.awt.GraphicsEnvironment;
-
 import processing.core.PApplet;
 import processing.core.PFont;
+
+import ddf.minim.*;
 
 public class UI extends PApplet
 {
@@ -50,9 +50,17 @@ public class UI extends PApplet
     }
     float buttonX = width/3;
     float buttonY = height/3;
+
+    Minim sound;
+    AudioPlayer start;
+
     public void setup()
     {
+
         String[] words = loadStrings("screen.txt");
+        sound = new Minim(this);
+        start = sound.loadFile("BackgroundSound.mp3");
+        // start.play();
         
         button1 = new Button(this, buttonX, buttonY, 100, 50,"Start");
         button2 = new Button(this, buttonX + 150, buttonY, 100, 50,"Info");
@@ -81,7 +89,7 @@ public class UI extends PApplet
     public void draw()
     {
         background(0);
-
+        start.play();
         // spaceship.structure();
         // radar.render();
         // radar.update();
