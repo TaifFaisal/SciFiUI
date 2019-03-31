@@ -18,5 +18,11 @@ public class Screen
         this.y = y;
     }
 
-   
+    public void displayscreen()
+    {
+        ui.stroke(0);
+        ui.fill(0);
+
+        ui.rect(x , y , 150, 150);
+    }
 }

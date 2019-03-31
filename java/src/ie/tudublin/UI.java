@@ -19,7 +19,7 @@ public class UI extends PApplet
     Clock clock;
     Info info;
     Spaceship spaceship;
-   
+    Screen screen;
 
     boolean[] keys = new boolean[1024];
 
@@ -59,7 +59,7 @@ public class UI extends PApplet
         greenbutton = new Button(this, 60 , 600, 17, 17,"Radar / ON");
         exitbutton = new Button(this, 650 , 20, 60, 40,"Exit");
         startbutton = new Button(this, 90 , 490, 110, 60,"Start");
-        
+        screen = new Screen(this, words, 300, 470);
         background = new BackGround(this);
         radar = new Radar(this, 65, 680,  100);
         clock = new Clock(this);
@@ -148,7 +148,7 @@ public class UI extends PApplet
                     startbutton.afterstartbutton();
                     radar.rect();
                     exitbutton.exitbutton();
-                    
+                    screen.displayscreen();
 
 
                 }
@@ -159,7 +159,7 @@ public class UI extends PApplet
                     radar.rect();
                     exitbutton.exitbutton();
                     startbutton.beforestartbutton();
-                    
+                    screen.displayscreen();
                 }
                 if(onoffbutton == 0)
                 {
