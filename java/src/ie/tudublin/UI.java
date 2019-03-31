@@ -13,6 +13,7 @@ public class UI extends PApplet
     Button redbutton;
     Button greenbutton;
     Button exitbutton;
+    Button startbutton;
     BackGround background;
     Radar radar;
     Clock clock;
@@ -56,7 +57,8 @@ public class UI extends PApplet
         redbutton = new Button(this, 60 , 600, 17, 17,"Radar / OFF");
         greenbutton = new Button(this, 60 , 600, 17, 17,"Radar / ON");
         exitbutton = new Button(this, 650 , 20, 60, 40,"Exit");
-
+        startbutton = new Button(this, 90 , 490, 110, 60,"Start");
+        // startbutton = new Button(this, 90 , 490, 110, 60,"Start");
         background = new BackGround(this);
         radar = new Radar(this, 65, 680,  100);
         clock = new Clock(this);
@@ -68,13 +70,15 @@ public class UI extends PApplet
     int homebutton = 1;
     int onoffbutton = 0;
     int exitcheck = 0;
+    int startcheck = 0;
     public void draw()
     {
         background(0);
         // spaceship.structure();
         // radar.render();
         // radar.update();
-        // circlebutton.circlebuttons();
+        // redbutton.redbutton();
+        // startbutton.beforestartbutton();
 
         // mc.update();
         // mc.render();
@@ -112,10 +116,10 @@ public class UI extends PApplet
             if (button == 1)
             {
                 checkbutton = 0;
-                background.movingstars();
-                spaceship.structure();
-                radar.rect();
-                exitbutton.exitbutton();
+                // background.star();
+                // spaceship.structure();
+                // radar.rect();
+                // exitbutton.exitbutton();
                 
                 if(mousePressed == true)
                 {
@@ -127,6 +131,24 @@ public class UI extends PApplet
                     {
                         exitcheck = 1;
                     }
+                    else if(mouseX > 90  && mouseX < 200 && mouseY > 490 && mouseY < 550)
+                    {
+                        startcheck = 1;
+                    }
+                }
+                if(startcheck == 1)
+                {
+                    
+
+
+                }
+                else
+                {
+                    background.star();
+                    spaceship.structure();
+                    radar.rect();
+                    exitbutton.exitbutton();
+                    startbutton.beforestartbutton();
                 }
                 if(onoffbutton == 0)
                 {

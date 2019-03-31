@@ -65,6 +65,18 @@ public class Button
         ui.text(text, x+30, y + 20);
 
     }
+    public void beforestartbutton()
+    {
+        ui.fill(255,0,0);
+        ui.stroke(139,0,0);
+        ui.rect(x, y, width, height);
+        ui.textAlign(PApplet.CENTER, PApplet.CENTER);
+        ui.fill(105,105,105);
+        PFont font = ui.createFont("Times New Roman", 30);
+        ui.textFont(font);
+        ui.text(text, x + 55, y + 25);
+    }
+    
 
    
 }
