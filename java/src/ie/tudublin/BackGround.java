@@ -17,9 +17,10 @@ public class BackGround
 	float[] size = new float[500];
 	int num1 = 0;
     float num2 = 4;
-    float[] num = new float[50];
+    float[] size2 = new float[50];
     float[] w = new float[50];
-    float[] h = new float[50];
+	float[] h = new float[50];
+	float[] a = new float[50];
 	PApplet ui;
 
 	// float x = random(width);
@@ -45,17 +46,17 @@ public class BackGround
 		{
 			x[number] = ui.random(-ui.width, ui.width);
 			y[number] = ui.random(-ui.height, ui.height);
-			// z[number] = ui.random(1, 4);
 			z[number] = ui.random(ui.width);
-			size[number] = ui.random(2, 9);
+			size[number] = ui.random(1, 9);
 			number++;
 		}
 
 		while(num1 < 50)
         {
-            num[num1] = ui.random(1,8);
+            size2[num1] = ui.random(1,8);
             w[num1] = ui.random(ui.width);
-            h[num1] = ui.random(ui.height);
+			h[num1] = ui.random(ui.height);
+			a[num1] = ui.random(1, 4);
             num1++;
         }
 		// int num = 0; 
@@ -88,6 +89,7 @@ public class BackGround
 			ui.ellipse(sx, sy, size[num], size[num]);
 		}			
 	}
+
 	void star1()
 	{
 		for(int num = 0; num<50; num++)
@@ -95,13 +97,13 @@ public class BackGround
 			ui.strokeWeight(1);
 			ui.fill(255);
 			ui.stroke(255);
-			ui.ellipse(x[num], y[num], size[num], size[num]);
+			ui.ellipse(w[num], h[num], size2[num], size2[num]);
 		
-			x[num] -=  z[num];
+			w[num] -=  a[num];
 			
-			if(x[num] < 0)
+			if(w[num] < 0)
 			{
-				x[num] = ui.width;
+				w[num] = ui.width;
 				
 			}
 		}
@@ -116,17 +118,17 @@ public class BackGround
 	
 	}
 	
-	// void star()
-	// {
-	// 	for(int i = 0; i<50; i++)
-    //     {
-	// 		ui.strokeWeight(1);
-	// 		ui.fill(255);
-	// 		ui.stroke(255);
-    //         ui.ellipse(w[i], h[i], num[i], num[i]);
+	void star()
+	{
+		for(int i = 0; i<50; i++)
+        {
+			ui.strokeWeight(1);
+			ui.fill(255);
+			ui.stroke(255);
+            ui.ellipse(w[i], h[i], size2[i], size2[i]);
 
-    //     }
-	// }
+        }
+	}
 	
 	void spaceship()
 	{

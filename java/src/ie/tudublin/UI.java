@@ -93,8 +93,8 @@ public class UI extends PApplet
     {
         background(0);
         //start.play();
-        translate(width / 2, height / 2);
-        background.movingstars();
+        
+        
         // spaceship.structure();
         // radar.render();
         // radar.update();
@@ -111,16 +111,19 @@ public class UI extends PApplet
 
 
 
-       /*
+    //   /*
         if (checkKey(ENTER))
         {
-            // background.star();
-            // background.spaceship();
+            
+            
             if(checkbutton == 1)
-            {
+            {   
+                background.star1();
+                background.spaceship();
                 button1.buttons();
                 button2.buttons();
                 button3.buttons();
+                
             }
             
             if(mousePressed == true)
@@ -171,7 +174,10 @@ public class UI extends PApplet
                 }
                 if(startcheck == 1)
                 {
+                    pushMatrix();
+                    translate(width / 2, height / 2);
                     background.movingstars();
+                    popMatrix();
                     spaceship.structure();
                     startbutton.afterstartbutton();
                     radar.rect();
@@ -228,7 +234,6 @@ public class UI extends PApplet
             {
                 checkbutton = 1;
                 button2 = new Button(this, buttonX + 150, buttonY, 100, 50,"Home");
-                background.movingstars();
                 info.borders();
                 if(mouseX > buttonX + 150 && mouseX < buttonX + 250 && mouseY > buttonY && mouseY < buttonY + 50)
                 {
@@ -238,7 +243,6 @@ public class UI extends PApplet
             if (button == 3)
             {
                 checkbutton = 1;
-                background.movingstars();
                 text("Are you sure you want to exit?!", width/3, height/2);
                 text("if yes press Y if no press any key", width/3, height/2 + 50);
                 if(checkKey('Y') || checkKey('y'))
@@ -254,13 +258,13 @@ public class UI extends PApplet
         }
         else
         {
-            //background.star1();
+            background.star();
             fill(255);
             PFont font = createFont("Apple Chancery", 32);
             textFont(font);
             text("Press Enter to start", width/3, height/2);  
         }
-        */
+        // */
         
         
         
