@@ -21,8 +21,6 @@ public class Radar
     {
         this.ui = ui;
         pos = new PVector(x, y);
-        this.x = x;
-        this.y = y;
         // this.speed = speed;
         this.size = size;
 
@@ -51,14 +49,14 @@ public class Radar
         ui.noFill();
         ui.strokeWeight(2);
         ui.stroke(0,128,0);
-        ui.circle(x, y, size);
-        ui.circle(x, y, size-15);
-        ui.circle(x, y, size-30);
-        ui.circle(x, y, size-45);
-        ui.circle(x, y, size-60);
-        ui.circle(x, y, size-75);
-        ui.circle(x, y, size-90);
-        ui.circle(x, y, size-98);
+        ui.circle(pos.x, pos.y, size);
+        ui.circle(pos.x, pos.y, size-15);
+        ui.circle(pos.x, pos.y, size-30);
+        ui.circle(pos.x, pos.y, size-45);
+        ui.circle(pos.x, pos.y, size-60);
+        ui.circle(pos.x, pos.y, size-75);
+        ui.circle(pos.x, pos.y, size-90);
+        ui.circle(pos.x, pos.y, size-98);
         ui.translate(pos.x, pos.y);
         ui.rotate(rotation);
 

@@ -2,7 +2,7 @@ package ie.tudublin;
 
 import processing.core.PApplet;
 import processing.core.PFont;
-
+import processing.data.Table;
 import ddf.minim.*;
 
 public class UI extends PApplet
@@ -22,6 +22,7 @@ public class UI extends PApplet
     Info info;
     Spaceship spaceship;
     Screen screen;
+    Graph graph;
 
     boolean[] keys = new boolean[1024];
 
@@ -58,6 +59,7 @@ public class UI extends PApplet
     {
 
         String[] words = loadStrings("screen.txt");
+        //Table table = loadTable("Planets.csv", "header");
         sound = new Minim(this);
         start = sound.loadFile("BackgroundSound.mp3");
         // start.play();
@@ -77,6 +79,7 @@ public class UI extends PApplet
         clockgreenbutton = new Button(this, 85 , 35, 17, 17,"Clock / ON");
         info = new Info(this, width , height);
         spaceship = new Spaceship(this, width, height);
+        //graph = new Graph(this, 630, 590, table);
         
     }
     int button = 0;
@@ -89,7 +92,9 @@ public class UI extends PApplet
     public void draw()
     {
         background(0);
-        start.play();
+        //start.play();
+        translate(width / 2, height / 2);
+        background.movingstars();
         // spaceship.structure();
         // radar.render();
         // radar.update();
@@ -99,12 +104,14 @@ public class UI extends PApplet
         // screen.displaywords();
         // clock.frame();
         // //clockredbutton.clockredbutton();
-        // // clockgreenbutton.clockgreenbutton();
+        // clockgreenbutton.clockgreenbutton();
         // clock.digitalclock();
+        // //graph.drawgraph();
         // // clock.analogclock();
 
 
-    //    /*
+
+       /*
         if (checkKey(ENTER))
         {
             // background.star();
@@ -253,7 +260,7 @@ public class UI extends PApplet
             textFont(font);
             text("Press Enter to start", width/3, height/2);  
         }
-        // */
+        */
         
         
         

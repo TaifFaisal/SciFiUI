@@ -11,10 +11,10 @@ public class BackGround
 	// float[] size1 = new float[50];
 	
 
-	float[] x = new float[50];
-	float[] y = new float[50];
-	float[] z = new float[50];
-	float[] size = new float[50];
+	float[] x = new float[500];
+	float[] y = new float[500];
+	float[] z = new float[500];
+	float[] size = new float[500];
 	int num1 = 0;
     float num2 = 4;
     float[] num = new float[50];
@@ -40,13 +40,13 @@ public class BackGround
 		// float y1 = ui.random(ui.height);
 		// float z1 = ui.random(1, 4);
 		// float size1 = ui.random(2, 9);
-
 		int number = 0; 
-		while(number<50)
+		while(number<500)
 		{
-			x[number] = ui.random(ui.width);
-			y[number] = ui.random(ui.height);
-			z[number] = ui.random(1, 4);
+			x[number] = ui.random(-ui.width, ui.width);
+			y[number] = ui.random(-ui.height, ui.height);
+			// z[number] = ui.random(1, 4);
+			z[number] = ui.random(ui.width);
 			size[number] = ui.random(2, 9);
 			number++;
 		}
@@ -72,6 +72,24 @@ public class BackGround
 	
 	void movingstars() 
 	{	
+		
+		for(int num = 0; num<500; num++)
+		{
+			float sx = ui.map(x[num] / z[num], 0, 1, 0, ui.width);
+			float sy = ui.map(y[num] / z[num], 0, 1, 0, ui.height);
+			z[num] -= 1;
+			if(z[num] < 1)
+			{
+				z[num] = ui.width;
+			}
+			ui.strokeWeight(1);
+			ui.fill(255);
+			ui.stroke(255);
+			ui.ellipse(sx, sy, size[num], size[num]);
+		}			
+	}
+	void star1()
+	{
 		for(int num = 0; num<50; num++)
 		{
 			ui.strokeWeight(1);
@@ -95,25 +113,20 @@ public class BackGround
 		// {
 		// 	x = ui.width;
 		// }
-				
-	}
-	void star1()
-	{
-		
 	
 	}
 	
-	void star()
-	{
-		for(int i = 0; i<50; i++)
-        {
-			ui.strokeWeight(1);
-			ui.fill(255);
-			ui.stroke(255);
-            ui.ellipse(w[i], h[i], num[i], num[i]);
+	// void star()
+	// {
+	// 	for(int i = 0; i<50; i++)
+    //     {
+	// 		ui.strokeWeight(1);
+	// 		ui.fill(255);
+	// 		ui.stroke(255);
+    //         ui.ellipse(w[i], h[i], num[i], num[i]);
 
-        }
-	}
+    //     }
+	// }
 	
 	void spaceship()
 	{
