@@ -25,4 +25,17 @@ public class Screen
 
         ui.rect(x , y , 150, 150);
     }
+    public void displaywords()
+    {
+        ui.textAlign(PApplet.CENTER, PApplet.CENTER);
+        ui.fill(0,255,0);
+
+        PFont font = ui.createFont("Times New Roman", 12);
+        
+        for (int i = 0 ; i < words.length; i++) 
+        {
+            ui.textFont(font);
+            ui.text(words[i], x+35, y+25);
+        }
+    }
 }

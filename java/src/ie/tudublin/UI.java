@@ -149,7 +149,7 @@ public class UI extends PApplet
                     radar.rect();
                     exitbutton.exitbutton();
                     screen.displayscreen();
-
+                    screen.displaywords();
 
                 }
                 else
