@@ -12,7 +12,7 @@ public class UI extends PApplet
     Button button3;
     Button redbutton;
     Button greenbutton;
-    MovingCircle mc;
+    Button exitbutton;
     BackGround background;
     Radar radar;
     Clock clock;
@@ -55,7 +55,8 @@ public class UI extends PApplet
         button3 = new Button(this, buttonX + 300, buttonY, 100, 50,"Exit");
         redbutton = new Button(this, 60 , 600, 17, 17,"Radar / OFF");
         greenbutton = new Button(this, 60 , 600, 17, 17,"Radar / ON");
-        mc = new MovingCircle(this, width / 2, height / 2, 50);
+        exitbutton = new Button(this, 650 , 20, 60, 40,"Exit");
+
         background = new BackGround(this);
         radar = new Radar(this, 65, 680,  100);
         clock = new Clock(this);
@@ -66,6 +67,7 @@ public class UI extends PApplet
     int checkbutton = 1;
     int homebutton = 1;
     int onoffbutton = 0;
+    int exitcheck = 0;
     public void draw()
     {
         background(0);
@@ -113,7 +115,7 @@ public class UI extends PApplet
                 background.movingstars();
                 spaceship.structure();
                 radar.rect();
-                
+                exitbutton.exitbutton();
                 
                 if(mousePressed == true)
                 {
@@ -121,11 +123,16 @@ public class UI extends PApplet
                     {
                         onoffbutton = 1;
                     } 
+                    else if(mouseX > 650  && mouseX < 710 && mouseY > 20 && mouseY < 60)
+                    {
+                        exitcheck = 1;
+                    }
                 }
                 if(onoffbutton == 0)
                 {
                     redbutton.redbutton();
                 }
+                
                 else
                 {
                     greenbutton.greenbutton();
@@ -135,6 +142,10 @@ public class UI extends PApplet
                     // {
                     //     onoffbutton = 0;
                     // } 
+                }
+                if(exitcheck == 1)
+                {
+                    System.exit(0);
                 }
 
 
