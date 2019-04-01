@@ -16,6 +16,8 @@ public class UI extends PApplet
     Button startbutton;
     Button clockredbutton;
     Button clockgreenbutton;
+    Button beforgraphbutton;
+    Button aftergraphbutton;
     BackGround background;
     Radar radar;
     Clock clock;
@@ -79,7 +81,9 @@ public class UI extends PApplet
         info = new Info(this, width , height);
         spaceship = new Spaceship(this, width, height);
         graph = new Graph(this);
-        
+        beforgraphbutton = new Button(this, 685 , 580, 17, 17,"Bar char/OFF");
+        aftergraphbutton = new Button(this, 685 , 580, 17, 17,"Bar char/ON");
+
     }
     int button = 0;
     int checkbutton = 1;
@@ -88,42 +92,44 @@ public class UI extends PApplet
     int exitcheck = 0;
     int startcheck = 0;
     int clockckeck = 0;
+    int graphcheck = 0;
     public void draw()
     {
         background(0);
         //start.play();
         
         
-        spaceship.structure();
+        // spaceship.structure();
         // radar.render();
         // radar.update();
         // redbutton.redbutton();
         // startbutton.beforestartbutton();
-        screen.displayscreen();
+        // screen.displayscreen();
         // screen.displaywords();
         // clock.frame();
         // //clockredbutton.clockredbutton();
         // clockgreenbutton.clockgreenbutton();
         // clock.digitalclock();
-        graph.graphrect();
-        graph.drawgraph();
+        // graph.graphrect();
+        // graph.drawgraph();
+        
         // clock.analogclock();
 
 
 
-      /*
+    //   /*
         if (checkKey(ENTER))
         {
             
             
             if(checkbutton == 1)
             {   
-                background.star1();
-                background.spaceship();
+                
                 button1.buttons();
                 button2.buttons();
                 button3.buttons();
-                
+                background.star1();
+                background.spaceship();
             }
             
             if(mousePressed == true)
@@ -152,10 +158,9 @@ public class UI extends PApplet
             if (button == 1)
             {
                 checkbutton = 0;
-                // background.star();
-                // spaceship.structure();
-                // radar.rect();
-                // exitbutton.exitbutton();
+                background.star();
+                spaceship.structure();
+                
                 
                 if(mousePressed == true)
                 {
@@ -170,6 +175,10 @@ public class UI extends PApplet
                     else if(mouseX > 90  && mouseX < 200 && mouseY > 490 && mouseY < 550)
                     {
                         startcheck = 1;
+                    }
+                    else if(mouseX > 685  && mouseX < 702 && mouseY > 580 && mouseY < 597)
+                    {
+                        graphcheck = 1;
                     }
                 }
                 if(startcheck == 1)
@@ -225,6 +234,15 @@ public class UI extends PApplet
                     //     onoffbutton = 0;
                     // } 
                 }
+                if(graphcheck == 1)
+                {
+                    aftergraphbutton.aftergraphbutton();
+                    graph.drawgraph();
+                }
+                else
+                {
+                    beforgraphbutton.beforegraphbutton();
+                }
                 if(exitcheck == 1)
                 {
                     System.exit(0);
@@ -234,8 +252,11 @@ public class UI extends PApplet
             }
             if (button == 2)
             {
-                checkbutton = 1;
-                button2 = new Button(this, buttonX + 150, buttonY, 100, 50,"Home");
+                checkbutton = 0;
+                background.star1();
+                button1.buttons();
+                button2.buttons();
+                button3.buttons();
                 info.borders();
                 if(mouseX > buttonX + 150 && mouseX < buttonX + 250 && mouseY > buttonY && mouseY < buttonY + 50)
                 {
@@ -244,7 +265,11 @@ public class UI extends PApplet
             }
             if (button == 3)
             {
-                checkbutton = 1;
+                checkbutton = 0;
+                background.star1();
+                button1.buttons();
+                button2.buttons();
+                button3.buttons();
                 text("Are you sure you want to exit?!", width/3, height/2);
                 text("if yes press Y if no press any key", width/3, height/2 + 50);
                 if(checkKey('Y') || checkKey('y'))
@@ -266,7 +291,7 @@ public class UI extends PApplet
             textFont(font);
             text("Press Enter to start", width/3, height/2);  
         }
-        */
+        // */
         
         
         

@@ -110,5 +110,26 @@ public class Button
         ui.text(text, x+6 , y -8);
     }
 
+    public void beforegraphbutton()
+    {
+        ui.fill(255,0,0);
+        ui.stroke(255,0,0);
+        ui.rect(x, y, width, height);
+        ui.fill(0);
+        PFont font = ui.createFont("Times New Roman", 11);
+        ui.textFont(font);
+        ui.text(text, x+52, y+8);
+    }
+    public void aftergraphbutton()
+    {
+        ui.fill(0,255,0);
+        ui.stroke(0,255,0);
+        ui.rect(x, y, width, height);
+        ui.fill(0);
+        PFont font = ui.createFont("Times New Roman", 11);
+        ui.textFont(font);
+        ui.text(text, x+52, y+8);
+    }
+
    
 }
