@@ -9,28 +9,41 @@ import processing.data.TableRow;
 public class Graph
 {
     PApplet ui;
-    private float x;
-    private float y;
-    Table table;
+    String[] planets = {"Mercury", "Pluto",  "Mars","Venus", "Earth", "Jupiter", "Uranus", "Saturn", "Neptune"};
+    float[] Temperature = {300, 37, 150, 326, 260, 120, 48, 88, 59};
 
-    public Graph(PApplet ui, float x, float y, Table table)
+    public Graph(PApplet ui)
     {
         this.ui = ui;
-        this.x = x;
-        this.y = y;
-        this.table = table;
+
+    }
+    
+    public void graphrect()
+    {
+        ui.fill(0);
+        ui.noStroke();
+        ui.rect(620,610,150,130);
     }
 
     public void drawgraph()
     {
-        ui.fill(0);
-        ui.noStroke();
-        ui.rect(x, y, 150, 140);
-        for(int i = 0 ; i < table.getRowCount() ; i ++)
+        
+        float h = (ui.width / (float) Temperature.length)/8;
+        int j = 5;
+        float value=600;
+        for(int i = 0 ; i < Temperature.length ; i ++) 
         {
-            TableRow row = table.getRow(i);
-            System.out.println(row.getString("Planet"));
-            System.out.println(row.getString("Temperature"));            
-        }
+            
+            ui.noStroke();
+            ui.fill(255);
+            value = 621 +i * h;
+            ui.rect(value +j, ui.map(i, 0, Temperature.length, ui.height-11, ui.height-11), h, -Temperature[i]/4);
+
+            j += 5;
+            
+            //ui.fill(255);
+            // float textY = ui.map(i, 0, Temperature.length, h * 0.5f, ui.height + (h * 0.5f));//i * h + (h * 0.5f);
+            // ui.text(planets[i], 5, textY);
+       }     
     }
 }

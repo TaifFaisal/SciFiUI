@@ -59,7 +59,6 @@ public class UI extends PApplet
     {
 
         String[] words = loadStrings("screen.txt");
-        //Table table = loadTable("Planets.csv", "header");
         sound = new Minim(this);
         start = sound.loadFile("BackgroundSound.mp3");
         // start.play();
@@ -79,7 +78,7 @@ public class UI extends PApplet
         clockgreenbutton = new Button(this, 85 , 35, 17, 17,"Clock / ON");
         info = new Info(this, width , height);
         spaceship = new Spaceship(this, width, height);
-        //graph = new Graph(this, 630, 590, table);
+        graph = new Graph(this);
         
     }
     int button = 0;
@@ -95,23 +94,24 @@ public class UI extends PApplet
         //start.play();
         
         
-        // spaceship.structure();
+        spaceship.structure();
         // radar.render();
         // radar.update();
         // redbutton.redbutton();
         // startbutton.beforestartbutton();
-        // screen.displayscreen();
+        screen.displayscreen();
         // screen.displaywords();
         // clock.frame();
         // //clockredbutton.clockredbutton();
         // clockgreenbutton.clockgreenbutton();
         // clock.digitalclock();
-        // //graph.drawgraph();
-        // // clock.analogclock();
+        graph.graphrect();
+        graph.drawgraph();
+        // clock.analogclock();
 
 
 
-    //   /*
+      /*
         if (checkKey(ENTER))
         {
             
@@ -185,7 +185,7 @@ public class UI extends PApplet
                     screen.displayscreen();
                     screen.displaywords();
                     clock.frame();
-                    
+                    graph.graphrect();
                     
 
                 }
@@ -198,6 +198,8 @@ public class UI extends PApplet
                     startbutton.beforestartbutton();
                     screen.displayscreen();
                     clock.frame();
+                    graph.graphrect();
+        
                 }
                 if(clockckeck == 1)
                     {
@@ -264,7 +266,7 @@ public class UI extends PApplet
             textFont(font);
             text("Press Enter to start", width/3, height/2);  
         }
-        // */
+        */
         
         
         
