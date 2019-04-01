@@ -99,25 +99,26 @@ public class UI extends PApplet
         //start.play();
         
         
-        // spaceship.structure();
+        spaceship.structure();
         // radar.render();
         // radar.update();
         // redbutton.redbutton();
         // startbutton.beforestartbutton();
-        // screen.displayscreen();
+        screen.displayscreen();
         // screen.displaywords();
         // clock.frame();
-        // //clockredbutton.clockredbutton();
+        //clockredbutton.clockredbutton();
         // clockgreenbutton.clockgreenbutton();
         // clock.digitalclock();
-        // graph.graphrect();
-        // graph.drawgraph();
+        graph.graphrect();
+        
+        graph.drawgraph();
         
         // clock.analogclock();
 
 
 
-    //   /*
+      /*
         if (checkKey(ENTER))
         {
             
@@ -238,6 +239,7 @@ public class UI extends PApplet
                 {
                     aftergraphbutton.aftergraphbutton();
                     graph.drawgraph();
+                    graph.update();
                 }
                 else
                 {
@@ -291,7 +293,7 @@ public class UI extends PApplet
             textFont(font);
             text("Press Enter to start", width/3, height/2);  
         }
-        // */
+        */
         
         
         

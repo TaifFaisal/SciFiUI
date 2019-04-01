@@ -9,12 +9,13 @@ import processing.data.TableRow;
 public class Graph
 {
     PApplet ui;
-    String[] planets = {"Mercury", "Pluto",  "Mars","Venus", "Earth", "Jupiter", "Uranus", "Saturn", "Neptune"};
-    float[] Temperature = {300, 37, 150, 326, 260, 120, 48, 88, 59};
-
+    //String[] planets = {"Mercury", "Pluto",  "Mars","Venus", "Earth", "Jupiter", "Uranus", "Saturn", "Neptune"};
+    //float[] Temperature = {300, 37, 150, 326, 260, 120, 48, 88, 59};
+    float[] Temperature = new float[9];
     public Graph(PApplet ui)
     {
         this.ui = ui;
+       
 
     }
     
@@ -34,16 +35,29 @@ public class Graph
         for(int i = 0 ; i < Temperature.length ; i ++) 
         {
             
+            
             ui.noStroke();
             ui.fill(255);
             value = 621 +i * h;
             ui.rect(value +j, ui.map(i, 0, Temperature.length, ui.height-11, ui.height-11), h, -Temperature[i]/4);
 
             j += 5;
-            
+
             //ui.fill(255);
             // float textY = ui.map(i, 0, Temperature.length, h * 0.5f, ui.height + (h * 0.5f));//i * h + (h * 0.5f);
             // ui.text(planets[i], 5, textY);
        }     
+    }
+    public void update()
+    {
+        for(int i = 0; i<Temperature.length;i++)
+        {
+            Temperature[i] += 1;
+            if(Temperature[i] > 330)
+            {
+                Temperature[i] = ui.random(0, 330);
+            }
+        }
+
     }
 }
