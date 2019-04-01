@@ -18,6 +18,8 @@ public class UI extends PApplet
     Button clockgreenbutton;
     Button beforgraphbutton;
     Button aftergraphbutton;
+    Button redcirclebutton;
+    Button greencirclebutton;
     BackGround background;
     Radar radar;
     Clock clock;
@@ -71,6 +73,10 @@ public class UI extends PApplet
         redbutton = new Button(this, 60 , 600, 17, 17,"Radar / OFF");
         greenbutton = new Button(this, 60 , 600, 17, 17,"Radar / ON");
         exitbutton = new Button(this, 650 , 20, 60, 40,"Exit");
+
+        redcirclebutton = new Button(this, 300 , 20, 20, 20,"");
+        greencirclebutton = new Button(this, 300 , 20, 20, 20,"");
+        
         startbutton = new Button(this, 90 , 490, 110, 60,"Start");
         screen = new Screen(this, words, 300, 470);
         background = new BackGround(this);
@@ -96,24 +102,28 @@ public class UI extends PApplet
     public void draw()
     {
         background(0);
-        //start.play();
+        // start.play();
         
         
-        spaceship.structure();
+        // spaceship.structure();
+        // radar.rect();
+        // exitbutton.exitbutton();
+        // startbutton.beforestartbutton();
+        // screen.displayscreen();
+        // clock.frame();
         // radar.render();
         // radar.update();
-        // redbutton.redbutton();
-        // startbutton.beforestartbutton();
-        screen.displayscreen();
-        // screen.displaywords();
-        // clock.frame();
-        //clockredbutton.clockredbutton();
-        // clockgreenbutton.clockgreenbutton();
+        // // redbutton.redbutton();
+        // // startbutton.beforestartbutton();
+        // screen.displayscreen();
+        // // screen.displaywords();
+        // // clock.frame();
+        // //clockredbutton.clockredbutton();
+        // // clockgreenbutton.clockgreenbutton();
         // clock.digitalclock();
-        graph.graphrect();
         
-        graph.drawgraph();
-        
+        // graph.graphrect();
+        // graph.drawgraph();
         // clock.analogclock();
 
 
@@ -151,10 +161,7 @@ public class UI extends PApplet
                 {
                     button = 3;
                 }
-                if(mouseX > 85 && mouseX < 102 && mouseY > 35 && mouseY < 52 )
-                {
-                    clockckeck = 1;
-                }
+                
             }
             if (button == 1)
             {
@@ -181,6 +188,10 @@ public class UI extends PApplet
                     {
                         graphcheck = 1;
                     }
+                    else if(mouseX > 85 && mouseX < 102 && mouseY > 35 && mouseY < 52 )
+                    {
+                        clockckeck = 1;
+                    }
                 }
                 if(startcheck == 1)
                 {
@@ -190,6 +201,7 @@ public class UI extends PApplet
                     popMatrix();
                     spaceship.structure();
                     startbutton.afterstartbutton();
+                    greencirclebutton.greencirclebutton();
                     radar.rect();
                     exitbutton.exitbutton();
                     screen.displayscreen();
@@ -197,7 +209,40 @@ public class UI extends PApplet
                     clock.frame();
                     graph.graphrect();
                     
-
+                    if(clockckeck == 1)
+                    {
+                        clockgreenbutton.clockgreenbutton();
+                        clock.digitalclock();
+                    }
+                    else
+                    {
+                        clockredbutton.clockredbutton();
+                    }
+                    if(onoffbutton == 0)
+                    {
+                        redbutton.redbutton();
+                    }
+                    else
+                    {
+                        greenbutton.greenbutton();
+                        radar.render();
+                        radar.update();
+                        // if(mouseX > 60  && mouseX < 77 && mouseY > 600 && mouseY < 617)
+                        // {
+                        //     onoffbutton = 0;
+                        // } 
+                    }
+                    if(graphcheck == 1)
+                    {
+                        aftergraphbutton.aftergraphbutton();
+                        graph.drawgraph();
+                        graph.update();
+                    }
+                    else
+                    {
+                        graphcheck = 0;
+                        beforgraphbutton.beforegraphbutton();
+                    }
                 }
                 else
                 {
@@ -209,17 +254,21 @@ public class UI extends PApplet
                     screen.displayscreen();
                     clock.frame();
                     graph.graphrect();
+                    beforgraphbutton.beforegraphbutton();
+                    redbutton.redbutton();
+                    clockredbutton.clockredbutton();
+                    redcirclebutton.redcirclebutton();
         
                 }
                 if(clockckeck == 1)
-                    {
-                        clockgreenbutton.clockgreenbutton();
-                        clock.digitalclock();
-                    }
-                    else
-                    {
-                        clockredbutton.clockredbutton();
-                    }
+                {
+                    clockgreenbutton.clockgreenbutton();
+                    clock.digitalclock();
+                }
+                else
+                {
+                    clockredbutton.clockredbutton();
+                }
                 if(onoffbutton == 0)
                 {
                     redbutton.redbutton();

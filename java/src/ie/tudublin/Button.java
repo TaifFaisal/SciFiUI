@@ -11,6 +11,7 @@ public class Button
     private float width;
     private float height;
     private String text;
+    float[] buttons = new float[7];
 
     public Button(PApplet ui, float x, float y, float width, float height, String text)
     {
@@ -20,6 +21,11 @@ public class Button
         this.width = width;
         this.height = height;
         this.text = text;
+        for(int i = 0; i < buttons.length; i++)
+        {
+            x = x+40;
+            buttons[i] = x;
+        }
         
     }
     public void buttons()
@@ -131,5 +137,27 @@ public class Button
         ui.text(text, x+52, y+8);
     }
 
+    public void redcirclebutton()
+    {
+        for(int i = 0; i < buttons.length; i++)
+        {
+            ui.fill(255,0,0);
+            ui.strokeWeight(3);
+            ui.stroke(255,0,0);
+            ui.ellipse(buttons[i], y, width, height);
+            ui.ellipse(buttons[i], y + 35 , width, height);
+        }   
+    }
+    public void greencirclebutton()
+    {
+        for(int i = 0; i < buttons.length; i++)
+        {
+            ui.strokeWeight(3);
+            ui.fill(50,205,50);
+            ui.stroke(50,205,50);
+            ui.ellipse(buttons[i], y, width, height);
+            ui.ellipse(buttons[i], y + 35 , width, height);
+        }   
+    }
    
 }
