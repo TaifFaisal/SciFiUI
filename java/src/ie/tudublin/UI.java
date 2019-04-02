@@ -20,6 +20,8 @@ public class UI extends PApplet
     Button aftergraphbutton;
     Button redcirclebutton;
     Button greencirclebutton;
+    Button fireoff;
+    Button fireon;
     BackGround background;
     Radar radar;
     Clock clock;
@@ -27,6 +29,7 @@ public class UI extends PApplet
     Spaceship spaceship;
     Screen screen;
     Graph graph;
+    Fire fire;
 
     boolean[] keys = new boolean[1024];
 
@@ -73,10 +76,8 @@ public class UI extends PApplet
         redbutton = new Button(this, 60 , 600, 17, 17,"Radar / OFF");
         greenbutton = new Button(this, 60 , 600, 17, 17,"Radar / ON");
         exitbutton = new Button(this, 650 , 20, 60, 40,"Exit");
-
         redcirclebutton = new Button(this, 300 , 20, 20, 20,"");
         greencirclebutton = new Button(this, 300 , 20, 20, 20,"");
-        
         startbutton = new Button(this, 90 , 490, 110, 60,"Start");
         screen = new Screen(this, words, 300, 470);
         background = new BackGround(this);
@@ -89,7 +90,9 @@ public class UI extends PApplet
         graph = new Graph(this);
         beforgraphbutton = new Button(this, 685 , 580, 17, 17,"Bar char/OFF");
         aftergraphbutton = new Button(this, 685 , 580, 17, 17,"Bar char/ON");
-
+        fireon = new Button(this, 610 , 510, 17, 17,"Fire / ON");
+        fireoff = new Button(this, 660 , 510, 17, 17,"Fire / OFF");
+        fire = new Fire(this);
     }
     int button = 0;
     int checkbutton = 1;
@@ -99,19 +102,20 @@ public class UI extends PApplet
     int startcheck = 0;
     int clockckeck = 0;
     int graphcheck = 0;
+    int firecheck = 0;
     public void draw()
     {
         background(0);
-        // // start.play();
-        // // background.loadData();
-        // // background.spaceship();
+        start.play();
+        // background.loadData();
+        // background.spaceship();
         // pushMatrix();
         // translate(width / 2, height / 2);
         // //background.movingstars();
         // popMatrix();
-        // background.spaceship();
-        
-        //spaceship.structure();
+        // // background.spaceship();
+        // fire.mouse();
+        // spaceship.structure();
 
         // radar.rect();
         // exitbutton.exitbutton();
@@ -128,9 +132,12 @@ public class UI extends PApplet
         // // clock.frame();
         // //clockredbutton.clockredbutton();
         // // clockgreenbutton.clockgreenbutton();
-        // clock.digitalclock();
+        // // clock.digitalclock();
         
-        // // graph.graphrect();
+        // graph.graphrect();
+        // fireoff.redbutton();
+        // fireon.greenbutton();
+        
         // // graph.drawgraph();
         // // clock.analogclock();
 
@@ -190,19 +197,6 @@ public class UI extends PApplet
                 
                 if(startcheck == 1)
                 {
-                    pushMatrix();
-                    translate(width / 2, height / 2);
-                    background.movingstars();
-                    popMatrix();
-                    spaceship.structure();
-                    startbutton.afterstartbutton();
-                    greencirclebutton.greencirclebutton();
-                    radar.rect();
-                    exitbutton.exitbutton();
-                    screen.displayscreen();
-                    screen.displaywords();
-                    clock.frame();
-                    graph.graphrect();
                     if(mousePressed == true)
                     {
                         if(mouseX > 60  && mouseX < 77 && mouseY > 600 && mouseY < 617)
@@ -222,7 +216,39 @@ public class UI extends PApplet
                         {
                             clockckeck = 1;
                         }
+                        else if(mouseX > 610 && mouseX < 627 && mouseY > 510 && mouseY < 527 )
+                        {
+                            firecheck = 1;
+                        }
+                        else if(mouseX > 660 && mouseX < 677 && mouseY > 510 && mouseY < 527 )
+                        {
+                            firecheck = 0;
+                        }
                     }
+                    
+                    if(firecheck == 1)
+                    {
+                        fire.mouse();
+                    }
+                    else
+                    {
+                        firecheck = 0;
+                    }
+                    pushMatrix();
+                    translate(width / 2, height / 2);
+                    background.movingstars();
+                    popMatrix();
+                    spaceship.structure();
+                    startbutton.afterstartbutton();
+                    greencirclebutton.greencirclebutton();
+                    radar.rect();
+                    exitbutton.exitbutton();
+                    screen.displayscreen();
+                    screen.displaywords();
+                    clock.frame();
+                    graph.graphrect();
+                    fireoff.redbutton();
+                    fireon.greenbutton();
                     if(clockckeck == 1)
                     {
                         clockgreenbutton.clockgreenbutton();
@@ -257,6 +283,7 @@ public class UI extends PApplet
                         graphcheck = 0;
                         beforgraphbutton.beforegraphbutton();
                     }
+                    
                 }
                 else
                 {
@@ -272,6 +299,8 @@ public class UI extends PApplet
                     redbutton.redbutton();
                     clockredbutton.clockredbutton();
                     redcirclebutton.redcirclebutton();
+                    fireoff.redbutton();
+                    fireon.greenbutton();
         
                 }
                 // if(clockckeck == 1)
