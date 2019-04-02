@@ -113,6 +113,7 @@ public class UI extends PApplet
         // clock.frame();
         // radar.render();
         // radar.update();
+
         // // redbutton.redbutton();
         // // startbutton.beforestartbutton();
         // screen.displayscreen();
@@ -122,13 +123,13 @@ public class UI extends PApplet
         // // clockgreenbutton.clockgreenbutton();
         // clock.digitalclock();
         
-        // graph.graphrect();
-        // graph.drawgraph();
-        // clock.analogclock();
+        // // graph.graphrect();
+        // // graph.drawgraph();
+        // // clock.analogclock();
 
 
 
-      /*
+    //   /*
         if (checkKey(ENTER))
         {
             
@@ -168,15 +169,9 @@ public class UI extends PApplet
                 checkbutton = 0;
                 background.star();
                 spaceship.structure();
-                
-                
                 if(mousePressed == true)
                 {
-                    if(mouseX > 60  && mouseX < 77 && mouseY > 600 && mouseY < 617)
-                    {
-                        onoffbutton = 1;
-                    } 
-                    else if(mouseX > 650  && mouseX < 710 && mouseY > 20 && mouseY < 60)
+                    if(mouseX > 650  && mouseX < 710 && mouseY > 20 && mouseY < 60)
                     {
                         exitcheck = 1;
                     }
@@ -184,15 +179,8 @@ public class UI extends PApplet
                     {
                         startcheck = 1;
                     }
-                    else if(mouseX > 685  && mouseX < 702 && mouseY > 580 && mouseY < 597)
-                    {
-                        graphcheck = 1;
-                    }
-                    else if(mouseX > 85 && mouseX < 102 && mouseY > 35 && mouseY < 52 )
-                    {
-                        clockckeck = 1;
-                    }
                 }
+                
                 if(startcheck == 1)
                 {
                     pushMatrix();
@@ -208,7 +196,26 @@ public class UI extends PApplet
                     screen.displaywords();
                     clock.frame();
                     graph.graphrect();
-                    
+                    if(mousePressed == true)
+                    {
+                        if(mouseX > 60  && mouseX < 77 && mouseY > 600 && mouseY < 617)
+                        {
+                            onoffbutton = 1;
+                        } 
+                        else if(mouseX > 650  && mouseX < 710 && mouseY > 20 && mouseY < 60)
+                        {
+                            exitcheck = 1;
+                        }
+                        
+                        else if(mouseX > 685  && mouseX < 702 && mouseY > 580 && mouseY < 597)
+                        {
+                            graphcheck = 1;
+                        }
+                        else if(mouseX > 85 && mouseX < 102 && mouseY > 35 && mouseY < 52 )
+                        {
+                            clockckeck = 1;
+                        }
+                    }
                     if(clockckeck == 1)
                     {
                         clockgreenbutton.clockgreenbutton();
@@ -260,40 +267,40 @@ public class UI extends PApplet
                     redcirclebutton.redcirclebutton();
         
                 }
-                if(clockckeck == 1)
-                {
-                    clockgreenbutton.clockgreenbutton();
-                    clock.digitalclock();
-                }
-                else
-                {
-                    clockredbutton.clockredbutton();
-                }
-                if(onoffbutton == 0)
-                {
-                    redbutton.redbutton();
-                }
+                // if(clockckeck == 1)
+                // {
+                //     clockgreenbutton.clockgreenbutton();
+                //     clock.digitalclock();
+                // }
+                // else
+                // {
+                //     clockredbutton.clockredbutton();
+                // }
+                // if(onoffbutton == 0)
+                // {
+                //     redbutton.redbutton();
+                // }
                 
-                else
-                {
-                    greenbutton.greenbutton();
-                    radar.render();
-                    radar.update();
-                    // if(mouseX > 60  && mouseX < 77 && mouseY > 600 && mouseY < 617)
-                    // {
-                    //     onoffbutton = 0;
-                    // } 
-                }
-                if(graphcheck == 1)
-                {
-                    aftergraphbutton.aftergraphbutton();
-                    graph.drawgraph();
-                    graph.update();
-                }
-                else
-                {
-                    beforgraphbutton.beforegraphbutton();
-                }
+                // else
+                // {
+                //     greenbutton.greenbutton();
+                //     radar.render();
+                //     radar.update();
+                //     // if(mouseX > 60  && mouseX < 77 && mouseY > 600 && mouseY < 617)
+                //     // {
+                //     //     onoffbutton = 0;
+                //     // } 
+                // }
+                // if(graphcheck == 1)
+                // {
+                //     aftergraphbutton.aftergraphbutton();
+                //     graph.drawgraph();
+                //     graph.update();
+                // }
+                // else
+                // {
+                //     beforgraphbutton.beforegraphbutton();
+                // }
                 if(exitcheck == 1)
                 {
                     System.exit(0);
@@ -342,7 +349,7 @@ public class UI extends PApplet
             textFont(font);
             text("Press Enter to start", width/3, height/2);  
         }
-        */
+        // */
         
         
         

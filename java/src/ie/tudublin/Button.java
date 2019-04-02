@@ -153,8 +153,8 @@ public class Button
         for(int i = 0; i < buttons.length; i++)
         {
             ui.strokeWeight(3);
-            ui.fill(50,205,50);
-            ui.stroke(50,205,50);
+            ui.fill(0,255,0);
+            ui.stroke(0,255,0);
             ui.ellipse(buttons[i], y, width, height);
             ui.ellipse(buttons[i], y + 35 , width, height);
         }   

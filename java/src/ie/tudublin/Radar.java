@@ -23,13 +23,14 @@ public class Radar
         pos = new PVector(x, y);
         // this.speed = speed;
         this.size = size;
-
         while(num1 < 5)
         {
-            planetx[num1] = ui.random(20,100);
-            planety[num1] = ui.random(635, 720);
+            planetx[num1] = ui.random(12, 110);
+            planety[num1] = ui.random(630, 720);
+
             num1++;
         }
+        
     }
 
     public void rect()
@@ -70,18 +71,23 @@ public class Radar
         for(int i = 0; i< 5; i++)
         {
             ui.noStroke();
-			ui.fill(255,218,185);
-            ui.ellipse(planetx[i], planety[i], size1, size1);
+            ui.fill(255,218,185);
+            planety[i] += 0.09f;
 
+            if(planety[i] > 720)
+            {
+                planety[i]= 630;
+                planetx[i] = ui.random(12, 110);
+        
+            }
+            ui.ellipse(planetx[i], ui.map(i, 0, 100, planety[i] , planety[i]), size1, size1);
+            
         }
     }
     
     public void update()
     {
-        //pos.x += speed;
         rotation += 0.1f;
-
     }
-
 
 }
