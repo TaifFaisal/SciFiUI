@@ -102,10 +102,17 @@ public class UI extends PApplet
     public void draw()
     {
         background(0);
-        // start.play();
+        // // start.play();
+        // // background.loadData();
+        // // background.spaceship();
+        // pushMatrix();
+        // translate(width / 2, height / 2);
+        // //background.movingstars();
+        // popMatrix();
+        // background.spaceship();
         
-        
-        // spaceship.structure();
+        //spaceship.structure();
+
         // radar.rect();
         // exitbutton.exitbutton();
         // startbutton.beforestartbutton();

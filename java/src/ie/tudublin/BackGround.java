@@ -1,6 +1,10 @@
 package ie.tudublin;
 
+import java.util.ArrayList;
+
+import javafx.scene.shape.Circle;
 import processing.core.*;
+
 
 
 public class BackGround 
@@ -10,7 +14,7 @@ public class BackGround
 	// float[] z1 = new float[50];
 	// float[] size1 = new float[50];
 	
-
+	ArrayList<Circle> circles;
 	float[] x = new float[500];
 	float[] y = new float[500];
 	float[] z = new float[500];
@@ -22,6 +26,7 @@ public class BackGround
 	float[] h = new float[50];
 	float[] a = new float[50];
 	PApplet ui;
+	PImage img;
 
 	// float x = random(width);
 	// float y = random(height);
@@ -32,11 +37,12 @@ public class BackGround
 	public BackGround(PApplet ui)
 	{
 		this.ui = ui;
-		// this.x = x;
-		// this.y =y;
-		// this.z = z;
-		// this.size = size;
-
+		circles = new ArrayList<Circle>();
+		
+		for(int i=0; i<20; i++)
+		{
+			circles.add(new Circle());
+		}
 		// float x1 = ui.random(ui.width);
 		// float y1 = ui.random(ui.height);
 		// float z1 = ui.random(1, 4);
@@ -68,6 +74,8 @@ public class BackGround
 		// 	size[num] = random(2, 9);
 		// 	num++;
 		// }
+		img = ui.loadImage("moon.png");
+		
 
 	}
 	
@@ -76,8 +84,8 @@ public class BackGround
 		
 		for(int num = 0; num<500; num++)
 		{
-			float sx = ui.map(x[num] / z[num], 0, 1, 0, ui.width);
-			float sy = ui.map(y[num] / z[num], 0, 1, 0, ui.height);
+			float x1 = ui.map(x[num] / z[num], 0, 1, 0, ui.width);
+			float y1 = ui.map(y[num] / z[num], 0, 1, 0, ui.height);
 			z[num] -= 1;
 			if(z[num] < 1)
 			{
@@ -86,7 +94,7 @@ public class BackGround
 			ui.strokeWeight(1);
 			ui.fill(255);
 			ui.stroke(255);
-			ui.ellipse(sx, sy, size[num], size[num]);
+			ui.ellipse(x1, y1, size[num], size[num]);
 		}			
 	}
 
@@ -132,8 +140,27 @@ public class BackGround
 	
 	void spaceship()
 	{
+		ui.noStroke();
 		ui.fill(231,220,184);
-		ui.ellipse(100, 850, 500, 500);
+		ui.image(img, 100, 850, 500, 500);
+		ui.image(img, -140, 610, 500, 500);
+		// ui.ellipse();
+
+		ui.stroke(210, 192, 131);
+		ui.strokeWeight(3);
+		// ui.ellipse(55, 750, 50, 50);
+		// ui.ellipse(140, 650, 30, 30);
+		// ui.ellipse(140, 690, 40, 40);
+		// ui.ellipse(80, 680, 10, 10);
+		// ui.ellipse(100, 670, 20, 20);
+		// ui.ellipse(140, 650, 30, 30);
+		// ui.ellipse(140, 690, 40, 40);
+		// ui.ellipse(80, 680, 10, 10);
+
+		for(int i = 0; i<23; i++)
+		{
+
+		}
 		ui.fill(169,169,169);
 		ui.noStroke();
 		ui.triangle(344, 324, 460, 280, 453, 400);
@@ -168,8 +195,4 @@ public class BackGround
 		ui.fill(65,105,225);
 		ui.circle(375, 400, 100);
 	}
-	
-
-
-
 }
