@@ -3,7 +3,7 @@ package ie.tudublin;
 
 import processing.core.PFont;
 
-public class Clock extends SpaceObject
+public class Clock extends SpaceObject 
 {
     private float x;
     private float y;

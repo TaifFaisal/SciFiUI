@@ -37,4 +37,15 @@ public class Screen extends SpaceObject
             ui.text(words[i], x+35, y+25);
         }
     }
+    public void instructions()
+    {
+        ui.textAlign(PApplet.CENTER, PApplet.CENTER);
+        ui.fill(0,255,0);
+
+        PFont font = ui.createFont("Times New Roman", 12);
+        ui.textFont(font);
+        ui.text("Point the mouse to the target \n", x+80, y+75);
+        ui.text("\n Press space to shoot", x+60, y+95);
+
+    }
 }

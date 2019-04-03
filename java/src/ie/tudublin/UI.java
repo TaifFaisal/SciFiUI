@@ -6,9 +6,8 @@ import processing.core.PFont;
 import java.util.ArrayList;
 
 import ddf.minim.*;
-import javafx.scene.layout.Background;
 
-public class UI extends PApplet
+public class UI extends PApplet  
 {
     Button button1;
     Button button2;
@@ -114,15 +113,17 @@ public class UI extends PApplet
     {
         background(0);
         //start.play();
-
+        // fire.monsters();
         // background.loadData();
-        // background.star();
+        // // background.star();
         // pushMatrix();
         // translate(width / 2, height / 2);
-        // //background.movingstars();
+        // background.movingstars();
+        // //fire.monsters();
+
         // popMatrix();
-        // background.spaceship();
-        //background.update();
+        // // background.spaceship();
+        // //background.update();
         // fire.mouse();
         // spaceship.structure();
 
@@ -137,7 +138,8 @@ public class UI extends PApplet
         // // redbutton.redbutton();
         // // startbutton.beforestartbutton();
         // screen.displayscreen();
-        // // screen.displaywords();
+        // screen.displaywords();
+        // screen.instructions();
         // // clock.frame();
         // //clockredbutton.clockredbutton();
         // // clockgreenbutton.clockgreenbutton();
@@ -237,7 +239,9 @@ public class UI extends PApplet
                     
                     if(firecheck == 1)
                     {
+                        
                         fire.mouse();
+                        //screen.instructions();
                     }
                     else
                     {
@@ -258,6 +262,7 @@ public class UI extends PApplet
                     graph.graphrect();
                     fireoff.redbutton();
                     fireon.greenbutton();
+                    
                     if(clockckeck == 1)
                     {
                         clockgreenbutton.clockgreenbutton();
@@ -291,6 +296,15 @@ public class UI extends PApplet
                     {
                         graphcheck = 0;
                         beforgraphbutton.beforegraphbutton();
+                    }
+                    if(firecheck == 1)
+                    {
+
+                        screen.instructions();
+                    }
+                    else
+                    {
+                        firecheck = 0;
                     }
                     
                 }

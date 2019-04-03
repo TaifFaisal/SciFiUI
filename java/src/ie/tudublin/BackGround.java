@@ -2,19 +2,17 @@ package ie.tudublin;
 
 import java.util.ArrayList;
 
-import javafx.scene.shape.Circle;
 import processing.core.*;
 
 
 
-public class BackGround extends SpaceObject
+public class BackGround extends SpaceObject 
 {	
 	// float[] x1 = new float[50];
 	// float[] y1 = new float[50];
 	// float[] z1 = new float[50];
 	// float[] size1 = new float[50];
-	
-	ArrayList<Circle> circles;
+
 	float[] x = new float[500];
 	float[] y = new float[500];
 	float[] z = new float[500];
@@ -36,16 +34,10 @@ public class BackGround extends SpaceObject
 	// float size = random(2, 9);
 
 	// public Back(PApplet ui, float x, float y, float z, float size)
-	public BackGround(UI ui)
+	public BackGround(UI ui) 
 	{
 		super(ui);
-		//this.ui = ui;
-		circles = new ArrayList<Circle>();
-		
-		for(int i=0; i<20; i++)
-		{
-			circles.add(new Circle());
-		}
+	
 		// float x1 = ui.random(ui.width);
 		// float y1 = ui.random(ui.height);
 		// float z1 = ui.random(1, 4);
@@ -99,6 +91,7 @@ public class BackGround extends SpaceObject
 			ui.fill(255);
 			ui.stroke(255);
 			ui.ellipse(x1, y1, size[num], size[num]);
+			
 		}			
 	}
 
@@ -145,8 +138,6 @@ public class BackGround extends SpaceObject
 	void spaceship()
 	{
 		ui.noStroke();
-		ui.fill(231,220,184);
-		ui.image(img, 100, 850, 500, 500);
 		ui.image(img, -140, 610, 500, 500);
 
 
@@ -203,10 +194,10 @@ public class BackGround extends SpaceObject
 		ui.fill(65,105,225);
 		ui.circle(375 + move, 400 - move, 100);
 	}
-	public void update()
-	{
-		move += 0.2f;
-		moverotate -= 0.3f;
-		movex += 0.2f;
-	}
+	// public void update()
+	// {
+	// 	move += 0.2f;
+	// 	moverotate -= 0.3f;
+	// 	movex += 0.2f;
+	// }
 }
