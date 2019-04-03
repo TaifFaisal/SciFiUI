@@ -106,14 +106,16 @@ public class UI extends PApplet
     public void draw()
     {
         background(0);
-        start.play();
+        //start.play();
+
         // background.loadData();
         // background.spaceship();
         // pushMatrix();
         // translate(width / 2, height / 2);
         // //background.movingstars();
         // popMatrix();
-        // // background.spaceship();
+        background.spaceship();
+        //background.update();
         // fire.mouse();
         // spaceship.structure();
 
@@ -143,7 +145,7 @@ public class UI extends PApplet
 
 
 
-    //   /*
+      /*
         if (checkKey(ENTER))
         {
             
@@ -385,7 +387,7 @@ public class UI extends PApplet
             textFont(font);
             text("Press Enter to start", width/3, height/2);  
         }
-        // */
+        */
         
         
         

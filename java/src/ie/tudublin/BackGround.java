@@ -27,6 +27,9 @@ public class BackGround
 	float[] a = new float[50];
 	PApplet ui;
 	PImage img;
+	float move; 
+	float moverotate;
+	float movex;
 
 	// float x = random(width);
 	// float y = random(height);
@@ -75,8 +78,9 @@ public class BackGround
 		// 	num++;
 		// }
 		img = ui.loadImage("moon.png");
-		
-
+		move = 0;
+		moverotate = 0;
+		movex = 0;
 	}
 	
 	void movingstars() 
@@ -144,42 +148,46 @@ public class BackGround
 		ui.fill(231,220,184);
 		ui.image(img, 100, 850, 500, 500);
 		ui.image(img, -140, 610, 500, 500);
-		// ui.ellipse();
 
-		ui.stroke(210, 192, 131);
-		ui.strokeWeight(3);
-		// ui.ellipse(55, 750, 50, 50);
-		// ui.ellipse(140, 650, 30, 30);
-		// ui.ellipse(140, 690, 40, 40);
-		// ui.ellipse(80, 680, 10, 10);
-		// ui.ellipse(100, 670, 20, 20);
-		// ui.ellipse(140, 650, 30, 30);
-		// ui.ellipse(140, 690, 40, 40);
-		// ui.ellipse(80, 680, 10, 10);
 
-		for(int i = 0; i<23; i++)
-		{
-
-		}
 		ui.fill(169,169,169);
 		ui.noStroke();
-		ui.triangle(344, 324, 460, 280, 453, 400);
-		ui.triangle(180, 500, 240, 480, 215, 522);
-		ui.triangle(345, 530, 350, 615, 319, 593);
+		ui.triangle(344 , 324 - move, 460 , 280 - move, 453 , 400 - move);
+		ui.triangle(180 + move, 500 - move, 240 + move, 480 - move, 215 + move, 522 - move);
+		ui.triangle(345 + move, 530 - move, 350 + move, 615 - move, 319 + move, 593 - move);
+		
+		// ui.triangle(399 + movex, 365 - move, 525 + movex , 330 - move, 500 + movex , 448 - move);
+		// ui.triangle(180 + move, 500 - move, 240 + move, 480 - move, 215 + move, 522 - move);
+		// ui.triangle(345 + move, 530 - move, 350 + move, 615 - move, 319 + move, 593 - move);
 		ui.pushMatrix();
 		ui.translate(380, -80);
 		ui.rotate(0.6f);
 		ui.noStroke();
+		ui.rect(200, 350 + moverotate, 130, 240);
+
+		// ui.rotate(0.7f);
+		// ui.translate(301, -330);
 		
-		ui.rect(200, 350, 130, 240);
+		// ui.noStroke();
+
+		// ui.rect(240, 350 + moverotate, 130, 240);
+		// ui.popMatrix();
+		// ui.pushMatrix();
+		// ui.triangle(399 + movex, 365 + moverotate, 525 + movex , 330 + moverotate, 500 + movex , 448 + moverotate);
+
+		// ui.rotate(0.7f);
+		// ui.translate(255, -300);
+		// //ui.rect(320, 570 + moverotate, 60, 30);
+		// ui.popMatrix();
+
 		ui.popMatrix();
 		ui.pushMatrix();
 		ui.translate(335, -50);
 		ui.rotate(0.6f);
-		ui.rect(248, 550, 60, 30);
+		ui.rect(248, 550 + moverotate, 60, 30);
 		ui.popMatrix();
 
-		// ui.stroke(255);
+		/*// ui.stroke(255);
         // ui.strokeWeight(4);
 		// ui.beginShape();
 		// ui.vertex(460, 280);
@@ -189,10 +197,16 @@ public class BackGround
 		// ui.vertex(320, 590);
 		// ui.vertex(319, 593);
 		// ui.vertex(350, 615);
-		// ui.endShape();
+		// ui.endShape();*/
 
-
+		ui.noStroke();
 		ui.fill(65,105,225);
-		ui.circle(375, 400, 100);
+		ui.circle(375 + move, 400 - move, 100);
+	}
+	public void update()
+	{
+		move += 0.2f;
+		moverotate -= 0.3f;
+		movex += 0.2f;
 	}
 }

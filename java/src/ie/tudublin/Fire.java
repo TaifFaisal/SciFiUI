@@ -19,13 +19,7 @@ public class Fire
         ui.noFill();
         ui.ellipse(ui.mouseX, ui.mouseY, 50, 50);
     }
-    public void mouse()
-    {
-        ui.stroke(255);
-        ui.strokeWeight(3);
-        ui.noFill();
-        ui.ellipse(ui.mouseX, ui.mouseY, 50, 50);
-    }
+
 
     // public void bullets()
     // {
