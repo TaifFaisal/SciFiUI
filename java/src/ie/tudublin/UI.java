@@ -2,7 +2,9 @@ package ie.tudublin;
 
 import processing.core.PApplet;
 import processing.core.PFont;
-import processing.data.Table;
+
+import java.util.ArrayList;
+
 import ddf.minim.*;
 
 public class UI extends PApplet
