@@ -1,15 +1,11 @@
 package ie.tudublin;
 
-import processing.core.PApplet;
-
-
-public class Graph
+public class Graph extends SpaceObject
 {
-    PApplet ui;
     float[] Temperature = new float[9];
-    public Graph(PApplet ui)
+    public Graph(UI ui)
     {
-        this.ui = ui;
+        super(ui);
     }
     
     public void graphrect()

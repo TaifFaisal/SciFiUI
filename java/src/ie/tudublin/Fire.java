@@ -1,15 +1,13 @@
 package ie.tudublin;
 
-import processing.core.PApplet;
 
 
-public class Fire
+public class Fire extends SpaceObject
 {
-    PApplet ui;
 
-    public Fire(PApplet ui)
+    public Fire(UI ui)
     {
-        this.ui = ui;
+        super(ui);
     }
     
     public void mouse()

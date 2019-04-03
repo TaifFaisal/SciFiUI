@@ -3,9 +3,8 @@ package ie.tudublin;
 import processing.core.PApplet;
 import processing.core.PFont;
 
-public class Button
+public class Button extends SpaceObject
 {
-    PApplet ui;
     private float x;
     private float y;
     private float width;
@@ -13,9 +12,9 @@ public class Button
     private String text;
     float[] buttons = new float[7];
 
-    public Button(PApplet ui, float x, float y, float width, float height, String text)
+    public Button(UI ui, float x, float y, float width, float height, String text)
     {
-        this.ui = ui;
+        super(ui);
         this.x = x;
         this.y = y;
         this.width = width;

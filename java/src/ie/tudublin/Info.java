@@ -1,17 +1,15 @@
 package ie.tudublin;
 
-import processing.core.PApplet;
 import processing.core.PFont;
 
-public class Info
+public class Info extends SpaceObject
 {
-    PApplet ui;
     private float x;
     private float y;
 
-    public Info(PApplet ui, float x, float y)
+    public Info(UI ui, float x, float y)
     {
-        this.ui = ui;
+        super(ui);
         this.x = x;
         this.y = y;
         

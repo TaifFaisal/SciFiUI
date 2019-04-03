@@ -7,7 +7,7 @@ import processing.core.*;
 
 
 
-public class BackGround 
+public class BackGround extends SpaceObject
 {	
 	// float[] x1 = new float[50];
 	// float[] y1 = new float[50];
@@ -25,7 +25,6 @@ public class BackGround
     float[] w = new float[50];
 	float[] h = new float[50];
 	float[] a = new float[50];
-	PApplet ui;
 	PImage img;
 	float move; 
 	float moverotate;
@@ -37,9 +36,10 @@ public class BackGround
 	// float size = random(2, 9);
 
 	// public Back(PApplet ui, float x, float y, float z, float size)
-	public BackGround(PApplet ui)
+	public BackGround(UI ui)
 	{
-		this.ui = ui;
+		super(ui);
+		//this.ui = ui;
 		circles = new ArrayList<Circle>();
 		
 		for(int i=0; i<20; i++)
@@ -130,7 +130,7 @@ public class BackGround
 	
 	}
 	
-	void star()
+	public void star()
 	{
 		for(int i = 0; i<50; i++)
         {

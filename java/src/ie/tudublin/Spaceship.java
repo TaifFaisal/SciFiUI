@@ -2,16 +2,15 @@ package ie.tudublin;
 
 import processing.core.*;
 
- public class Spaceship
+ public class Spaceship extends SpaceObject
 {
-    PApplet ui;
     private float x;
     private float y;
     private float rotate;
 
-    public Spaceship(PApplet ui, float x, float y)
+    public Spaceship(UI ui, float x, float y)
     {
-        this.ui = ui;
+        super(ui);
         this.x = x;
         this.y = y;
         rotate =  0.6f;

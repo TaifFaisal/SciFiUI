@@ -6,6 +6,7 @@ import processing.core.PFont;
 import java.util.ArrayList;
 
 import ddf.minim.*;
+import javafx.scene.layout.Background;
 
 public class UI extends PApplet
 {
@@ -84,6 +85,9 @@ public class UI extends PApplet
         startbutton = new Button(this, 90 , 490, 110, 60,"Start");
         screen = new Screen(this, words, 300, 470);
         background = new BackGround(this);
+
+        // spaceObject.add(background);
+        
         radar = new Radar(this, 65, 680,  100);
         clock = new Clock(this, 120, 20);
         clockredbutton = new Button(this, 85 , 35, 17, 17,"Clock / OFF");
@@ -112,12 +116,12 @@ public class UI extends PApplet
         //start.play();
 
         // background.loadData();
-        // background.spaceship();
+        // background.star();
         // pushMatrix();
         // translate(width / 2, height / 2);
         // //background.movingstars();
         // popMatrix();
-        background.spaceship();
+        // background.spaceship();
         //background.update();
         // fire.mouse();
         // spaceship.structure();
@@ -148,7 +152,7 @@ public class UI extends PApplet
 
 
 
-      /*
+    //   /*
         if (checkKey(ENTER))
         {
             
@@ -390,7 +394,7 @@ public class UI extends PApplet
             textFont(font);
             text("Press Enter to start", width/3, height/2);  
         }
-        */
+        // */
         
         
         

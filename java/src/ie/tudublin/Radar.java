@@ -1,25 +1,23 @@
 package ie.tudublin;
 
-import processing.core.PApplet;
 import processing.core.PVector;
 
-public class Radar 
+public class Radar extends SpaceObject
 {
     private PVector pos;
     private float x;
     private float y;
     // private float speed;
     private float size;
-    PApplet ui;
     float[] planetx = new float[5];
     float[] planety = new float[5];
     int num1 = 0;
 
     private float rotation;
     // float speed
-    public Radar(PApplet ui, float x, float y,  float size)
+    public Radar(UI ui, float x, float y,  float size)
     {
-        this.ui = ui;
+        super(ui);
         pos = new PVector(x, y);
         // this.speed = speed;
         this.size = size;

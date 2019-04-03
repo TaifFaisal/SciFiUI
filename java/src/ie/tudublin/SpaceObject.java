@@ -9,5 +9,19 @@ public abstract class SpaceObject
     {
         this.ui = ui;
     }
+
+    /**
+     * @return the ui
+     */
+    public UI getUi() {
+        return ui;
+    }
+
+    /**
+     * @param ui the ui to set
+     */
+    public void setUi(UI ui) {
+        this.ui = ui;
+    }
     
 }

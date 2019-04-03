@@ -1,18 +1,17 @@
 package ie.tudublin;
 
-import processing.core.PApplet;
+
 import processing.core.PFont;
 
-public class Clock
+public class Clock extends SpaceObject
 {
-    PApplet ui;
     private float x;
     private float y;
 
 
-    public Clock(PApplet ui, float x, float y)
+    public Clock(UI ui, float x, float y)
     {
-        this.ui = ui;
+        super(ui);
         this.x = x;
         this.y = y;
     }

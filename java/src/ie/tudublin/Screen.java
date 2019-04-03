@@ -3,16 +3,15 @@ package ie.tudublin;
 import processing.core.PApplet;
 import processing.core.PFont;
 
-public class Screen
+public class Screen extends SpaceObject
 {
-    PApplet ui;
     private float x;
     private float y;
     // String[] words = ui.loadStrings("screen.txt");
     String[] words;
-    public Screen(PApplet ui, String[] words, float x, float y)
+    public Screen(UI ui, String[] words, float x, float y)
     {
-        this.ui = ui;
+        super(ui);
         this.words = words;
         this.x = x;
         this.y = y;
