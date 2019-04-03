@@ -34,6 +34,7 @@ public class UI extends PApplet
     Fire fire;
 
     boolean[] keys = new boolean[1024];
+    public ArrayList<SpaceObject> spaceObject = new ArrayList<SpaceObject>(); 
 
     public void keyPressed()
     {
