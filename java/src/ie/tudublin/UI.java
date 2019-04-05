@@ -24,6 +24,7 @@ public class UI extends PApplet
     Button greencirclebutton;
     Button fireoff;
     Button fireon;
+    Button extrabuttons; 
     BackGround background;
     Radar radar;
     Clock clock;
@@ -82,6 +83,7 @@ public class UI extends PApplet
         redcirclebutton = new Button(this, 300 , 20, 20, 20,"");
         greencirclebutton = new Button(this, 300 , 20, 20, 20,"");
         startbutton = new Button(this, 90 , 490, 110, 60,"Start");
+        extrabuttons = new Button(this, 450 , 500, 17, 17,"");
         screen = new Screen(this, words, 300, 470);
         background = new BackGround(this);
 
@@ -112,52 +114,54 @@ public class UI extends PApplet
     public void draw()
     {
         background(0);
-        //start.play();
+        // start.play();
         // fire.monsters();
         // background.loadData();
-        // // background.star();
-        // pushMatrix();
-        // translate(width / 2, height / 2);
-        // background.movingstars();
-        // //fire.monsters();
+        // background.star();
+        pushMatrix();
+        translate(width / 2, height / 2);
+        background.movingstars();
+        //fire.monsters();
 
-        // popMatrix();
-        // // background.spaceship();
-        // //background.update();
-        // fire.mouse();
-        // spaceship.structure();
+        popMatrix();
+        // background.spaceship();
+        //background.update();
+        fire.mouse();
+        spaceship.structure();
 
-        // radar.rect();
-        // exitbutton.exitbutton();
+        radar.rect();
+        exitbutton.exitbutton();
+        startbutton.beforestartbutton();
+        screen.displayscreen();
+        clock.frame();
+        radar.render();
+        radar.update();
+
+        // redbutton.redbutton();
         // startbutton.beforestartbutton();
-        // screen.displayscreen();
+        screen.displayscreen();
+        screen.displaywords();
+        //screen.instructions();
         // clock.frame();
-        // radar.render();
-        // radar.update();
-
-        // // redbutton.redbutton();
-        // // startbutton.beforestartbutton();
-        // screen.displayscreen();
-        // screen.displaywords();
-        // screen.instructions();
-        // // clock.frame();
-        // //clockredbutton.clockredbutton();
-        // // clockgreenbutton.clockgreenbutton();
-        // // clock.digitalclock();
+        //clockredbutton.clockredbutton();
+        // clockgreenbutton.clockgreenbutton();
+        // clock.digitalclock();
         
-        // graph.graphrect();
-        // fireoff.redbutton();
-        // fireon.greenbutton();
+        graph.graphrect();
+        fireoff.redbutton();
+        fireon.greenbutton();
+        extrabuttons.extrabuttons();
         
-        // // graph.drawgraph();
-        // // clock.analogclock();
+        // graph.drawgraph();
+        // clock.analogclock();
 
 
 
-    //   /*
+      /*
         if (checkKey(ENTER))
         {
             
+
             
             if(checkbutton == 1)
             {   
@@ -394,7 +398,8 @@ public class UI extends PApplet
                     System.exit(0);
                 }
                 else 
-                {
+                { 
+
                     
                 }
             }
@@ -408,7 +413,7 @@ public class UI extends PApplet
             textFont(font);
             text("Press Enter to start", width/3, height/2);  
         }
-        // */
+        */
         
         
         
