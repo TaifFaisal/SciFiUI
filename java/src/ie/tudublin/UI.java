@@ -2,6 +2,7 @@ package ie.tudublin;
 
 import processing.core.PApplet;
 import processing.core.PFont;
+import processing.data.Table;
 
 import java.util.ArrayList;
 
@@ -24,7 +25,7 @@ public class UI extends PApplet
     Button greencirclebutton;
     Button fireoff;
     Button fireon;
-    Button extrabuttons; 
+    ExtraButton extrabuttons; 
     BackGround background;
     Radar radar;
     Clock clock;
@@ -68,6 +69,7 @@ public class UI extends PApplet
 
     public void setup()
     {
+        Table table = loadTable("Numbers.csv", "header");
 
         String[] words = loadStrings("screen.txt");
         sound = new Minim(this);
@@ -83,7 +85,7 @@ public class UI extends PApplet
         redcirclebutton = new Button(this, 300 , 20, 20, 20,"");
         greencirclebutton = new Button(this, 300 , 20, 20, 20,"");
         startbutton = new Button(this, 90 , 490, 110, 60,"Start");
-        extrabuttons = new Button(this, 450 , 500, 17, 17,"");
+        extrabuttons = new ExtraButton(this, 450 , 500, 17, 17, table);
         screen = new Screen(this, words, 300, 470);
         background = new BackGround(this);
 
@@ -102,6 +104,7 @@ public class UI extends PApplet
         fireoff = new Button(this, 660 , 510, 17, 17,"Fire / OFF");
         fire = new Fire(this);
     }
+   
     int button = 0;
     int checkbutton = 1;
     int homebutton = 1;

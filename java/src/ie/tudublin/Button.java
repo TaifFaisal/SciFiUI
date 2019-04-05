@@ -10,7 +10,7 @@ public class Button extends SpaceObject
     private float width;
     private float height;
     private String text;
-    float[] buttons = new float[3];
+    float[] buttons = new float[7];
 
     public Button(UI ui, float x, float y, float width, float height, String text)
     {
@@ -156,18 +156,6 @@ public class Button extends SpaceObject
             ui.stroke(0,255,0);
             ui.ellipse(buttons[i], y, width, height);
             ui.ellipse(buttons[i], y + 35 , width, height);
-        }   
-    }
-    public void extrabuttons()
-    {
-        for(int i = 0; i < buttons.length; i++)
-        {
-            ui.strokeWeight(3);
-            ui.fill(85,107,47);
-            ui.stroke(0,100,0);
-            ui.rect(buttons[i], y, width, height);
-            ui.rect(buttons[i], y + 25 , width, height);
-            ui.rect(buttons[i], y + 50 , width, height);
         }   
     }
 }
