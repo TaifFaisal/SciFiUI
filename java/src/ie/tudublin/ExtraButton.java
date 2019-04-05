@@ -27,5 +27,17 @@ public class ExtraButton extends SpaceObject
         this.table = table;
         
     }
-    
+    public void extrabuttons()
+    {
+        for(TableRow row:table.rows())
+        {   
+            int x = row.getInt("x");
+            int y = row.getInt("y");
+            ui.strokeWeight(3);
+            ui.fill(85,107,47);
+            ui.stroke(0,100,0);
+            ui.rect(x, y, width, height);            
+        } 
+
+    }
 }
