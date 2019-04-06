@@ -94,6 +94,25 @@ public class BackGround extends SpaceObject
 			
 		}			
 	}
+	void fastmovingstars() 
+	{	
+		
+		for(int num = 0; num<500; num++)
+		{
+			float x1 = ui.map(x[num] / z[num], 0, 1, 0, ui.width);
+			float y1 = ui.map(y[num] / z[num], 0, 1, 0, ui.height);
+			z[num] -= 10;
+			if(z[num] < 1)
+			{
+				z[num] = ui.width;
+			}
+			ui.strokeWeight(1);
+			ui.fill(255);
+			ui.stroke(255);
+			ui.ellipse(x1, y1, size[num], size[num]);
+			
+		}			
+	}
 
 	void star1()
 	{

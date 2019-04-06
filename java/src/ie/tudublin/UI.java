@@ -125,47 +125,47 @@ public class UI extends PApplet
         // fire.monsters();
         // background.loadData();
         // background.star();
-        pushMatrix();
-        translate(width / 2, height / 2);
-        background.movingstars();
-        //fire.monsters();
+        // pushMatrix();
+        // translate(width / 2, height / 2);
+        // background.movingstars();
+        // //fire.monsters();
 
-        popMatrix();
-        // background.spaceship();
-        //background.update();
-        fire.mouse();
-        spaceship.structure();
+        // popMatrix();
+        // // background.spaceship();
+        // //background.update();
+        // fire.mouse();
+        // spaceship.structure();
 
-        radar.rect();
-        exitbutton.exitbutton();
-        startbutton.beforestartbutton();
-        screen.displayscreen();
-        clock.frame();
-        radar.render();
-        radar.update();
-        // beforespeed.beforespeed();
-        afterspeed.afterspeed();
-        // redbutton.redbutton();
+        // radar.rect();
+        // exitbutton.exitbutton();
         // startbutton.beforestartbutton();
-        screen.displayscreen();
-        screen.displaywords();
-        //screen.instructions();
+        // screen.displayscreen();
         // clock.frame();
-        //clockredbutton.clockredbutton();
-        // clockgreenbutton.clockgreenbutton();
-        // clock.digitalclock();
+        // radar.render();
+        // radar.update();
+        // // beforespeed.beforespeed();
+        // afterspeed.afterspeed();
+        // // redbutton.redbutton();
+        // // startbutton.beforestartbutton();
+        // screen.displayscreen();
+        // screen.displaywords();
+        // //screen.instructions();
+        // // clock.frame();
+        // //clockredbutton.clockredbutton();
+        // // clockgreenbutton.clockgreenbutton();
+        // // clock.digitalclock();
         
-        graph.graphrect();
-        fireoff.redbutton();
-        fireon.greenbutton();
-        extrabuttons.extrabuttons();
+        // graph.graphrect();
+        // fireoff.redbutton();
+        // fireon.greenbutton();
+        // extrabuttons.extrabuttons();
         
         // graph.drawgraph();
-        // clock.analogclock();
+        // redcirclebutton.redcirclebutton();
+        // //greencirclebutton.greencirclebutton();
 
 
-
-      /*
+    //   /*
         if (checkKey(ENTER))
         {
             
@@ -204,7 +204,7 @@ public class UI extends PApplet
             if (button == 1)
             {
                 checkbutton = 0;
-                background.star();
+                //background.star();
                 spaceship.structure();
                 if(mousePressed == true)
                 {
@@ -269,16 +269,22 @@ public class UI extends PApplet
                     }
                      if(speedcheck == 1)
                     {
-                        
+                        pushMatrix();
+                        translate(width / 2, height / 2);
+                        background.fastmovingstars();
+                        popMatrix();
                     }
                     else
                     {
-                       background.movingstars();
+                        pushMatrix();
+                        translate(width / 2, height / 2);
+                        background.movingstars();
+                        popMatrix();
                     }
-                    pushMatrix();
-                    translate(width / 2, height / 2);
-                    background.movingstars();
-                    popMatrix();
+                    // pushMatrix();
+                    // translate(width / 2, height / 2);
+                    // //background.movingstars();
+                    // popMatrix();
                     spaceship.structure();
                     startbutton.afterstartbutton();
                     greencirclebutton.greencirclebutton();
@@ -290,6 +296,7 @@ public class UI extends PApplet
                     graph.graphrect();
                     fireoff.redbutton();
                     fireon.greenbutton();
+                    extrabuttons.extrabuttons();
                     if(clockckeck == 1)
                     {
                         clockgreenbutton.clockgreenbutton();
@@ -362,6 +369,7 @@ public class UI extends PApplet
                     redcirclebutton.redcirclebutton();
                     fireoff.redbutton();
                     fireon.greenbutton();
+                    beforespeed.beforespeed();
         
                 }
                 // if(clockckeck == 1)

@@ -22,7 +22,7 @@ public class Button extends SpaceObject
         this.text = text;
         for(int i = 0; i < buttons.length; i++)
         {
-            x = x+25;
+            x = x+40;
             buttons[i] = x;
         }
         
