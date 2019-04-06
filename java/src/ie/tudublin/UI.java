@@ -25,6 +25,8 @@ public class UI extends PApplet
     Button greencirclebutton;
     Button fireoff;
     Button fireon;
+    Button beforespeed;
+    Button afterspeed;
     ExtraButton extrabuttons; 
     BackGround background;
     Radar radar;
@@ -85,12 +87,13 @@ public class UI extends PApplet
         redcirclebutton = new Button(this, 300 , 20, 20, 20,"");
         greencirclebutton = new Button(this, 300 , 20, 20, 20,"");
         startbutton = new Button(this, 90 , 490, 110, 60,"Start");
-        extrabuttons = new ExtraButton(this, 450 , 500, 17, 17, table);
+
+        beforespeed = new Button(this, 170 , 630, 100, 30,"");
+        afterspeed = new Button(this, 170 , 630, 100, 30,"");
+
+        extrabuttons = new ExtraButton(this, 17, 17, table);
         screen = new Screen(this, words, 300, 470);
         background = new BackGround(this);
-
-        // spaceObject.add(background);
-        
         radar = new Radar(this, 65, 680,  100);
         clock = new Clock(this, 120, 20);
         clockredbutton = new Button(this, 85 , 35, 17, 17,"Clock / OFF");
@@ -114,6 +117,7 @@ public class UI extends PApplet
     int clockckeck = 0;
     int graphcheck = 0;
     int firecheck = 0;
+    int speedcheck = 0;
     public void draw()
     {
         background(0);
@@ -139,7 +143,8 @@ public class UI extends PApplet
         clock.frame();
         radar.render();
         radar.update();
-
+        // beforespeed.beforespeed();
+        afterspeed.afterspeed();
         // redbutton.redbutton();
         // startbutton.beforestartbutton();
         screen.displayscreen();
@@ -242,17 +247,33 @@ public class UI extends PApplet
                         {
                             firecheck = 0;
                         }
+                        else if(mouseX > 190 && mouseX < 250 && mouseY > 590 && mouseY < 605)
+                        {
+                            speedcheck = 1;
+
+                        }
+                        else if(mouseX > 190 && mouseX < 250 && mouseY > 690 && mouseY < 705)
+                        {
+                            speedcheck = 0;
+                        }
                     }
                     
                     if(firecheck == 1)
                     {
                         
                         fire.mouse();
-                        //screen.instructions();
                     }
                     else
                     {
                         firecheck = 0;
+                    }
+                     if(speedcheck == 1)
+                    {
+                        
+                    }
+                    else
+                    {
+                       background.movingstars();
                     }
                     pushMatrix();
                     translate(width / 2, height / 2);
@@ -269,7 +290,6 @@ public class UI extends PApplet
                     graph.graphrect();
                     fireoff.redbutton();
                     fireon.greenbutton();
-                    
                     if(clockckeck == 1)
                     {
                         clockgreenbutton.clockgreenbutton();
@@ -312,6 +332,17 @@ public class UI extends PApplet
                     else
                     {
                         firecheck = 0;
+                    }
+                    if(speedcheck == 1)
+                    {
+                        afterspeed.afterspeed();
+                        
+                    }
+                    else
+                    {
+                        speedcheck = 0;
+                        beforespeed.beforespeed();
+                      
                     }
                     
                 }
@@ -416,7 +447,7 @@ public class UI extends PApplet
             textFont(font);
             text("Press Enter to start", width/3, height/2);  
         }
-        */
+        // */
         
         
         

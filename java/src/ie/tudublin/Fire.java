@@ -31,10 +31,8 @@ public class Fire extends SpaceObject
         ui.stroke(255);
         ui.strokeWeight(3);
         ui.noFill();
-        ui.ellipse(ui.mouseX, ui.mouseY, 50, 50);
-        
+        ui.ellipse(ui.mouseX, ui.mouseY, 50, 50);   
     }
-    
     public void monsters()
     {
         int j =0;

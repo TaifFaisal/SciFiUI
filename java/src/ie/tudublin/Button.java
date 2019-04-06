@@ -158,4 +158,34 @@ public class Button extends SpaceObject
             ui.ellipse(buttons[i], y + 35 , width, height);
         }   
     }
+    public void beforespeed()
+    {
+        ui.strokeWeight(3);
+        ui.noFill();
+        ui.stroke(86, 86, 86);
+        ui.rect(x, y, width, height);
+
+        ui.noStroke();
+        ui.fill(140, 140, 140);
+        ui.rect(x+20, y-40, 10, 60);
+        ui.rect(x+70, y-40, 10, 60);
+
+        ui.fill(52, 52, 52);
+        ui.rect(x+20, y-40, 60, 15);
+    }
+    public void afterspeed()
+    {
+        ui.strokeWeight(3);
+        ui.noFill();
+        ui.stroke(86, 86, 86);
+        ui.rect(x, y, width, height);
+
+        ui.noStroke();
+        ui.fill(140, 140, 140);
+        ui.rect(x+20, y+10, 10, 60);
+        ui.rect(x+70, y+10, 10, 60);
+
+        ui.fill(52, 52, 52);
+        ui.rect(x+20, y+60, 60, 15);
+    }
 }
