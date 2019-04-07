@@ -132,47 +132,49 @@ public class UI extends PApplet
         // background.loadData();
         // background.star();
 
-        pushMatrix();
-        translate(width / 2, height / 2);
-        background.movingstars();
-        //fire.monsters();
+        // pushMatrix();
+        // translate(width / 2, height / 2);
+        // background.movingstars();
+        // //fire.monsters();
 
-        popMatrix();
-        // background.spaceship();
-        //background.update();
-        fire.mouse();
-        spaceship.structure();
+        // popMatrix();
+        // // background.spaceship();
+        // //background.update();
+        // fire.mouse();
+        // spaceship.structure();
 
-        radar.rect();
-        exitbutton.exitbutton();
-        startbutton.beforestartbutton();
-        screen.displayscreen();
-        clock.frame();
-        radar.render();
-        radar.update();
-        // beforespeed.beforespeed();
-        afterspeed.afterspeed();
-        // redbutton.redbutton();
+        // radar.rect();
+        // exitbutton.exitbutton();
         // startbutton.beforestartbutton();
-        screen.displayscreen();
-        screen.displaywords();
-        //screen.instructions();
+        // screen.displayscreen();
         // clock.frame();
-        //clockredbutton.clockredbutton();
-        // clockgreenbutton.clockgreenbutton();
-        // clock.digitalclock();
+        // radar.render();
+        // radar.update();
+        // // beforespeed.beforespeed();
+        // afterspeed.afterspeed();
+        // // redbutton.redbutton();
+        // // startbutton.beforestartbutton();
+        // screen.displayscreen();
+        // screen.displaywords();
+        // //screen.instructions();
+        // // clock.frame();
+        // //clockredbutton.clockredbutton();
+        // // clockgreenbutton.clockgreenbutton();
+        // // clock.digitalclock();
         
-        graph.graphrect();
-        fireoff.redbutton();
-        fireon.greenbutton();
-        extrabuttons1.extrabuttons1();
-        extrabuttons2.extrabuttons2();
-        graph.drawgraph();
-        redcirclebutton.redcirclebutton();
-        greencirclebutton.greencirclebutton();
+        // graph.graphrect();
+        // fireoff.redbutton();
+        // fireon.greenbutton();
+        // // extrabuttons1.extrabuttons1();
+        // // extrabuttons2.extrabuttons2();
+        // extrabuttons1.startextrabuttons1();
+        // extrabuttons2.startextrabuttons2();
+        // graph.drawgraph();
+        // redcirclebutton.redcirclebutton();
+        // greencirclebutton.greencirclebutton();
 
 
-      /*
+    //   /*
         if (checkKey(ENTER))
         {
             
@@ -303,8 +305,9 @@ public class UI extends PApplet
                     graph.graphrect();
                     fireoff.redbutton();
                     fireon.greenbutton();
-                    extrabuttons1.startextrabuttons();
-                    
+                    extrabuttons1.startextrabuttons1();
+                    extrabuttons2.startextrabuttons2();
+
                     if(clockckeck == 1)
                     {
                         clockgreenbutton.clockgreenbutton();
@@ -378,7 +381,8 @@ public class UI extends PApplet
                     fireoff.redbutton();
                     fireon.greenbutton();
                     beforespeed.beforespeed();
-                    extrabuttons1.extrabuttons();
+                    extrabuttons1.extrabuttons1();
+                    extrabuttons2.extrabuttons2();
                 }
                 // if(clockckeck == 1)
                 // {

@@ -19,8 +19,8 @@ public class ExtraButton extends SpaceObject
     {
         for(TableRow row:table.rows())
         {   
-            int x = row.getInt("x");
-            int y = row.getInt("y");
+            int x = row.getInt("x1");
+            int y = row.getInt("y1");
             ui.strokeWeight(1);
             ui.fill(0,100,0);
             ui.stroke(0,100,0);
@@ -32,8 +32,8 @@ public class ExtraButton extends SpaceObject
     {
         for(TableRow row:table.rows())
         {   
-            int x = row.getInt("x1");
-            int y = row.getInt("y1");
+            int x = row.getInt("x2");
+            int y = row.getInt("y2");
             ui.strokeWeight(1);
             ui.fill(0,100,0);
             ui.stroke(0,100,0);
@@ -41,5 +41,30 @@ public class ExtraButton extends SpaceObject
             System.out.println(row.getColumnCount());   
         } 
     }
-   
+    public void startextrabuttons1()
+    {
+        for(TableRow row:table.rows())
+        {   
+            int x = row.getInt("x1");
+            int y = row.getInt("y1");
+            ui.strokeWeight(1);
+            ui.fill(0,ui.random(100),0);
+            ui.stroke(0,100,0);
+            ui.rect(x, y, width, height);
+            System.out.println(row.getColumnCount());    
+        } 
+    }
+    public void startextrabuttons2()
+    {
+        for(TableRow row:table.rows())
+        {   
+            int x = row.getInt("x2");
+            int y = row.getInt("y2");
+            ui.strokeWeight(1);
+            ui.fill(0,ui.random(100),0);
+            ui.stroke(0,100,0);
+            ui.rect(x, y, width, height);
+            System.out.println(row.getColumnCount());    
+        } 
+    }
 }
