@@ -2,6 +2,7 @@ package ie.tudublin;
 
 import processing.core.PApplet;
 import processing.core.PFont;
+import processing.core.PVector;
 
 public class Button extends SpaceObject
 {
@@ -187,5 +188,25 @@ public class Button extends SpaceObject
 
         ui.fill(52, 52, 52);
         ui.rect(x+20, y+60, 60, 15);
+    }
+    public void speaker()
+    {
+        for(int i =0; i<50; i++)
+        {
+            ui.strokeWeight(5);
+            ui.fill(0);
+            // ui.stroke(192,192,192);
+            ui.stroke(211,211,211);
+            ui.ellipse(x, y, width, height);
+        }
+        
+
+
+        ui.strokeWeight(1);
+        ui.stroke(0,128,0);
+        ui.line(0, 0, width/3, width/3);
+
+
+
     }
 }

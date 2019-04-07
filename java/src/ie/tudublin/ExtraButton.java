@@ -24,8 +24,7 @@ public class ExtraButton extends SpaceObject
             ui.strokeWeight(1);
             ui.fill(0,100,0);
             ui.stroke(0,100,0);
-            ui.rect(x, y, width, height);
-            System.out.println(row.getColumnCount());   
+            ui.rect(x, y, width, height); 
         } 
     }
     public void extrabuttons2()
@@ -37,8 +36,7 @@ public class ExtraButton extends SpaceObject
             ui.strokeWeight(1);
             ui.fill(0,100,0);
             ui.stroke(0,100,0);
-            ui.rect(x, y, width, height);
-            System.out.println(row.getColumnCount());   
+            ui.rect(x, y, width, height); 
         } 
     }
     public void startextrabuttons1()
@@ -50,8 +48,7 @@ public class ExtraButton extends SpaceObject
             ui.strokeWeight(1);
             ui.fill(0,ui.random(100),0);
             ui.stroke(0,100,0);
-            ui.rect(x, y, width, height);
-            System.out.println(row.getColumnCount());    
+            ui.rect(x, y, width, height);  
         } 
     }
     public void startextrabuttons2()
@@ -63,8 +60,7 @@ public class ExtraButton extends SpaceObject
             ui.strokeWeight(1);
             ui.fill(0,ui.random(100),0);
             ui.stroke(0,100,0);
-            ui.rect(x, y, width, height);
-            System.out.println(row.getColumnCount());    
+            ui.rect(x, y, width, height);  
         } 
     }
 }

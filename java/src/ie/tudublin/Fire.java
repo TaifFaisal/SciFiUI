@@ -4,11 +4,11 @@ import processing.core.PImage;
 
 public class Fire extends SpaceObject
 {
-    float[] x = new float[15];
-	float[] y = new float[15];
-	float[] z = new float[15];
-    float[] size = new float[15];
-    
+    float[] x = new float[50];
+	float[] y = new float[50];
+	float[] z = new float[50];
+    float[] size = new float[50];
+    float PI = 3.14f;
     PImage img2;
     
     public Fire(UI ui)
@@ -31,7 +31,11 @@ public class Fire extends SpaceObject
         ui.stroke(255);
         ui.strokeWeight(3);
         ui.noFill();
-        ui.ellipse(ui.mouseX, ui.mouseY, 50, 50);   
+        ui.arc(ui.mouseX, ui.mouseY, 50, 50, 0, PI*0.3f); 
+        ui.arc(ui.mouseX, ui.mouseY, 50, 50, PI*0.5f, PI*0.8f); 
+        ui.arc(ui.mouseX, ui.mouseY, 50, 50, PI*1, PI*1.3f); 
+        ui.arc(ui.mouseX, ui.mouseY, 50, 50, PI*1.5f, PI*1.8f); 
+
     }
     public void monsters()
     {
@@ -45,11 +49,11 @@ public class Fire extends SpaceObject
 			{
 				z[j] = ui.width;
             }
-            ui.strokeWeight(1);
-			ui.fill(255);
-			ui.stroke(255);
+            // ui.strokeWeight(1);
+			// ui.fill(255);
+			// ui.stroke(255);
 			//ui.ellipse(x1, y1, 10, 10);
-			ui.noStroke();
+			// ui.noStroke();
             ui.image(img2, x1, y1, size[j], size[j]);
             j++;
 		}		
