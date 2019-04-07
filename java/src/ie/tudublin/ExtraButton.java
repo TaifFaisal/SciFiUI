@@ -15,7 +15,7 @@ public class ExtraButton extends SpaceObject
         this.height = height;
         this.table = table;   
     }
-    public void extrabuttons()
+    public void extrabuttons1()
     {
         for(TableRow row:table.rows())
         {   
@@ -25,22 +25,21 @@ public class ExtraButton extends SpaceObject
             ui.fill(0,100,0);
             ui.stroke(0,100,0);
             ui.rect(x, y, width, height);
-            System.out.println(row.getColumnCount());  
-            
+            System.out.println(row.getColumnCount());   
         } 
     }
-    public void startextrabuttons()
+    public void extrabuttons2()
     {
         for(TableRow row:table.rows())
         {   
-            int x = row.getInt("x");
-            int y = row.getInt("y");
+            int x = row.getInt("x1");
+            int y = row.getInt("y1");
             ui.strokeWeight(1);
-            ui.fill(0,ui.random(100),0);
+            ui.fill(0,100,0);
             ui.stroke(0,100,0);
             ui.rect(x, y, width, height);
-            System.out.println(row.getColumnCount());  
-            
+            System.out.println(row.getColumnCount());   
         } 
     }
+   
 }

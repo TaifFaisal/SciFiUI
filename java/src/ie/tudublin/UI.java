@@ -28,7 +28,8 @@ public class UI extends PApplet
     Button fireon;
     Button beforespeed;
     Button afterspeed;
-    ExtraButton extrabuttons; 
+    ExtraButton extrabuttons1; 
+    ExtraButton extrabuttons2; 
     BackGround background;
     Radar radar;
     Clock clock;
@@ -94,7 +95,9 @@ public class UI extends PApplet
         beforespeed = new Button(this, 170 , 630, 100, 30,"");
         afterspeed = new Button(this, 170 , 630, 100, 30,"");
 
-        extrabuttons = new ExtraButton(this, 17, 17, table);
+        extrabuttons1 = new ExtraButton(this, 17, 17, table);
+        extrabuttons2 = new ExtraButton(this, 17, 17, table);
+
         screen = new Screen(this, words, 300, 470);
         background = new BackGround(this);
         radar = new Radar(this, 65, 680,  100);
@@ -129,47 +132,47 @@ public class UI extends PApplet
         // background.loadData();
         // background.star();
 
-        // pushMatrix();
-        // translate(width / 2, height / 2);
-        // background.movingstars();
-        // //fire.monsters();
+        pushMatrix();
+        translate(width / 2, height / 2);
+        background.movingstars();
+        //fire.monsters();
 
-        // popMatrix();
-        // // background.spaceship();
-        // //background.update();
-        // fire.mouse();
-        // spaceship.structure();
+        popMatrix();
+        // background.spaceship();
+        //background.update();
+        fire.mouse();
+        spaceship.structure();
 
-        // radar.rect();
-        // exitbutton.exitbutton();
+        radar.rect();
+        exitbutton.exitbutton();
+        startbutton.beforestartbutton();
+        screen.displayscreen();
+        clock.frame();
+        radar.render();
+        radar.update();
+        // beforespeed.beforespeed();
+        afterspeed.afterspeed();
+        // redbutton.redbutton();
         // startbutton.beforestartbutton();
-        // screen.displayscreen();
+        screen.displayscreen();
+        screen.displaywords();
+        //screen.instructions();
         // clock.frame();
-        // radar.render();
-        // radar.update();
-        // // beforespeed.beforespeed();
-        // afterspeed.afterspeed();
-        // // redbutton.redbutton();
-        // // startbutton.beforestartbutton();
-        // screen.displayscreen();
-        // screen.displaywords();
-        // //screen.instructions();
-        // // clock.frame();
-        // //clockredbutton.clockredbutton();
-        // // clockgreenbutton.clockgreenbutton();
-        // // clock.digitalclock();
+        //clockredbutton.clockredbutton();
+        // clockgreenbutton.clockgreenbutton();
+        // clock.digitalclock();
         
-        // graph.graphrect();
-        // fireoff.redbutton();
-        // fireon.greenbutton();
-        // extrabuttons.extrabuttons();
-        
-        // graph.drawgraph();
-        // redcirclebutton.redcirclebutton();
-        //greencirclebutton.greencirclebutton();
+        graph.graphrect();
+        fireoff.redbutton();
+        fireon.greenbutton();
+        extrabuttons1.extrabuttons1();
+        extrabuttons2.extrabuttons2();
+        graph.drawgraph();
+        redcirclebutton.redcirclebutton();
+        greencirclebutton.greencirclebutton();
 
 
-    //   /*
+      /*
         if (checkKey(ENTER))
         {
             
@@ -289,10 +292,6 @@ public class UI extends PApplet
                         background.movingstars();
                         popMatrix();
                     }
-                    // pushMatrix();
-                    // translate(width / 2, height / 2);
-                    // //background.movingstars();
-                    // popMatrix();
                     spaceship.structure();
                     startbutton.afterstartbutton();
                     greencirclebutton.greencirclebutton();
@@ -304,7 +303,7 @@ public class UI extends PApplet
                     graph.graphrect();
                     fireoff.redbutton();
                     fireon.greenbutton();
-                    extrabuttons.startextrabuttons();
+                    extrabuttons1.startextrabuttons();
                     
                     if(clockckeck == 1)
                     {
@@ -379,7 +378,7 @@ public class UI extends PApplet
                     fireoff.redbutton();
                     fireon.greenbutton();
                     beforespeed.beforespeed();
-                    extrabuttons.extrabuttons();
+                    extrabuttons1.extrabuttons();
                 }
                 // if(clockckeck == 1)
                 // {
