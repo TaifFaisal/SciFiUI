@@ -13,6 +13,7 @@ public class UI extends PApplet
     Button button1;
     Button button2;
     Button button3;
+    Button button4;
     Button redbutton;
     Button greenbutton;
     Button exitbutton;
@@ -81,6 +82,8 @@ public class UI extends PApplet
         button1 = new Button(this, buttonX, buttonY, 100, 50,"Start");
         button2 = new Button(this, buttonX + 150, buttonY, 100, 50,"Info");
         button3 = new Button(this, buttonX + 300, buttonY, 100, 50,"Exit");
+        button4 = new Button(this, buttonX + 450, buttonY, 100, 50,"Back");
+
         redbutton = new Button(this, 60 , 600, 17, 17,"Radar / OFF");
         greenbutton = new Button(this, 60 , 600, 17, 17,"Radar / ON");
         exitbutton = new Button(this, 650 , 20, 60, 40,"Exit");
@@ -196,7 +199,11 @@ public class UI extends PApplet
                     //for the third button Exit
                     if(mouseX > buttonX + 300 && mouseX < buttonX + 400 && mouseY > buttonY && mouseY < buttonY + 50)
                     {
-                        button = 3;
+                        button = 3;  
+                    }
+                    if(mouseX > buttonX + 450 && mouseX < buttonX + 550 && mouseY > buttonY && mouseY < buttonY + 50)
+                    {
+                        button = 4;
                     }
                 
                 }
@@ -418,21 +425,22 @@ public class UI extends PApplet
             if (button == 2)
             {
                 background(0);
-                //background.star1();
+                background.star1();
                 button1.buttons();
                 button2.buttons();
                 button3.buttons();
+                button4.buttons();
                 info.borders();
                 checkbutton = 1;
             }
             if (button == 3)
             {
                 background(0);
-                //background.star1();
+                background.star1();
                 button1.buttons();
                 button2.buttons();
                 button3.buttons();
-
+                button4.buttons();
                 text("Are you sure you want to exit?!", width/3, height/2);
                 text("if yes press Y or Space", width/3, height/2 + 50);
                 
@@ -441,6 +449,14 @@ public class UI extends PApplet
                     System.exit(0);
                 }
                 checkbutton = 1;
+            }
+            if(button == 4)
+            {
+                button1.buttons();
+                button2.buttons();
+                button3.buttons();
+                background.star1();
+                background.spaceship();
             }
         }
         else
