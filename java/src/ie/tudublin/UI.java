@@ -125,6 +125,7 @@ public class UI extends PApplet
         // fire.monsters();
         // background.loadData();
         // background.star();
+
         // pushMatrix();
         // translate(width / 2, height / 2);
         // background.movingstars();
@@ -162,7 +163,7 @@ public class UI extends PApplet
         
         // graph.drawgraph();
         // redcirclebutton.redcirclebutton();
-        // //greencirclebutton.greencirclebutton();
+        //greencirclebutton.greencirclebutton();
 
 
     //   /*
@@ -179,28 +180,28 @@ public class UI extends PApplet
                 button3.buttons();
                 background.star1();
                 background.spaceship();
-            }
-            
-            if(mousePressed == true)
-            {
-                //for the first button Start
-                if(mouseX > buttonX && mouseX < buttonX + 100 && mouseY > buttonY && mouseY < buttonY + 50)
+                if(mousePressed == true)
                 {
-                    button = 1;
-                }
-                //for the second button Information
-                if(mouseX > buttonX + 150 && mouseX < buttonX + 250 && mouseY > buttonY && mouseY < buttonY + 50)
-                {
-                    button = 2;
-                    //background.movingstars(); 
-                }
-                //for the third button Exit
-                if(mouseX > buttonX + 300 && mouseX < buttonX + 400 && mouseY > buttonY && mouseY < buttonY + 50)
-                {
-                    button = 3;
-                }
+                    //for the first button Start
+                    if(mouseX > buttonX && mouseX < buttonX + 100 && mouseY > buttonY && mouseY < buttonY + 50)
+                    {
+                        button = 1;
+                    }
+                    //for the second button Information
+                    if(mouseX > buttonX + 150 && mouseX < buttonX + 250 && mouseY > buttonY && mouseY < buttonY + 50)
+                    {
+                        button = 2;
+                        //background.movingstars(); 
+                    }
+                    //for the third button Exit
+                    if(mouseX > buttonX + 300 && mouseX < buttonX + 400 && mouseY > buttonY && mouseY < buttonY + 50)
+                    {
+                        button = 3;
+                    }
                 
+                }
             }
+
             if (button == 1)
             {
                 checkbutton = 0;
@@ -296,7 +297,8 @@ public class UI extends PApplet
                     graph.graphrect();
                     fireoff.redbutton();
                     fireon.greenbutton();
-                    extrabuttons.extrabuttons();
+                    extrabuttons.startextrabuttons();
+                    
                     if(clockckeck == 1)
                     {
                         clockgreenbutton.clockgreenbutton();
@@ -370,7 +372,7 @@ public class UI extends PApplet
                     fireoff.redbutton();
                     fireon.greenbutton();
                     beforespeed.beforespeed();
-        
+                    extrabuttons.extrabuttons();
                 }
                 // if(clockckeck == 1)
                 // {
@@ -415,37 +417,31 @@ public class UI extends PApplet
             }
             if (button == 2)
             {
-                checkbutton = 0;
-                background.star1();
+                background(0);
+                //background.star1();
                 button1.buttons();
                 button2.buttons();
                 button3.buttons();
                 info.borders();
-                if(mouseX > buttonX + 150 && mouseX < buttonX + 250 && mouseY > buttonY && mouseY < buttonY + 50)
-                {
-                    
-                }
+                checkbutton = 1;
             }
             if (button == 3)
             {
-                checkbutton = 0;
-                background.star1();
+                background(0);
+                //background.star1();
                 button1.buttons();
                 button2.buttons();
                 button3.buttons();
+
                 text("Are you sure you want to exit?!", width/3, height/2);
-                text("if yes press Y if no press any key", width/3, height/2 + 50);
+                text("if yes press Y or Space", width/3, height/2 + 50);
+                
                 if(checkKey('Y') || checkKey('y'))
                 {
                     System.exit(0);
                 }
-                else 
-                { 
-
-                    
-                }
+                checkbutton = 1;
             }
-           
         }
         else
         {
