@@ -74,6 +74,7 @@ public class UI extends PApplet
 
     Minim sound;
     AudioPlayer start;
+    AudioPlayer infoaudio;
 
     public void setup()
     {
@@ -101,7 +102,7 @@ public class UI extends PApplet
         rect = new Satellitephone(this, 465 , 600);
         information = new Button(this, 485 , 610, 25, 25,"Info");
         help = new Button(this, 525 , 610, 25, 25,"Help");
-        phone = new Satellitephone(this, 495 , 675);
+        //phone = new Satellitephone(this, 495 , 675);
 
         extrabuttons1 = new ExtraButton(this, 17, 17, table);
         extrabuttons2 = new ExtraButton(this, 17, 17, table);
@@ -132,6 +133,8 @@ public class UI extends PApplet
     int graphcheck = 0;
     int firecheck = 0;
     int speedcheck = 0;
+    int checkinfo = 0;
+    //int checkhelp = 0;
     public void draw()
     {
         background(0);
@@ -141,52 +144,52 @@ public class UI extends PApplet
         // background.star();
 
 
-        pushMatrix();
-        translate(width / 2, height / 2);
-        background.movingstars();
-        //fire.monsters();
+        // pushMatrix();
+        // translate(width / 2, height / 2);
+        // background.movingstars();
+        // //fire.monsters();
 
-        popMatrix();
-        // background.spaceship();
-        // background.update();
-        fire.mouse();
-        spaceship.structure();
+        // popMatrix();
+        // // background.spaceship();
+        // // background.update();
+        // fire.mouse();
+        // spaceship.structure();
 
-        radar.rect();
-        exitbutton.exitbutton();
-        startbutton.beforestartbutton();
-        screen.displayscreen();
-        clock.frame();
-        radar.render();
-        radar.update();
-        // beforespeed.beforespeed();
-        afterspeed.afterspeed();
-        // redbutton.redbutton();
+        // radar.rect();
+        // exitbutton.exitbutton();
         // startbutton.beforestartbutton();
-        screen.displayscreen();
-        screen.displaywords();
-        //screen.instructions();
+        // screen.displayscreen();
         // clock.frame();
-        //clockredbutton.clockredbutton();
-        // clockgreenbutton.clockgreenbutton();
-        // clock.digitalclock();
+        // radar.render();
+        // radar.update();
+        // // beforespeed.beforespeed();
+        // afterspeed.afterspeed();
+        // // redbutton.redbutton();
+        // // startbutton.beforestartbutton();
+        // screen.displayscreen();
+        // screen.displaywords();
+        // //screen.instructions();
+        // // clock.frame();
+        // //clockredbutton.clockredbutton();
+        // // clockgreenbutton.clockgreenbutton();
+        // // clock.digitalclock();
         
-        graph.graphrect();
-        fireoff.redbutton();
-        fireon.greenbutton();
-        // extrabuttons1.extrabuttons1();
-        // extrabuttons2.extrabuttons2();
-        extrabuttons1.startextrabuttons1();
-        extrabuttons2.startextrabuttons2();
-        graph.drawgraph();
-        //redcirclebutton.redcirclebutton();
-        greencirclebutton.greencirclebutton();
-        rect.rect();
-        information.phonebuttons();
-        help.phonebuttons();
-        phone.phone();
+        // graph.graphrect();
+        // fireoff.redbutton();
+        // fireon.greenbutton();
+        // // extrabuttons1.extrabuttons1();
+        // // extrabuttons2.extrabuttons2();
+        // extrabuttons1.startextrabuttons1();
+        // extrabuttons2.startextrabuttons2();
+        // graph.drawgraph();
+        // //redcirclebutton.redcirclebutton();
+        // greencirclebutton.greencirclebutton();
+        // rect.rect();
+        // information.phonebuttons();
+        // help.phonebuttons();
+        // //phone.phone();
 
-      /*
+    //   /*
         if (checkKey(ENTER))
         {
             
@@ -281,6 +284,10 @@ public class UI extends PApplet
                         {
                             speedcheck = 0;
                         }
+                        else if(mouseX > 485 && mouseX < 510 && mouseY > 610 && mouseY < 635)
+                        {
+                            checkinfo =1;
+                        }
                     }
                     
                     if(firecheck == 1)
@@ -312,6 +319,9 @@ public class UI extends PApplet
 
                     spaceship.structure();
                     startbutton.afterstartbutton();
+                    rect.rect();
+                    information.phonebuttons();
+                    help.phonebuttons();
                     greencirclebutton.greencirclebutton();
                     radar.rect();
                     exitbutton.exitbutton();
@@ -378,6 +388,12 @@ public class UI extends PApplet
                         beforespeed.beforespeed();
                       
                     }
+                    if(checkinfo == 1)
+                    {
+                        infoaudio = sound.loadFile("information.mp3");
+                        infoaudio.play();
+                        checkinfo = 0;
+                    }
                     
                 }
                 else
@@ -399,7 +415,9 @@ public class UI extends PApplet
                     beforespeed.beforespeed();
                     extrabuttons1.extrabuttons1();
                     extrabuttons2.extrabuttons2();
-                    
+                    rect.rect();
+                    information.phonebuttons();
+                    help.phonebuttons();
                 }
                 // if(clockckeck == 1)
                 // {

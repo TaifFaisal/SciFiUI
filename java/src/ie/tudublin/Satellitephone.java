@@ -1,5 +1,6 @@
 package ie.tudublin;
 
+import ddf.minim.*;
 
 public class Satellitephone extends SpaceObject
 {
@@ -23,6 +24,23 @@ public class Satellitephone extends SpaceObject
         ui.strokeWeight(1);
         ui.stroke(0,128,0); 
     }
-  
     
+    
+  
+    // public void phone()
+    // {
+    //     ui.pushMatrix();
+    //     ui.fill(68, 68, 68);
+    //     ui.strokeWeight(2);
+    //     ui.stroke(68, 68, 68);
+    //     ui.translate(0, 0);
+    //     ui.rotate(ui.PI/3.0f);
+    //     ui.rect(830, -106, 50, 50);
+    //     ui.stroke(0);
+    //     //ui.curve(470, 700, 475, 710,510, 710 ,500, 690 );
+
+    //     ui.popMatrix();
+    //     ui.line(x-20, y+20, x+5, y+5);
+    //     ui.line(x-20, y+30, x+10, y+10);
+    // }
 }
