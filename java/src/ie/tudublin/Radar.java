@@ -88,4 +88,5 @@ public class Radar extends SpaceObject
         rotation += 0.1f;
     }
 
+
 }

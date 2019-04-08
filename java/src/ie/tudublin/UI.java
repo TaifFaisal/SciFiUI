@@ -28,7 +28,10 @@ public class UI extends PApplet
     Button fireon;
     Button beforespeed;
     Button afterspeed;
-    Button speaker;
+    Button information;
+    Button help;
+    Satellitephone rect;
+    Satellitephone phone;
     ExtraButton extrabuttons1; 
     ExtraButton extrabuttons2; 
     BackGround background;
@@ -94,7 +97,11 @@ public class UI extends PApplet
         startbutton = new Button(this, 90 , 490, 110, 60,"Start");
         beforespeed = new Button(this, 170 , 630, 100, 30,"");
         afterspeed = new Button(this, 170 , 630, 100, 30,"");
-        speaker = new Button(this, 525 , 670, 100, 100,"");
+
+        rect = new Satellitephone(this, 465 , 600);
+        information = new Button(this, 485 , 610, 25, 25,"Info");
+        help = new Button(this, 525 , 610, 25, 25,"Help");
+        phone = new Satellitephone(this, 495 , 675);
 
         extrabuttons1 = new ExtraButton(this, 17, 17, table);
         extrabuttons2 = new ExtraButton(this, 17, 17, table);
@@ -172,9 +179,12 @@ public class UI extends PApplet
         extrabuttons1.startextrabuttons1();
         extrabuttons2.startextrabuttons2();
         graph.drawgraph();
-        redcirclebutton.redcirclebutton();
+        //redcirclebutton.redcirclebutton();
         greencirclebutton.greencirclebutton();
-        speaker.speaker();
+        rect.rect();
+        information.phonebuttons();
+        help.phonebuttons();
+        phone.phone();
 
       /*
         if (checkKey(ENTER))

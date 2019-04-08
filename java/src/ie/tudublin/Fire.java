@@ -8,7 +8,6 @@ public class Fire extends SpaceObject
 	float[] y = new float[50];
 	float[] z = new float[50];
     float[] size = new float[50];
-    float PI = 3.14f;
     PImage img2;
     
     public Fire(UI ui)
@@ -20,7 +19,7 @@ public class Fire extends SpaceObject
             x[i] = ui.random(0, ui.width);
 			y[i] = ui.random(0, ui.height);
 			z[i] = ui.random(ui.width);
-			size[i] = ui.random(50, 100);
+			size[i] = ui.random(50, 70);
         }
 
         img2 = ui.loadImage("ghost.png");
@@ -31,10 +30,10 @@ public class Fire extends SpaceObject
         ui.stroke(255);
         ui.strokeWeight(3);
         ui.noFill();
-        ui.arc(ui.mouseX, ui.mouseY, 50, 50, 0, PI*0.3f); 
-        ui.arc(ui.mouseX, ui.mouseY, 50, 50, PI*0.5f, PI*0.8f); 
-        ui.arc(ui.mouseX, ui.mouseY, 50, 50, PI*1, PI*1.3f); 
-        ui.arc(ui.mouseX, ui.mouseY, 50, 50, PI*1.5f, PI*1.8f); 
+        ui.arc(ui.mouseX, ui.mouseY, 50, 50, 0, ui.PI*0.3f); 
+        ui.arc(ui.mouseX, ui.mouseY, 50, 50, ui.PI*0.5f, ui.PI*0.8f); 
+        ui.arc(ui.mouseX, ui.mouseY, 50, 50, ui.PI*1, ui.PI*1.3f); 
+        ui.arc(ui.mouseX, ui.mouseY, 50, 50, ui.PI*1.5f, ui.PI*1.8f); 
 
     }
     public void monsters()
