@@ -44,8 +44,9 @@ public class Screen extends SpaceObject
 
         PFont font = ui.createFont("Times New Roman", 12);
         ui.textFont(font);
-        ui.text("Point the mouse to the target \n", x+80, y+75);
-        ui.text("\n Press space to shoot", x+60, y+95);
+        ui.text("To collect points: \n \n", x+50, y+75);
+        ui.text("1.Point the mouse to the target \n ", x+75, y+95);
+        ui.text("2.Click the mouse ", x+45, y+115);
 
     }
 }

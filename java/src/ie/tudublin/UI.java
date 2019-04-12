@@ -31,8 +31,6 @@ public class UI extends PApplet
     Button afterspeed;
     Button information;
     Button help;
-    Satellitephone rect;
-    Satellitephone phone;
     ExtraButton extrabuttons1; 
     ExtraButton extrabuttons2; 
     BackGround background;
@@ -40,9 +38,10 @@ public class UI extends PApplet
     Clock clock;
     Info info;
     Spaceship spaceship;
+    Spaceship phone;
     Screen screen;
     Graph graph;
-    Fire fire;
+    Targets fire;
 
     boolean[] keys = new boolean[1024];
     public ArrayList<SpaceObject> spaceObject = new ArrayList<SpaceObject>(); 
@@ -101,10 +100,9 @@ public class UI extends PApplet
         beforespeed = new Button(this, 170 , 630, 100, 30,"");
         afterspeed = new Button(this, 170 , 630, 100, 30,"");
 
-        rect = new Satellitephone(this, 465 , 600);
         information = new Button(this, 485 , 610, 25, 25,"Info");
         help = new Button(this, 525 , 610, 25, 25,"Help");
-        //phone = new Satellitephone(this, 495 , 675);
+        phone = new Spaceship(this, 465 , 600);
 
         extrabuttons1 = new ExtraButton(this, 17, 17, table);
         extrabuttons2 = new ExtraButton(this, 17, 17, table);
@@ -122,7 +120,7 @@ public class UI extends PApplet
         aftergraphbutton = new Button(this, 685 , 580, 17, 17,"Bar char/ON");
         fireon = new Button(this, 610 , 510, 17, 17,"Fire / ON");
         fireoff = new Button(this, 660 , 510, 17, 17,"Fire / OFF");
-        fire = new Fire(this);        
+        fire = new Targets(this);        
     }
    
     int button = 0;
@@ -150,15 +148,15 @@ public class UI extends PApplet
         pushMatrix();
         translate(width / 2, height / 2);
         background.movingstars();
+      
         
-        //fire.monsters();
 
         popMatrix();
         // background.spaceship();
         // background.update();
         fire.mouse();
         
-        //fire.monsters();
+        
         spaceship.structure();
 
         radar.rect();
@@ -190,10 +188,12 @@ public class UI extends PApplet
         graph.drawgraph();
         //redcirclebutton.redcirclebutton();
         greencirclebutton.greencirclebutton();
-        rect.rect();
+        phone.phonerect();
         information.phonebuttons();
         help.phonebuttons();
-        fire.monsters();
+        
+        // fire.monsters();
+        
         // fire.setdata();
         
         //phone.phone();
@@ -306,8 +306,9 @@ public class UI extends PApplet
                     
                     if(firecheck == 1)
                     {
-                        
                         fire.mouse();
+                        fire.pinkdiamonds();
+                        fire.diamonds();
                     }
                     else
                     {
@@ -333,7 +334,7 @@ public class UI extends PApplet
 
                     spaceship.structure();
                     startbutton.afterstartbutton();
-                    rect.rect();
+                    phone.phonerect();
                     information.phonebuttons();
                     help.phonebuttons();
                     greencirclebutton.greencirclebutton();
@@ -429,7 +430,7 @@ public class UI extends PApplet
                     beforespeed.beforespeed();
                     extrabuttons1.extrabuttons1();
                     extrabuttons2.extrabuttons2();
-                    rect.rect();
+                    phone.phonerect();
                     information.phonebuttons();
                     help.phonebuttons();
                 }
