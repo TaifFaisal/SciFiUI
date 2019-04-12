@@ -3,6 +3,7 @@ package ie.tudublin;
 import processing.core.PApplet;
 import processing.core.PFont;
 import processing.data.Table;
+import processing.data.TableRow;
 
 import java.util.ArrayList;
 
@@ -45,10 +46,10 @@ public class UI extends PApplet
 
     boolean[] keys = new boolean[1024];
     public ArrayList<SpaceObject> spaceObject = new ArrayList<SpaceObject>(); 
-
     public void keyPressed()
     {
         keys[keyCode] = true;
+
     }
     
     public void keyReleased()
@@ -78,6 +79,7 @@ public class UI extends PApplet
 
     public void setup()
     {
+        
         Table table = loadTable("Numbers.csv", "header");
 
         String[] words = loadStrings("screen.txt");
@@ -120,7 +122,7 @@ public class UI extends PApplet
         aftergraphbutton = new Button(this, 685 , 580, 17, 17,"Bar char/ON");
         fireon = new Button(this, 610 , 510, 17, 17,"Fire / ON");
         fireoff = new Button(this, 660 , 510, 17, 17,"Fire / OFF");
-        fire = new Fire(this);
+        fire = new Fire(this);        
     }
    
     int button = 0;
@@ -138,58 +140,70 @@ public class UI extends PApplet
     public void draw()
     {
         background(0);
-        // start.play();
+        //start.play();
+
         // fire.monsters();
         // background.loadData();
         // background.star();
 
 
-        // pushMatrix();
-        // translate(width / 2, height / 2);
-        // background.movingstars();
-        // //fire.monsters();
-
-        // popMatrix();
-        // // background.spaceship();
-        // // background.update();
-        // fire.mouse();
-        // spaceship.structure();
-
-        // radar.rect();
-        // exitbutton.exitbutton();
-        // startbutton.beforestartbutton();
-        // screen.displayscreen();
-        // clock.frame();
-        // radar.render();
-        // radar.update();
-        // // beforespeed.beforespeed();
-        // afterspeed.afterspeed();
-        // // redbutton.redbutton();
-        // // startbutton.beforestartbutton();
-        // screen.displayscreen();
-        // screen.displaywords();
-        // //screen.instructions();
-        // // clock.frame();
-        // //clockredbutton.clockredbutton();
-        // // clockgreenbutton.clockgreenbutton();
-        // // clock.digitalclock();
+        pushMatrix();
+        translate(width / 2, height / 2);
+        background.movingstars();
         
-        // graph.graphrect();
-        // fireoff.redbutton();
-        // fireon.greenbutton();
-        // // extrabuttons1.extrabuttons1();
-        // // extrabuttons2.extrabuttons2();
-        // extrabuttons1.startextrabuttons1();
-        // extrabuttons2.startextrabuttons2();
-        // graph.drawgraph();
-        // //redcirclebutton.redcirclebutton();
-        // greencirclebutton.greencirclebutton();
-        // rect.rect();
-        // information.phonebuttons();
-        // help.phonebuttons();
-        // //phone.phone();
+        //fire.monsters();
 
-    //   /*
+        popMatrix();
+        // background.spaceship();
+        // background.update();
+        fire.mouse();
+        
+        //fire.monsters();
+        spaceship.structure();
+
+        radar.rect();
+        exitbutton.exitbutton();
+        startbutton.beforestartbutton();
+        screen.displayscreen();
+        clock.frame();
+        radar.render();
+        radar.update();
+        // beforespeed.beforespeed();
+        afterspeed.afterspeed();
+        // redbutton.redbutton();
+        // startbutton.beforestartbutton();
+        screen.displayscreen();
+        screen.displaywords();
+        //screen.instructions();
+        // clock.frame();
+        //clockredbutton.clockredbutton();
+        // clockgreenbutton.clockgreenbutton();
+        // clock.digitalclock();
+        
+        graph.graphrect();
+        fireoff.redbutton();
+        fireon.greenbutton();
+        // extrabuttons1.extrabuttons1();
+        // extrabuttons2.extrabuttons2();
+        extrabuttons1.startextrabuttons1();
+        extrabuttons2.startextrabuttons2();
+        graph.drawgraph();
+        //redcirclebutton.redcirclebutton();
+        greencirclebutton.greencirclebutton();
+        rect.rect();
+        information.phonebuttons();
+        help.phonebuttons();
+        fire.monsters();
+        // fire.setdata();
+        
+        //phone.phone();
+
+        // if (checkKey(' '))
+        // {
+        //     fire.target();
+        // }
+
+      /*
         if (checkKey(ENTER))
         {
             
@@ -304,7 +318,7 @@ public class UI extends PApplet
                         pushMatrix();
                         translate(width / 2, height / 2);
                         background.fastmovingstars();
-                        fire.monsters();
+                        //fire.monsters();
                         popMatrix();
                     }
                     else
@@ -506,9 +520,7 @@ public class UI extends PApplet
             text("Press Enter to start", width/3, height/2);  
         }
         // */
+    }   
         
-        
-        
-    }
 }
 
