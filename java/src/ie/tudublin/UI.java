@@ -86,7 +86,7 @@ public class UI extends PApplet
         String[] words = loadStrings("screen.txt");
         sound = new Minim(this);
         start = sound.loadFile("BackgroundSound.mp3");
-        Level = sound.loadFile("EmergencyAlarm.mp3");
+        // Level = sound.loadFile("EmergencyAlarm.mp3");
         
         // start.play();
         
@@ -125,7 +125,7 @@ public class UI extends PApplet
         fireon = new Button(this, 610 , 510, 17, 17,"Fire / ON");
         fireoff = new Button(this, 660 , 510, 17, 17,"Fire / OFF");
         targets = new Button(this, 620 , 545, 50, 20,"Find targets");
-        fire = new Targets(this, Level);        
+        fire = new Targets(this, sound);        
     }
    
     int button = 0;

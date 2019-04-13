@@ -8,8 +8,8 @@ import ddf.minim.*;
 
 public class Targets extends SpaceObject
 {
-    //Minim sound;
-    AudioPlayer Level;
+    Minim sound;
+    AudioPlayer levelup;
     Table table;
     int count = 0;
     int checkpink = 0;
@@ -19,10 +19,11 @@ public class Targets extends SpaceObject
     PImage oneimg;
     PImage[] images = new PImage[2];
 
-    public Targets(UI ui, AudioPlayer Level)
+    public Targets(UI ui, Minim sound)
     {
         super(ui);
-        this.Level = Level;
+        this.sound = sound;
+        // this.Level = Level;
         table = new Table();
 
         table.addColumn("x1");
@@ -179,9 +180,9 @@ public class Targets extends SpaceObject
         {
             if(count > 9 + (10 * x))
             {
-                System.out.println("level:"+level+"\t count:"+count + "\t table row:" + table.getRowCount());
                 level++;
-                Level.play();
+                levelup = sound.loadFile("LevelUp.mp3");
+                levelup.play();
                 x++;
             }
         }
