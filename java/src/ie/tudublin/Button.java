@@ -10,7 +10,7 @@ public class Button extends SpaceObject
     private float width;
     private float height;
     private String text;
-    float[] buttons = new float[7];
+    float[] buttons = new float[5];
 
     public Button(UI ui, float x, float y, float width, float height, String text)
     {

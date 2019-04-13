@@ -11,10 +11,10 @@ public class Targets extends SpaceObject
 	// float[] y = new float[10];
 	// float[] z = new float[10];
     // float[] size = new float[10];
-    float x;
-	float y;
-	float z;
-    float size;
+    // float x;
+	// float y;
+	// float z;
+    // float size;
 
     Table table;
     int count = 0;
