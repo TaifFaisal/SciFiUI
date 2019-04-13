@@ -411,6 +411,14 @@ public class UI extends PApplet
                         helpaudio.play();
                         checkhelp = 0;
                     }
+                    if(firecheck == 1)
+                    {
+                        fire.displaypoits();
+                    }
+                    else
+                    {
+                        firecheck = 0;
+                    }
                     
                 }
                 else
