@@ -50,14 +50,6 @@ import processing.core.*;
         ui.vertex(0, y/4 + 400);
         ui.endShape();  
     }
-    public void phonerect()
-    {
-        ui.strokeWeight(3);
-        ui.fill(0);
-        ui.stroke(211,211,211);
-        ui.rect(x, y, 100, 50);
-        ui.strokeWeight(1);
-        ui.stroke(0,128,0); 
-    }
+    
 
 }

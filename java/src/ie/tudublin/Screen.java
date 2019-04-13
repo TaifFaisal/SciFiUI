@@ -42,11 +42,12 @@ public class Screen extends SpaceObject
         ui.textAlign(PApplet.CENTER, PApplet.CENTER);
         ui.fill(0,255,0);
 
-        PFont font = ui.createFont("Times New Roman", 12);
+        PFont font = ui.createFont("Times New Roman", 10);
         ui.textFont(font);
-        ui.text("To collect points: \n \n", x+50, y+75);
-        ui.text("1.Point the mouse to the target \n ", x+75, y+95);
-        ui.text("2.Click the mouse ", x+45, y+115);
+        ui.text("To collect points: \n \n", x+40, y+75);
+        ui.text("1.Point the mouse to the target \n ", x+70, y+95);
+        ui.text("2.Click the mouse ", x+45, y+105);
+        ui.text("White = 4\t \t\t\t Pink = 2", x+70, y+128);
 
     }
 }

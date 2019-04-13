@@ -38,7 +38,6 @@ public class UI extends PApplet
     Clock clock;
     Info info;
     Spaceship spaceship;
-    Spaceship phone;
     Screen screen;
     Graph graph;
     Targets fire;
@@ -104,7 +103,6 @@ public class UI extends PApplet
         information = new Button(this, 350 , 25, 25, 25,"Info");
         help = new Button(this, 310 , 25, 25, 25,"Help");
        
-        // phone = new Spaceship(this, 465 , 600);
 
         extrabuttons1 = new ExtraButton(this, 17, 17, table);
         extrabuttons2 = new ExtraButton(this, 17, 17, table);
@@ -140,73 +138,65 @@ public class UI extends PApplet
     public void draw()
     {
         background(0);
-        start.play();
+        //start.play();
 
         // fire.monsters();
         // background.loadData();
         // background.star();
 
 
-        // pushMatrix();
-        // translate(width / 2, height / 2);
-        // background.movingstars();
+        pushMatrix();
+        translate(width / 2, height / 2);
+        background.movingstars();
       
         
 
-        // popMatrix();
-        // // background.spaceship();
-        // // background.update();
-        // fire.mouse();
+        popMatrix();
+        // background.spaceship();
+        // background.update();
+        fire.mouse();
         
-        // fire.pinkdiamonds();
-        // fire.diamonds();
-        // spaceship.structure();
+        fire.pinkdiamonds();
+        fire.diamonds();
+        spaceship.structure();
 
-        // radar.rect();
-        // exitbutton.exitbutton();
+        radar.rect();
+        exitbutton.exitbutton();
+        startbutton.beforestartbutton();
+        screen.displayscreen();
+        clock.frame();
+        radar.render();
+        radar.update();
+        // beforespeed.beforespeed();
+        afterspeed.afterspeed();
+        // redbutton.redbutton();
         // startbutton.beforestartbutton();
-        // screen.displayscreen();
+        screen.displayscreen();
+        screen.displaywords();
+        screen.instructions();
         // clock.frame();
-        // radar.render();
-        // radar.update();
-        // // beforespeed.beforespeed();
-        // afterspeed.afterspeed();
-        // // redbutton.redbutton();
-        // // startbutton.beforestartbutton();
-        // screen.displayscreen();
-        // screen.displaywords();
-        // //screen.instructions();
-        // // clock.frame();
-        // //clockredbutton.clockredbutton();
-        // // clockgreenbutton.clockgreenbutton();
-        // // clock.digitalclock();
+        //clockredbutton.clockredbutton();
+        // clockgreenbutton.clockgreenbutton();
+        // clock.digitalclock();
         
-        // graph.graphrect();
-        // fireoff.redbutton();
-        // fireon.greenbutton();
-        // // extrabuttons1.extrabuttons1();
-        // // extrabuttons2.extrabuttons2();
-        // extrabuttons1.startextrabuttons1();
-        // extrabuttons2.startextrabuttons2();
-        // graph.drawgraph();
-        // //redcirclebutton.redcirclebutton();
-        // greencirclebutton.greencirclebutton();
-        
+        graph.graphrect();
+        fireoff.redbutton();
+        fireon.greenbutton();
+        // extrabuttons1.extrabuttons1();
+        // extrabuttons2.extrabuttons2();
+        extrabuttons1.startextrabuttons1();
+        extrabuttons2.startextrabuttons2();
+        graph.drawgraph();
+        //redcirclebutton.redcirclebutton();
+        greencirclebutton.greencirclebutton();
+        fire.displaypoits();
         // information.phonebuttons();
         // help.phonebuttons();
         
-        // fire.monsters();
         
-        // fire.setdata();
-        
-        //phone.phone();
+         
 
-        // if (checkKey(' '))
-        // {
-        //     fire.target();
-        // }
-
-    //   /*
+      /*
         if (checkKey(ENTER))
         {
             
@@ -341,7 +331,6 @@ public class UI extends PApplet
 
                     spaceship.structure();
                     startbutton.afterstartbutton();
-                    //phone.phonerect();
                     information.phonebuttons();
                     help.phonebuttons();
                     greencirclebutton.greencirclebutton();
@@ -443,7 +432,6 @@ public class UI extends PApplet
                     beforespeed.beforespeed();
                     extrabuttons1.extrabuttons1();
                     extrabuttons2.extrabuttons2();
-                    //phone.phonerect();
                     information.phonebuttons();
                     help.phonebuttons();
                 }

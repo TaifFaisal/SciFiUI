@@ -7,26 +7,17 @@ import processing.data.TableRow;
 
 public class Targets extends SpaceObject
 {
-    // float[] x = new float[10];
-	// float[] y = new float[10];
-	// float[] z = new float[10];
-    // float[] size = new float[10];
-    // float x;
-	// float y;
-	// float z;
-    // float size;
 
     Table table;
     int count = 0;
+    int checkpink = 0;
+    int checkwhite = 0;
     PImage oneimg;
     PImage[] images = new PImage[2];
 
     public Targets(UI ui)
     {
         super(ui);
-
-        // forward = new PVector(0, -1);
-        // pos = new PVector(ui.mouseX, ui.mouseY);
         table = new Table();
 
         table.addColumn("x1");
@@ -94,14 +85,15 @@ public class Targets extends SpaceObject
             {
                 if(ui.mouseX > x1 && ui.mouseX< x1+row.getFloat("size") && ui.mouseY>y1 && ui.mouseY<y1 + row.getFloat("size"))
                 {
-                    count++;
+                    checkwhite = 0;
+                    count += 2;
+                    checkpink =1;
                     table.removeRow(j);
                 }
             }
             
             j++;
         }	
-        System.out.println("count pink" + count);	
     }
     public void diamonds()
     {
@@ -121,27 +113,55 @@ public class Targets extends SpaceObject
                 row.setFloat("z", ui.width);
             }
 
-			//ui.ellipse(x1, y1, 10, 10);
-            // ui.noStroke();
-            
             ui.image(images[0], x1, y1, row.getFloat("size"), row.getFloat("size"));
             ui.strokeWeight(3);
 			ui.fill(255,20,147);
             ui.stroke(255,20,147);
             
-            //ui.ellipse(x1, y1, row.getFloat("size"), row.getFloat("size"));
             if (ui.mousePressed == true)
             {
                 if(ui.mouseX > x1 && ui.mouseX< x1+row.getFloat("size") && ui.mouseY>y1 && ui.mouseY<y1 + row.getFloat("size"))
                 {
-                    count+=2;
+                    checkpink = 0;
+                    count += 4;
+                    checkwhite =1;
                     table.removeRow(j);
                 }
             }
-            
             j++;
         }	
-        System.out.println("count original" + count);	
+    }
+
+    public void displaypoits()
+    {
+        ui.strokeWeight(3);
+        ui.fill(0);
+        ui.stroke(211, 211, 211);
+        ui.rect(470, 630, 110, 100);
+        ui.fill(211, 211, 211);
+        ui.strokeWeight(3);
+        ui.stroke(0);
+        ui.rect(480, 670, 90, 40);
+        
+        if(checkwhite ==1)
+        {
+            ui.image(images[0], 480, 665, 50, 50);
+            
+        }
+        else if(checkpink ==1)
+        {
+            ui.image(images[1], 485, 675, 35, 30);
+            
+        }
+        else
+        {
+            ui.noFill();
+            ui.strokeWeight(3);
+            ui.stroke(0);
+            ui.rect(480, 670, 40, 40);
+        }
+    
+
     }
 
    
