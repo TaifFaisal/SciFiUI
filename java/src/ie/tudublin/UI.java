@@ -31,6 +31,7 @@ public class UI extends PApplet
     Button afterspeed;
     Button information;
     Button help;
+    Button targets;
     ExtraButton extrabuttons1; 
     ExtraButton extrabuttons2; 
     BackGround background;
@@ -75,6 +76,7 @@ public class UI extends PApplet
     AudioPlayer start;
     AudioPlayer infoaudio;
     AudioPlayer helpaudio;
+    AudioPlayer Level;
 
     public void setup()
     {
@@ -84,6 +86,8 @@ public class UI extends PApplet
         String[] words = loadStrings("screen.txt");
         sound = new Minim(this);
         start = sound.loadFile("BackgroundSound.mp3");
+        Level = sound.loadFile("EmergencyAlarm.mp3");
+        
         // start.play();
         
         button1 = new Button(this, buttonX, buttonY, 100, 50,"Start");
@@ -120,7 +124,8 @@ public class UI extends PApplet
         aftergraphbutton = new Button(this, 685 , 580, 17, 17,"Bar char/ON");
         fireon = new Button(this, 610 , 510, 17, 17,"Fire / ON");
         fireoff = new Button(this, 660 , 510, 17, 17,"Fire / OFF");
-        fire = new Targets(this);        
+        targets = new Button(this, 620 , 545, 50, 20,"Find targets");
+        fire = new Targets(this, Level);        
     }
    
     int button = 0;
@@ -135,6 +140,7 @@ public class UI extends PApplet
     int speedcheck = 0;
     int checkinfo = 0;
     int checkhelp = 0;
+    int checktargets = 0;
     public void draw()
     {
         background(0);
@@ -145,58 +151,60 @@ public class UI extends PApplet
         // background.star();
 
 
-        pushMatrix();
-        translate(width / 2, height / 2);
-        background.movingstars();
+        // pushMatrix();
+        // translate(width / 2, height / 2);
+        // background.movingstars();
       
         
 
-        popMatrix();
-        // background.spaceship();
-        // background.update();
-        fire.mouse();
+        // popMatrix();
+        // // background.spaceship();
+        // // background.update();
+        // fire.mouse();
         
-        fire.pinkdiamonds();
-        fire.diamonds();
-        spaceship.structure();
+        // fire.pinkdiamonds();
+        // fire.diamonds();
+        // spaceship.structure();
 
-        radar.rect();
-        exitbutton.exitbutton();
-        startbutton.beforestartbutton();
-        screen.displayscreen();
-        clock.frame();
-        radar.render();
-        radar.update();
-        // beforespeed.beforespeed();
-        afterspeed.afterspeed();
-        // redbutton.redbutton();
+        // radar.rect();
+        // exitbutton.exitbutton();
         // startbutton.beforestartbutton();
-        screen.displayscreen();
-        screen.displaywords();
-        screen.instructions();
+        // screen.displayscreen();
         // clock.frame();
-        //clockredbutton.clockredbutton();
-        // clockgreenbutton.clockgreenbutton();
-        // clock.digitalclock();
+        // radar.render();
+        // radar.update();
+        // // beforespeed.beforespeed();
+        // afterspeed.afterspeed();
+        // // redbutton.redbutton();
+        // // startbutton.beforestartbutton();
+        // screen.displayscreen();
+        // screen.displaywords();
+        // screen.instructions();
+        // // clock.frame();
+        // //clockredbutton.clockredbutton();
+        // // clockgreenbutton.clockgreenbutton();
+        // // clock.digitalclock();
         
-        graph.graphrect();
-        fireoff.redbutton();
-        fireon.greenbutton();
-        // extrabuttons1.extrabuttons1();
-        // extrabuttons2.extrabuttons2();
-        extrabuttons1.startextrabuttons1();
-        extrabuttons2.startextrabuttons2();
-        graph.drawgraph();
-        //redcirclebutton.redcirclebutton();
-        greencirclebutton.greencirclebutton();
-        fire.displaypoits();
-        // information.phonebuttons();
-        // help.phonebuttons();
+        // graph.graphrect();
+        // fireoff.redbutton();
+        // fireon.greenbutton();
+        // // extrabuttons1.extrabuttons1();
+        // // extrabuttons2.extrabuttons2();
+        // extrabuttons1.startextrabuttons1();
+        // extrabuttons2.startextrabuttons2();
+        // graph.drawgraph();
+        // //redcirclebutton.redcirclebutton();
+        // greencirclebutton.greencirclebutton();
+        // fire.pointsrect();
+        // fire.displaypoints();
+        // targets.targetbuttons();
+        // // information.phonebuttons();
+        // // help.phonebuttons();
         
         
          
 
-      /*
+    //   /*
         if (checkKey(ENTER))
         {
             
@@ -306,12 +314,24 @@ public class UI extends PApplet
                         fire.mouse();
                         fire.pinkdiamonds();
                         fire.diamonds();
+                        if(mousePressed == true)
+                        {
+                            if(mouseX > 620  && mouseX < 670 && mouseY > 545 && mouseY < 565)
+                            {
+                                checktargets = 1;
+                            } 
+                        }
                     }
                     else
                     {
                         firecheck = 0;
                     }
-                     if(speedcheck == 1)
+                    if(checktargets == 1)
+                    {
+                        fire.findtargets();
+                        checktargets = 0;
+                    }
+                    if(speedcheck == 1)
                     {
                         pushMatrix();
                         translate(width / 2, height / 2);
@@ -344,7 +364,7 @@ public class UI extends PApplet
                     fireon.greenbutton();
                     extrabuttons1.startextrabuttons1();
                     extrabuttons2.startextrabuttons2();
-                    
+                    fire.pointsrect();
                     if(clockckeck == 1)
                     {
                         clockgreenbutton.clockgreenbutton();
@@ -413,7 +433,8 @@ public class UI extends PApplet
                     }
                     if(firecheck == 1)
                     {
-                        fire.displaypoits();
+                        targets.targetbuttons();
+                        fire.displaypoints();
                     }
                     else
                     {
@@ -442,6 +463,7 @@ public class UI extends PApplet
                     extrabuttons2.extrabuttons2();
                     information.phonebuttons();
                     help.phonebuttons();
+                    fire.pointsrect();
                 }
                 // if(clockckeck == 1)
                 // {

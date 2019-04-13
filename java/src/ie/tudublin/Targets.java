@@ -4,11 +4,12 @@ import processing.core.PFont;
 import processing.core.PImage;
 import processing.data.Table;
 import processing.data.TableRow;
-
+import ddf.minim.*;
 
 public class Targets extends SpaceObject
 {
-
+    //Minim sound;
+    AudioPlayer Level;
     Table table;
     int count = 0;
     int checkpink = 0;
@@ -18,9 +19,10 @@ public class Targets extends SpaceObject
     PImage oneimg;
     PImage[] images = new PImage[2];
 
-    public Targets(UI ui)
+    public Targets(UI ui, AudioPlayer Level)
     {
         super(ui);
+        this.Level = Level;
         table = new Table();
 
         table.addColumn("x1");
@@ -135,13 +137,16 @@ public class Targets extends SpaceObject
             j++;
         }	
     }
-
-    public void displaypoits()
+    public void pointsrect()
     {
         ui.strokeWeight(3);
         ui.fill(0);
         ui.stroke(211, 211, 211);
         ui.rect(470, 630, 110, 100);
+    }
+    public void displaypoints()
+    {
+        
         ui.fill(211, 211, 211);
         ui.strokeWeight(3);
         ui.stroke(0);
@@ -176,6 +181,7 @@ public class Targets extends SpaceObject
             {
                 System.out.println("level:"+level+"\t count:"+count + "\t table row:" + table.getRowCount());
                 level++;
+                Level.play();
                 x++;
             }
         }
@@ -193,6 +199,19 @@ public class Targets extends SpaceObject
 
             }
         }
+    }
+    public void findtargets()
+    {
+        for(int i=0; i<4; i++)
+        {
+            TableRow newRow = table.addRow();
+            newRow.setFloat("x1", ui.random(0, ui.width));
+            newRow.setFloat("y1", ui.random(0, ui.height));
+            newRow.setFloat("x2", ui.random(0, ui.width));
+            newRow.setFloat("y2", ui.random(0, ui.height));
+            newRow.setFloat("z", ui.random(ui.width));
+            newRow.setFloat("size", ui.random(10, 20));
+        } 
     }
 
    

@@ -155,8 +155,8 @@ public class Button extends SpaceObject
         for(int i = 0; i < buttons.length; i++)
         {
             ui.strokeWeight(3);
-            ui.fill(0, 255, 0);
-            ui.stroke(0,255,0);
+            ui.fill(0, ui.random(200, 255), 0);
+            ui.stroke(0, ui.random(200, 255),0);
             ui.ellipse(buttons[i], y, width, height);
             ui.ellipse(buttons[i], y + 35 , width, height);
         }   
@@ -201,6 +201,18 @@ public class Button extends SpaceObject
         PFont font = ui.createFont("Times New Roman", 11);
         ui.textFont(font);
         ui.text(text, x+10, y+10);
+    }
+
+    public void targetbuttons()
+    {
+        ui.strokeWeight(2);
+        ui.fill(0);
+        ui.stroke(211,211,211);
+        ui.rect(x, y, width, height);
+        ui.fill(255);
+        PFont font = ui.createFont("Times New Roman", 9);
+        ui.textFont(font);
+        ui.text(text, x+24, y+9);
     }
 
 }
