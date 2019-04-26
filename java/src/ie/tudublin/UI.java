@@ -144,67 +144,8 @@ public class UI extends PApplet
     public void draw()
     {
         background(0);
-        //start.play();
+        start.play();
 
-        // fire.monsters();
-        // background.loadData();
-        // background.star();
-
-
-        // pushMatrix();
-        // translate(width / 2, height / 2);
-        // background.movingstars();
-      
-        
-
-        // popMatrix();
-        // // background.spaceship();
-        // // background.update();
-        // fire.mouse();
-        
-        // fire.pinkdiamonds();
-        // fire.diamonds();
-        // spaceship.structure();
-
-        // radar.rect();
-        // exitbutton.exitbutton();
-        // startbutton.beforestartbutton();
-        // screen.displayscreen();
-        // clock.frame();
-        // radar.render();
-        // radar.update();
-        // // beforespeed.beforespeed();
-        // afterspeed.afterspeed();
-        // // redbutton.redbutton();
-        // // startbutton.beforestartbutton();
-        // screen.displayscreen();
-        // screen.displaywords();
-        // screen.instructions();
-        // // clock.frame();
-        // //clockredbutton.clockredbutton();
-        // // clockgreenbutton.clockgreenbutton();
-        // // clock.digitalclock();
-        
-        // graph.graphrect();
-        // fireoff.redbutton();
-        // fireon.greenbutton();
-        // // extrabuttons1.extrabuttons1();
-        // // extrabuttons2.extrabuttons2();
-        // extrabuttons1.startextrabuttons1();
-        // extrabuttons2.startextrabuttons2();
-        // graph.drawgraph();
-        // //redcirclebutton.redcirclebutton();
-        // greencirclebutton.greencirclebutton();
-        // fire.pointsrect();
-        // fire.displaypoints();
-        // targets.targetbuttons();
-        // // information.phonebuttons();
-        // // help.phonebuttons();
-        
-        
-         
-
-    //   /*
         if (checkKey(ENTER))
         {
             
@@ -383,10 +324,7 @@ public class UI extends PApplet
                         greenbutton.greenbutton();
                         radar.render();
                         radar.update();
-                        // if(mouseX > 60  && mouseX < 77 && mouseY > 600 && mouseY < 617)
-                        // {
-                        //     onoffbutton = 0;
-                        // } 
+                       
                     }
                     if(graphcheck == 1)
                     {
@@ -465,40 +403,7 @@ public class UI extends PApplet
                     help.phonebuttons();
                     fire.pointsrect();
                 }
-                // if(clockckeck == 1)
-                // {
-                //     clockgreenbutton.clockgreenbutton();
-                //     clock.digitalclock();
-                // }
-                // else
-                // {
-                //     clockredbutton.clockredbutton();
-                // }
-                // if(onoffbutton == 0)
-                // {
-                //     redbutton.redbutton();
-                // }
                 
-                // else
-                // {
-                //     greenbutton.greenbutton();
-                //     radar.render();
-                //     radar.update();
-                //     // if(mouseX > 60  && mouseX < 77 && mouseY > 600 && mouseY < 617)
-                //     // {
-                //     //     onoffbutton = 0;
-                //     // } 
-                // }
-                // if(graphcheck == 1)
-                // {
-                //     aftergraphbutton.aftergraphbutton();
-                //     graph.drawgraph();
-                //     graph.update();
-                // }
-                // else
-                // {
-                //     beforgraphbutton.beforegraphbutton();
-                // }
                 if(exitcheck == 1)
                 {
                     System.exit(0);
@@ -515,6 +420,7 @@ public class UI extends PApplet
                 button3.buttons();
                 button4.buttons();
                 info.borders();
+                info.infotext();
                 checkbutton = 1;
             }
             if (button == 3)
@@ -525,8 +431,9 @@ public class UI extends PApplet
                 button2.buttons();
                 button3.buttons();
                 button4.buttons();
-                text("Are you sure you want to exit?!", width/3, height/2);
-                text("if yes press Y or Space", width/3, height/2 + 50);
+                info.borders();
+                text("Are you sure you want to exit?!", width/2 -20, height/2);
+                text("if yes press Y or Space", width/4 +170, height/2 + 50);
                 
                 if(checkKey('Y') || checkKey('y'))
                 {
@@ -551,7 +458,6 @@ public class UI extends PApplet
             textFont(font);
             text("Press Enter to start", width/3, height/2);  
         }
-        // */
     }   
         
 }

@@ -1,18 +1,12 @@
 package ie.tudublin;
 
-import java.util.ArrayList;
 
 import processing.core.*;
 
 
 
 public class BackGround extends SpaceObject 
-{	
-	// float[] x1 = new float[50];
-	// float[] y1 = new float[50];
-	// float[] z1 = new float[50];
-	// float[] size1 = new float[50];
-
+{
 	float[] x = new float[500];
 	float[] y = new float[500];
 	float[] z = new float[500];
@@ -213,10 +207,5 @@ public class BackGround extends SpaceObject
 		ui.fill(65,105,225);
 		ui.circle(375 + move, 400 - move, 100);
 	}
-	// public void update()
-	// {
-	// 	move += 0.2f;
-	// 	moverotate -= 0.3f;
-	// 	movex += 0.2f;
-	// }
+
 }

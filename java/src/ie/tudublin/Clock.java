@@ -34,10 +34,4 @@ public class Clock extends SpaceObject
         ui.text(h+":"+m+":"+s, x + 73, y+15); 
     }
    
-    // public void analogclock()
-    // {
-    //     float x =0;
-    //     float y =0;
-    //     //ellipse();
-    // }
 }

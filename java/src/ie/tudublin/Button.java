@@ -54,7 +54,6 @@ public class Button extends SpaceObject
         ui.fill(0,255,0);
         ui.stroke(0,255,0);
         ui.rect(x, y, width, height);
-        //ui.textAlign(PApplet.CENTER, PApplet.CENTER);
         ui.fill(0);
         PFont font = ui.createFont("Times New Roman", 11);
         ui.textFont(font);
@@ -66,7 +65,6 @@ public class Button extends SpaceObject
         ui.fill(139,0,0);
         ui.stroke(139,0,0);
         ui.rect(x, y, width, height);
-        //ui.textAlign(PApplet.CENTER, PApplet.CENTER);
         ui.fill(0);
         PFont font = ui.createFont("Times New Roman", 20);
         ui.textFont(font);

@@ -24,6 +24,9 @@ public class Info extends SpaceObject
         ui.line(x, y/4, x-100, y/2.7f);
         ui.line(x/8, y/2.7f, x-100, y/2.7f);
         ui.line(x/8, y/2.2f + 200, x-100, y/2.2f + 200);
+    }
+    public void infotext()
+    {
         ui.fill(255);
         PFont font = ui.createFont("Apple Chancery", 32);
         ui.textFont(font);
