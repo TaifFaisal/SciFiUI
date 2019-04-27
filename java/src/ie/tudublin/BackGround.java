@@ -22,12 +22,6 @@ public class BackGround extends SpaceObject
 	float moverotate;
 	float movex;
 
-	// float x = random(width);
-	// float y = random(height);
-	// float z = random(1, 4);
-	// float size = random(2, 9);
-
-	// public Back(PApplet ui, float x, float y, float z, float size)
 	public BackGround(UI ui) 
 	{
 		super(ui);
@@ -126,13 +120,6 @@ public class BackGround extends SpaceObject
 			}
 		}
 
-		// ui.ellipse(x, y, size, size);
-			
-		// x = x - z;
-		// if(x < 0)
-		// {
-		// 	x = ui.width;
-		// }
 	
 	}
 	
@@ -160,29 +147,11 @@ public class BackGround extends SpaceObject
 		ui.triangle(180 + move, 500 - move, 240 + move, 480 - move, 215 + move, 522 - move);
 		ui.triangle(345 + move, 530 - move, 350 + move, 615 - move, 319 + move, 593 - move);
 		
-		// ui.triangle(399 + movex, 365 - move, 525 + movex , 330 - move, 500 + movex , 448 - move);
-		// ui.triangle(180 + move, 500 - move, 240 + move, 480 - move, 215 + move, 522 - move);
-		// ui.triangle(345 + move, 530 - move, 350 + move, 615 - move, 319 + move, 593 - move);
 		ui.pushMatrix();
 		ui.translate(380, -80);
 		ui.rotate(0.6f);
 		ui.noStroke();
 		ui.rect(200, 350 + moverotate, 130, 240);
-
-		// ui.rotate(0.7f);
-		// ui.translate(301, -330);
-		
-		// ui.noStroke();
-
-		// ui.rect(240, 350 + moverotate, 130, 240);
-		// ui.popMatrix();
-		// ui.pushMatrix();
-		// ui.triangle(399 + movex, 365 + moverotate, 525 + movex , 330 + moverotate, 500 + movex , 448 + moverotate);
-
-		// ui.rotate(0.7f);
-		// ui.translate(255, -300);
-		// //ui.rect(320, 570 + moverotate, 60, 30);
-		// ui.popMatrix();
 
 		ui.popMatrix();
 		ui.pushMatrix();
@@ -207,5 +176,62 @@ public class BackGround extends SpaceObject
 		ui.fill(65,105,225);
 		ui.circle(375 + move, 400 - move, 100);
 	}
+	public void borders()
+    {
+        ui.fill(255);
+        ui.strokeWeight(4); 
+        ui.line(0, ui.height/4, ui.width/8, ui.height/2.7f);
+        ui.line(0, ui.height/3 + 400, ui.width/8, ui.height/2.2f + 200);
+        ui.line(ui.width, ui.height/3 + 400, ui.width-100, ui.height/2.2f + 200);
+        ui.line(ui.width, ui.height/4, ui.width-100, ui.height/2.7f);
+        ui.line(ui.width/8, ui.height/2.7f, ui.width-100, ui.height/2.7f);
+        ui.line(ui.width/8, ui.height/2.2f + 200, ui.width-100, ui.height/2.2f + 200);
+	}
+	public void infotext()
+    {
+        ui.fill(255);
+        PFont font = ui.createFont("Apple Chancery", 32);
+        ui.textFont(font);
+        ui.text("Object Oriented Programming Assignment", ui.width/2, ui.height/2);
+        ui.text("D17125070",  ui.width/4 + 200, ui.height/2+50);
+	}
+	public void structure()
+    {
+        ui.stroke(86, 86, 86);
+        ui.strokeWeight(5);
+
+        ui.beginShape();
+        ui.fill(169,169,169);
+        ui.vertex(-5, 0);
+        ui.vertex(-5, ui.height/16);
+        ui.vertex(0, ui.height/16);
+        ui.vertex(ui.width/16*1.5f, ui.height/10);
+        ui.vertex(ui.width/16*1.5f, ui.height/10);
+        ui.vertex(ui.width-100, ui.height/10);
+        ui.vertex(ui.width-100, ui.height/10);
+        ui.vertex(ui.width, ui.height/16);
+        ui.vertex(ui.width+5, ui.height/16);
+        ui.vertex(ui.width+5, 0);
+        ui.vertex(ui.width, -5);
+        ui.vertex(-5, -5);
+        ui.endShape();
+
+        ui.beginShape();
+        ui.fill(169,169,169);
+        ui.vertex(0, ui.height/4 + 400);
+        ui.vertex(ui.width/8, ui.height/3 + 200);
+        ui.vertex(ui.width/8, ui.height/3 + 200);
+        ui.vertex(ui.width - 100,ui.height/3 + 200);
+        ui.vertex(ui.width - 100,ui.height/3 + 200);
+        ui.vertex(ui.width, ui.height/4 + 400);
+        ui.vertex(ui.width, ui.height/4 + 400);
+        ui.vertex(ui.width, ui.height);
+        ui.vertex(ui.width, ui.height);
+        ui.vertex(0, ui.height);
+        ui.vertex(0, ui.height);
+        ui.vertex(0, ui.height/4 + 400);
+        ui.endShape();  
+    }
+	
 
 }

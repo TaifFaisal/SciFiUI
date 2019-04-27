@@ -37,8 +37,6 @@ public class UI extends PApplet
     BackGround background;
     Radar radar;
     Clock clock;
-    Info info;
-    Spaceship spaceship;
     Screen screen;
     Graph graph;
     Targets fire;
@@ -117,11 +115,10 @@ public class UI extends PApplet
         clock = new Clock(this, 120, 20);
         clockredbutton = new Button(this, 85 , 35, 17, 17,"Clock / OFF");
         clockgreenbutton = new Button(this, 85 , 35, 17, 17,"Clock / ON");
-        info = new Info(this, width , height);
-        spaceship = new Spaceship(this, width, height);
+        
         graph = new Graph(this);
-        beforgraphbutton = new Button(this, 685 , 580, 17, 17,"Bar char/OFF");
-        aftergraphbutton = new Button(this, 685 , 580, 17, 17,"Bar char/ON");
+        beforgraphbutton = new Button(this, 685 , 580, 17, 17,"Bar chart/OFF");
+        aftergraphbutton = new Button(this, 685 , 580, 17, 17,"Bar chart/ON");
         fireon = new Button(this, 610 , 510, 17, 17,"Fire / ON");
         fireoff = new Button(this, 660 , 510, 17, 17,"Fire / OFF");
         targets = new Button(this, 620 , 545, 50, 20,"Find targets");
@@ -189,7 +186,7 @@ public class UI extends PApplet
             {
                 checkbutton = 0;
                 //background.star();
-                spaceship.structure();
+                background.structure();
                 if(mousePressed == true)
                 {
                     if(mouseX > 650  && mouseX < 710 && mouseY > 20 && mouseY < 60)
@@ -290,7 +287,7 @@ public class UI extends PApplet
 
                     
 
-                    spaceship.structure();
+                    background.structure();
                     startbutton.afterstartbutton();
                     information.phonebuttons();
                     help.phonebuttons();
@@ -383,7 +380,7 @@ public class UI extends PApplet
                 else
                 {
                     background.star();
-                    spaceship.structure();
+                    background.structure();
                     radar.rect();
                     exitbutton.exitbutton();
                     startbutton.beforestartbutton();
@@ -408,8 +405,6 @@ public class UI extends PApplet
                 {
                     System.exit(0);
                 }
-
-
             }
             if (button == 2)
             {
@@ -419,8 +414,8 @@ public class UI extends PApplet
                 button2.buttons();
                 button3.buttons();
                 button4.buttons();
-                info.borders();
-                info.infotext();
+                background.borders();
+                background.infotext();
                 checkbutton = 1;
             }
             if (button == 3)
@@ -431,7 +426,7 @@ public class UI extends PApplet
                 button2.buttons();
                 button3.buttons();
                 button4.buttons();
-                info.borders();
+                background.borders();
                 text("Are you sure you want to exit?!", width/2 -20, height/2);
                 text("if yes press Y or Space", width/4 +170, height/2 + 50);
                 
