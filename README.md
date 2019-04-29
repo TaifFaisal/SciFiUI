@@ -144,24 +144,9 @@ I’m glad that I had this opportunity to practice what I have learned so far in
 
 # Markdown Tutorial
 
-This is *emphasis*
 
-This is a bulleted list
 
-- Item
-- Item
 
-This is a numbered list
-
-1. Item
-1. Item
-
-This is a [hyperlink](http://bryanduggan.org)
-
-# Headings
-## Headings
-#### Headings
-##### Headings
 
 This is code:
 
