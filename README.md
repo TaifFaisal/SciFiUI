@@ -7,6 +7,7 @@ Student Number: D17125070
 Fork this repository and use it a starter project for your assignment
 
 # Description of the assignment
+This assignment is about creating a user interface for a science fiction idea using java and processing. The purpose behind this assignment is to practice what I have leaned and to improve my coding skills plus getting the chance to use git. I struggled in the beginning to find an idea for my assignment, as science fiction is not one of my strongest points. However, I had a chat with a couple of friends who are fans of science fiction movies and games. They inspired me to come up with the idea of a spaceship. 
 
 # Instructions
 
