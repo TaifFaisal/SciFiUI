@@ -140,6 +140,8 @@ Temperature[i] = ui.random(0, 330);
 
 # What I am most proud of in the assignment
 
+I’m glad that I had this opportunity to practice what I have learned so far in my course and to improve my coding skills. This assignment helped me practice my skills not only in programming but my problem solving skills as well as time management. I faced some difficulties with coding as well as coming up with ideas. However, I was able to overcome those difficulties and learned from them. Finally, I’m satisfied with the final result I have achieved so far.
+
 # Markdown Tutorial
 
 This is *emphasis*
