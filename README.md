@@ -30,6 +30,113 @@ The user must press enter to start the program, the main page will then be displ
 
 
 # How it works
+To make my program work I created 11 classes:
+
+• Main : used to execute the UI class.
+
+• UI : this class includes declaring and initializing some objects, plus passing some parameters, this class also includes       loading a table, text file and some sound files, I also used integer variables, if statements, checkKey(), and                 mousePressed() to check some conditions (x and y values) before calling the methods. 
+
+```Java
+if (checkKey(ENTER))
+        {
+            
+
+            
+            if(checkbutton == 1)
+            {   
+                
+                button1.buttons();
+                button2.buttons();
+                button3.buttons();
+                background.star1();
+                background.spaceship();
+                if(mousePressed == true)
+                {
+                    //for the first button Start
+                    if(mouseX > buttonX && mouseX < buttonX + 100 && mouseY > buttonY && mouseY < buttonY + 50)
+                    {
+                        button = 1;
+                    }
+                    //for the second button Information
+                    if(mouseX > buttonX + 150 && mouseX < buttonX + 250 && mouseY > buttonY && mouseY < buttonY + 50)
+                    {
+                        button = 2;
+                        //background.movingstars(); 
+                    }
+                    //for the third button Exit
+                    if(mouseX > buttonX + 300 && mouseX < buttonX + 400 && mouseY > buttonY && mouseY < buttonY + 50)
+                    {
+                        button = 3;  
+                    }
+                    if(mouseX > buttonX + 450 && mouseX < buttonX + 550 && mouseY > buttonY && mouseY < buttonY + 50)
+                    {
+                        button = 4;
+                    }
+                
+                }
+            }
+```
+
+• BackGround : a subclass of SpaceObject, it loads and displays an image, displays the borders of some pages, shows the         spaceship structure, and a couple of different backgrounds, like the moving stars background (after starting the spaceship),   moving the stars from left to right (in the main page), speeding the background and the non-moving stars background (before   pressing enter). This class also includes some functions like pushMatrix(), popMatrix(), beginShape(), endShape() rotate()     and translate().
+
+```Java
+ui.pushMatrix();
+ui.translate(380, -80);
+ui.rotate(0.6f);
+ui.noStroke();
+ui.rect(200, 350 + moverotate, 130, 240);
+ui.popMatrix();
+```
+
+
+
+
+```Java
+ ui.beginShape();
+ui.fill(169,169,169);
+ui.vertex(0, ui.height/4 + 400);
+ui.vertex(ui.width/8, ui.height/3 + 200);
+ui.vertex(ui.width/8, ui.height/3 + 200);
+ui.vertex(ui.width - 100,ui.height/3 + 200);
+ui.vertex(ui.width - 100,ui.height/3 + 200);
+ui.vertex(ui.width, ui.height/4 + 400);
+ui.vertex(ui.width, ui.height/4 + 400);
+ui.vertex(ui.width, ui.height);
+ui.vertex(ui.width, ui.height);
+ui.vertex(0, ui.height);
+ui.vertex(0, ui.height);
+ui.vertex(0, ui.height/4 + 400);
+ui.endShape();  
+```
+
+• Button: this class is a subclass of SpaceObject, it is responsible for all the buttons in the program. 
+
+• Clock: a subclass of SpaceObject, it displays a digital clock. 
+
+• ExtraButton: a subclass of SpaceObject, it only displays the non-functional buttons, using the random() function to     change their colors.
+
+```Java
+ui.fill(0,ui.random(100),0);
+```
+
+• Graph: this class is also a subclass of SpaceObject, it shows a moving bar chart depending on the temperature, map() function is used in the drawgraph() method and the random() function is used in the update method to change the bar values.
+
+```Java
+ui.rect(value +j, ui.map(i, 0, Temperature.length, ui.height-11, ui.height-11), h, -Temperature[i]/4);
+```
+
+```Java
+Temperature[i] = ui.random(0, 330);
+```
+
+• Radar: this class is a subclass of SpaceObject, shows the radar with the moving planets on it using different           functions.
+
+• Screen: a subclass of SpaceObject, this class shows the screen and displays the instructions on it.
+
+• SpaceObject: this is an abstract class.
+
+• Targets: this is a subclass of SpaceObject, this class is responsible for loading images using an array, displaying     the images on the background, loading and displaying a sound file, creating a table, adding a target pointer around the       mouse, counting the points, showing what the user has collected, removing the collected diamond using the mousePressed()       function, and increasing the user’s level. 
+
 
 # What I am most proud of in the assignment
 
