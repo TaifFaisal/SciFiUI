@@ -34,7 +34,7 @@ To make my program work I created 11 classes:
 
 • Main : used to execute the UI class.
 
-• UI : this class includes declaring and initializing some objects, plus passing some parameters, this class also includes       loading a table, text file and some sound files, I also used integer variables, if statements, checkKey(), and                 mousePressed() to check some conditions (x and y values) before calling the methods. 
+• UI : this class includes declaring and initializing some objects, plus passing some parameters, this class also includes       loading a table (Numbers.csv), text file (screen.txt) and some sound files, I also used integer variables, if statements,     checkKey(), and mousePressed() to check some conditions (x and y values) before calling the methods. 
 
 ```Java
 if (checkKey(ENTER))
@@ -92,7 +92,7 @@ ui.popMatrix();
 
 
 ```Java
- ui.beginShape();
+ui.beginShape();
 ui.fill(169,169,169);
 ui.vertex(0, ui.height/4 + 400);
 ui.vertex(ui.width/8, ui.height/3 + 200);
@@ -135,7 +135,7 @@ Temperature[i] = ui.random(0, 330);
 
 • SpaceObject: this is an abstract class.
 
-• Targets: this is a subclass of SpaceObject, this class is responsible for loading images using an array, displaying     the images on the background, loading and displaying a sound file, creating a table, adding a target pointer around the       mouse, counting the points, showing what the user has collected, removing the collected diamond using the mousePressed()       function, and increasing the user’s level. 
+• Targets: this is a subclass of SpaceObject, this class is responsible for loading images using an array, displaying the       images on the background, loading and displaying a sound file, creating a table, adding a target pointer around the           mouse, counting the points, showing what the user has collected, removing the collected diamond using the mousePressed()       function, and increasing the user’s level. 
 
 
 # What I am most proud of in the assignment
@@ -144,54 +144,205 @@ I’m glad that I had this opportunity to practice what I have learned so far in
 
 # Markdown Tutorial
 
-
-
-
-
-This is code:
+## Polymorphism:
+clock.java is a subclass of SpaceObject
 
 ```Java
-public void render()
+public class Clock extends SpaceObject 
 {
-	ui.noFill();
-	ui.stroke(255);
-	ui.rect(x, y, width, height);
-	ui.textAlign(PApplet.CENTER, PApplet.CENTER);
-	ui.text(text, x + width * 0.5f, y + height * 0.5f);
+    private float x;
+    private float y;
+
+
+    public Clock(UI ui, float x, float y)
+    {
+        super(ui);
+        this.x = x;
+        this.y = y;
+    }
+}
+```
+## Interfaces:
+
+Interface.java
+
+```Java
+package ie.tudublin;
+// public interface Interface 
+// {
+//    public void applyTo(Button fireon);
+// }
+```
+Display.java
+
+```Java
+package ie.tudublin;
+// public class Display extends SpaceObject implements Interface
+// {
+//     public Display(UI ui)
+//     {
+//         super(ui);
+//     }
+// }
+```
+
+## PVectors
+
+Radar.java
+
+```Java
+package ie.tudublin;
+
+import processing.core.PVector;
+
+public class Radar extends SpaceObject
+{
+    private PVector pos;
+    private float x;
+    private float y;
+    // private float speed;
+    private float size;
+    float[] planetx = new float[5];
+    float[] planety = new float[5];
+    int num1 = 0;
+
+    private float rotation;
+    // float speed
+    public Radar(UI ui, float x, float y,  float size)
+    {
+        super(ui);
+        pos = new PVector(x, y);
+        // this.speed = speed;
+        this.size = size;
+        while(num1 < 5)
+        {
+            planetx[num1] = ui.random(12, 110);
+            planety[num1] = ui.random(630, 720);
+
+            num1++;
+        }
+        
+    }
+
+    public void rect()
+    {
+        ui.fill(0);
+        ui.noStroke();
+        ui.rect(10,625,115,110);
+    }
+
+    public void render()
+    {
+
+        float howFast = 2;
+        
+
+        ui.pushMatrix();
+        ui.noFill();
+        ui.strokeWeight(2);
+        ui.stroke(0,128,0);
+        ui.circle(pos.x, pos.y, size);
+        ui.circle(pos.x, pos.y, size-15);
+        ui.circle(pos.x, pos.y, size-30);
+        ui.circle(pos.x, pos.y, size-45);
+        ui.circle(pos.x, pos.y, size-60);
+        ui.circle(pos.x, pos.y, size-75);
+        ui.circle(pos.x, pos.y, size-90);
+        ui.circle(pos.x, pos.y, size-98);
+        ui.translate(pos.x, pos.y);
+        ui.rotate(rotation);
+
+
+        ui.stroke(0,128,0);
+
+        ui.line(0, 0, pos.x/2, pos.x/2);
+        ui.popMatrix();
+        float size1 = 6;
+
+        for(int i = 0; i< 5; i++)
+        {
+            ui.noStroke();
+            ui.fill(255,218,185);
+            planety[i] += 0.09f;
+
+            if(planety[i] > 720)
+            {
+                planety[i]= 630;
+                planetx[i] = ui.random(12, 110);
+        
+            }
+            ui.ellipse(planetx[i], ui.map(i, 0, 100, planety[i] , planety[i]), size1, size1);
+            
+        }
+    }
+    
+    public void update()
+    {
+        rotation += 0.1f;
+    }
+
+
 }
 ```
 
-So is this without specifying the language:
+## Transforms:
 
-```
-public void render()
+BackGround.java
+
+```Java
+void spaceship()
 {
-	ui.noFill();
-	ui.stroke(255);
-	ui.rect(x, y, width, height);
-	ui.textAlign(PApplet.CENTER, PApplet.CENTER);
-	ui.text(text, x + width * 0.5f, y + height * 0.5f);
+	ui.noStroke();
+	ui.image(img, -140, 610, 500, 500);
+
+
+	ui.fill(169,169,169);
+	ui.noStroke();
+	ui.triangle(344 , 324 - move, 460 , 280 - move, 453 , 400 - move);
+	ui.triangle(180 + move, 500 - move, 240 + move, 480 - move, 215 + move, 522 - move);
+	ui.triangle(345 + move, 530 - move, 350 + move, 615 - move, 319 + move, 593 - move);
+
+	ui.pushMatrix();
+	ui.translate(380, -80);
+	ui.rotate(0.6f);
+	ui.noStroke();
+	ui.rect(200, 350 + moverotate, 130, 240);
+
+	ui.popMatrix();
+	ui.pushMatrix();
+	ui.translate(335, -50);
+	ui.rotate(0.6f);
+	ui.rect(248, 550 + moverotate, 60, 30);
+	ui.popMatrix();
+
+	ui.noStroke();
+	ui.fill(65,105,225);
+	ui.circle(375 + move, 400 - move, 100);
 }
 ```
+## Images:
 
-This is an image using a relative URL:
+Press Enter to start:
 
-![An image](images/p8.png)
+![An image](java/data/img1.jpg)
 
-This is an image using an absolute URL:
+The main page:
 
-![A different image](https://bryanduggandotorg.files.wordpress.com/2019/02/infinite-forms-00045.png?w=595&h=&zoom=2)
+![An image](java/data/img3.jpg)
+
+Start button:
+
+![An image](java/data/img2.jpg)
+
+Fireon button:
+
+![An image](java/data/img4.jpg)
+
+## Video:
 
 This is a youtube video:
 
-[![YouTube](http://img.youtube.com/vi/J2kHSSFA4NU/0.jpg)](https://www.youtube.com/watch?v=J2kHSSFA4NU)
+[![YouTube](java/data/img2.jpg)](https://www.youtube.com/watch?v=5-5PN0A0v3M&feature=youtu.be)
 
-This is a table:
 
-| Heading 1 | Heading 2 |
-|-----------|-----------|
-|Some stuff | Some more stuff in this column |
-|Some stuff | Some more stuff in this column |
-|Some stuff | Some more stuff in this column |
-|Some stuff | Some more stuff in this column |
 
