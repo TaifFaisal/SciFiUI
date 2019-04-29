@@ -16,7 +16,6 @@ public class Targets extends SpaceObject
     int checkwhite = 0;
     int level = 0;
     int x = 0;
-    PImage oneimg;
     PImage[] images = new PImage[2];
 
     public Targets(UI ui, Minim sound)
