@@ -342,7 +342,47 @@ ui.beginShape();
 		}
 		ui.endShape();
 ```
+## Files:
 
+#### csv file:
+
+UI.java
+
+```Java
+Table table = loadTable("Numbers.csv", "header");
+```
+
+ExtraButton.java
+
+```Java
+for(TableRow row:table.rows())
+{   
+    int x = row.getInt("x1");
+    int y = row.getInt("y1");
+    ui.strokeWeight(1);
+    ui.fill(0,100,0);
+    ui.stroke(0,100,0);
+    ui.rect(x, y, width, height); 
+} 
+```
+
+#### text file:
+
+UI.java
+
+```Java
+String[] words = loadStrings("screen.txt");
+```
+
+Screen.java
+
+```Java
+ for (int i = 0 ; i < words.length; i++) 
+{
+    ui.textFont(font);
+    ui.text(words[i], x+35, y+25);
+}
+```
 
 ## Images:
 
