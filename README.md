@@ -320,6 +320,30 @@ void spaceship()
 	ui.circle(375 + move, 400 - move, 100);
 }
 ```
+
+## Trigonometry:
+
+BackGround.java
+
+```Java
+ui.beginShape();
+		for(int num=0; num < 360; num++)
+		{
+			float a = ui.radians(num);
+			float valuex = 375 + move;
+			float valuey = 400 - move;
+			float radius = 100;
+			float valuex2= valuex + ui.sin(a)*(radius-50);
+			float valuey2= valuey + ui.cos(a)*(radius-50);
+			ui.noStroke();
+			ui.fill(65,105,225);
+			ui.vertex(valuex2, valuey2);
+			// ui.circle(375 + move, 400 - move, 100);
+		}
+		ui.endShape();
+```
+
+
 ## Images:
 
 Press Enter to start:
