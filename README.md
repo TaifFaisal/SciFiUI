@@ -384,6 +384,40 @@ Screen.java
 }
 ```
 
+## Interactive:
+
+UI.java
+
+```Java
+ if(mousePressed == true)
+{
+    //for the first button Start
+    if(mouseX > buttonX && mouseX < buttonX + 100 && mouseY > buttonY && mouseY < buttonY + 50)
+    {
+	button = 1;
+    }
+    //for the second button Information
+    if(mouseX > buttonX + 150 && mouseX < buttonX + 250 && mouseY > buttonY && mouseY < buttonY + 50)
+    {
+	button = 2;
+	//background.movingstars(); 
+    }
+    //for the third button Exit
+    if(mouseX > buttonX + 300 && mouseX < buttonX + 400 && mouseY > buttonY && mouseY < buttonY + 50)
+    {
+	button = 3;  
+    }
+    if(mouseX > buttonX + 450 && mouseX < buttonX + 550 && mouseY > buttonY && mouseY < buttonY + 50)
+    {
+	button = 4;
+    }
+
+}
+```
+![An image](java/data/img5.jpg) 
+![An image](java/data/img6.png)
+
+
 ## Images:
 
 Press Enter to start:
